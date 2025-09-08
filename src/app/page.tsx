@@ -8,6 +8,7 @@ import {
   Star,
   Clock,
   BookOpen,
+  MapPin,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -21,6 +22,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
 import { RegistrationForm } from '@/components/registration-form';
 import { Dialog, DialogTrigger } from '@/components/ui/dialog';
+import { ScrollToTop } from '@/components/scroll-to-top';
 
 export default function Home() {
   return (
@@ -63,6 +65,12 @@ export default function Home() {
                 Schedule
               </Link>
               <Link
+                href="#location"
+                className="text-muted-foreground transition-colors hover:text-primary"
+              >
+                Location
+              </Link>
+              <Link
                 href="#faq"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
@@ -76,14 +84,18 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <section
               id="home"
-              className="flex min-h-screen flex-col items-center justify-center text-center"
+              className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-center"
             >
+              <div className="absolute inset-0 -z-10">
+                <div className="absolute h-full w-full bg-transparent bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div className="absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+                <div className="absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
+              </div>
               <div className="relative mx-auto max-w-5xl">
-                <div className="absolute -top-40 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   The Future of Cloud,
                   <br />
-                  <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     Today.
                   </span>
                 </h1>
@@ -137,10 +149,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section
-              id="learn"
-              className="bg-secondary/50 py-20 sm:py-32 -mx-4 px-4"
-            >
+            <section id="learn" className="py-20 sm:py-32">
               <div className="container mx-auto text-center">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
                   What You'll Learn
@@ -192,7 +201,7 @@ export default function Home() {
                 <p className="text-lg text-muted-foreground">
                   ...and for a "CloudX" touch to the events
                 </p>
-                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mt-4 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   NO PREQUISITE KNOWLEDGE REQUIRED.
                 </h2>
                 <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
@@ -249,10 +258,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section
-              id="schedule"
-              className="bg-secondary/50 py-20 sm:py-32 -mx-4 px-4"
-            >
+            <section id="schedule" className="py-20 sm:py-32">
               <div className="container mx-auto max-w-3xl text-center">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
                   Workshop Schedule
@@ -318,6 +324,40 @@ export default function Home() {
               </div>
             </section>
 
+            <section id="location" className="py-20 sm:py-32">
+              <div className="container mx-auto max-w-4xl text-center">
+                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
+                  Location
+                </h2>
+                <p className="mt-4 text-lg text-muted-foreground">
+                  Join us at the heart of innovation.
+                </p>
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div className="w-full">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2856053880896!2d80.04248560906781!3d12.824811887424941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70ce1c18cd9%3A0xffb39775f24c16e9!2sTech%20Park%20Building%2C%20SRM%20University%2C%20Potheri%2C%20SRM%20Nagar%2C%20Kattankulathur%2C%20Tamil%20Nadu%20603203!5e0!3m2!1sen!2sin!4v1757371884091!5m2!1sen!2sin"
+                      width="100%"
+                      height="300"
+                      style={{ border: 0 }}
+                      allowFullScreen={true}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="rounded-lg shadow-lg"
+                    ></iframe>
+                  </div>
+                  <div className="text-left flex items-center gap-4">
+                    <MapPin className="h-12 w-12 text-primary flex-shrink-0" />
+                    <div>
+                      <h4 className="text-xl font-bold">Our Venue</h4>
+                      <p className="text-muted-foreground">
+                        iMac Lab, 14th Floor, Tech Park 1, SRMIST, Kattankulathur
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             <section id="faq" className="py-20 sm:py-32">
               <div className="mx-auto max-w-3xl">
                 <h2 className="text-center font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
@@ -360,7 +400,7 @@ export default function Home() {
           </div>
         </main>
 
-        <footer className="border-t border-border/50 bg-secondary/50">
+        <footer className="border-t border-border/50">
           <div className="container mx-auto py-12 px-4 text-center text-muted-foreground">
             <div className="mb-4">
               <DialogTrigger asChild>
@@ -380,6 +420,7 @@ export default function Home() {
         </footer>
       </div>
       <RegistrationForm />
+      <ScrollToTop />
     </Dialog>
   );
 }
