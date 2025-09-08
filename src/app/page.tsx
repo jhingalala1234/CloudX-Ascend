@@ -8,7 +8,6 @@ import {
   Star,
   Clock,
   BookOpen,
-  HelpCircle,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -70,8 +69,11 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex-1">
-        <section className="container flex min-h-screen items-center pt-20 text-center">
+      <main className="container mx-auto flex-1 px-4">
+        <section
+          id="home"
+          className="flex min-h-screen flex-col items-center justify-center text-center"
+        >
           <div className="relative mx-auto max-w-5xl">
             <div className="absolute -top-40 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
             <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
@@ -103,7 +105,7 @@ export default function Home() {
         </section>
 
         <section id="overview" className="py-20 sm:py-32">
-          <div className="container mx-auto grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
             <div className="space-y-6">
               <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
                 Workshop Overview
@@ -133,7 +135,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="learn" className="bg-secondary/50 py-20 sm:py-32">
+        <section id="learn" className="bg-secondary/50 py-20 sm:py-32 -mx-4 px-4">
           <div className="container mx-auto text-center">
             <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
               What You'll Learn
@@ -178,7 +180,7 @@ export default function Home() {
         </section>
 
         <section id="speakers" className="py-20 sm:py-32">
-          <div className="container mx-auto text-center">
+          <div className="text-center">
             <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
               Meet the Speakers
             </h2>
@@ -219,7 +221,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="schedule" className="bg-secondary/50 py-20 sm:py-32">
+        <section id="schedule" className="bg-secondary/50 py-20 sm:py-32 -mx-4 px-4">
           <div className="container mx-auto max-w-3xl text-center">
             <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
               Workshop Schedule
@@ -278,7 +280,7 @@ export default function Home() {
         </section>
 
         <section id="faq" className="py-20 sm:py-32">
-          <div className="container mx-auto max-w-3xl">
+          <div className="mx-auto max-w-3xl">
             <h2 className="text-center font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
               Frequently Asked Questions
             </h2>
