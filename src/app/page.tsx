@@ -108,7 +108,7 @@ export default function Home() {
           <section id="overview" className="py-20 sm:py-32">
             <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
               <div className="space-y-6">
-                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
+                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
                   Workshop Overview
                 </h2>
                 <p className="text-lg text-muted-foreground">
@@ -138,7 +138,7 @@ export default function Home() {
 
           <section id="learn" className="bg-secondary/50 py-20 sm:py-32 -mx-4 px-4">
             <div className="container mx-auto text-center">
-              <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
+              <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
                 What You'll Learn
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
@@ -158,7 +158,7 @@ export default function Home() {
                 </Card>
                 <Card className="text-left">
                   <CardContent className="pt-6">
-                    <Code className="mb-4 h-10 w-10 text-primary" />
+                    <Code className="mb-4 h-10 w-10 text-accent" />
                     <h3 className="text-xl font-bold">Infrastructure as Code</h3>
                     <p className="mt-2 text-muted-foreground">
                       Learn to automate your infrastructure with Terraform and
@@ -185,7 +185,7 @@ export default function Home() {
               <p className="text-lg text-muted-foreground">
                 ...and for a "CloudX" touch to the events
               </p>
-              <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mt-4">
+              <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mt-4 text-accent">
                 NO PREQUISITE KNOWLEDGE REQUIRED.
               </h2>
               <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
@@ -196,7 +196,7 @@ export default function Home() {
 
           <section id="speakers" className="py-20 sm:py-32">
             <div className="text-center">
-              <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
+              <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
                 Meet the Speakers
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -228,7 +228,7 @@ export default function Home() {
                   </Avatar>
                   <div className="text-center">
                     <h3 className="text-2xl font-bold">John Smith</h3>
-                    <p className="text-primary">Senior Cloud Architect</p>
+                    <p className="text-accent">Senior Cloud Architect</p>
                     <p className="mt-2 text-muted-foreground">
                       John specializes in serverless architectures and has helped
                       numerous startups scale their applications on AWS.
@@ -244,7 +244,7 @@ export default function Home() {
             className="bg-secondary/50 py-20 sm:py-32 -mx-4 px-4"
           >
             <div className="container mx-auto max-w-3xl text-center">
-              <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
+              <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
                 Workshop Schedule
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
@@ -266,7 +266,7 @@ export default function Home() {
                   </div>
                 </li>
                 <li className="flex items-start gap-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
                     <BookOpen className="h-6 w-6" />
                   </div>
                   <div>
@@ -292,7 +292,7 @@ export default function Home() {
                   </div>
                 </li>
                 <li className="flex items-start gap-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
                     <Clock className="h-6 w-6" />
                   </div>
                   <div>
@@ -310,7 +310,7 @@ export default function Home() {
 
           <section id="faq" className="py-20 sm:py-32">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-center font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
+              <h2 className="text-center font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
                 Frequently Asked Questions
               </h2>
               <Accordion type="single" collapsible className="mt-12 w-full">
