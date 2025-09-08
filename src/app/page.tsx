@@ -182,12 +182,13 @@ export default function Home() {
 
           <section className="py-20 sm:py-32 text-center">
             <div className="container mx-auto">
-              <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+              <p className="text-lg text-muted-foreground">
                 ...and for a "CloudX" touch to the events
+              </p>
+              <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mt-4">
+                NO PREQUISITE KNOWLEDGE REQUIRED.
               </h2>
               <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
-                NO PREQUISITE KNOWLEDGE REQUIRED.
-                <br />
                 Don't worry if you don't know anything. All are welcome.
               </p>
             </div>
