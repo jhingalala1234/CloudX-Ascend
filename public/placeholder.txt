@@ -1,1 +1,0 @@
-This folder is for your static assets. Please upload your logo.png file here.
