@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-sm">
-        <div className="container flex h-20 items-center justify-between">
+        <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.png"
@@ -336,7 +336,7 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-border/50 bg-secondary/50">
-        <div className="container py-12 text-center text-muted-foreground">
+        <div className="container mx-auto py-12 px-4 text-center text-muted-foreground">
           <div className="mb-4">
             <Button
               asChild
