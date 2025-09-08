@@ -27,10 +27,13 @@ export default function Home() {
       <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-sm">
         <div className="container flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <Cloud className="h-8 w-8 text-primary" />
-            <span className="font-headline text-2xl font-bold text-primary">
-              CloudX
-            </span>
+            <Image
+              src="/logo.png"
+              alt="CloudX Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+            />
           </Link>
           <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
             <Link
