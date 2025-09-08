@@ -80,22 +80,20 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="flex-1">
+        <main className="flex-1 pt-20">
           <div className="container mx-auto px-4">
             <section
               id="home"
-              className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-center"
+              className="relative flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center overflow-hidden text-center"
             >
               <div className="absolute inset-0 -z-10">
-                <div className="absolute h-full w-full bg-transparent bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                <div className="absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
-                <div className="absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
+                <div className="absolute inset-0 bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
               </div>
               <div className="relative mx-auto max-w-5xl">
                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   The Future of Cloud,
                   <br />
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                     Today.
                   </span>
                 </h1>
@@ -121,7 +119,7 @@ export default function Home() {
             <section id="overview" className="py-20 sm:py-32">
               <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
                 <div className="space-y-6">
-                  <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
+                  <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-primary">
                     Workshop Overview
                   </h2>
                   <p className="text-lg text-muted-foreground">
@@ -151,7 +149,7 @@ export default function Home() {
 
             <section id="learn" className="py-20 sm:py-32">
               <div className="container mx-auto text-center">
-                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
+                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-primary">
                   What You'll Learn
                 </h2>
                 <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
@@ -196,12 +194,12 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="py-20 sm:py-32 text-center">
+            <section className="py-20 text-center sm:py-32">
               <div className="container mx-auto">
                 <p className="text-lg text-muted-foreground">
                   ...and for a "CloudX" touch to the events
                 </p>
-                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <h2 className="font-headline mt-4 bg-gradient-to-r from-accent to-primary bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl md:text-6xl">
                   NO PREQUISITE KNOWLEDGE REQUIRED.
                 </h2>
                 <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
@@ -212,7 +210,7 @@ export default function Home() {
 
             <section id="speakers" className="py-20 sm:py-32">
               <div className="text-center">
-                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
+                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-primary">
                   Meet the Speakers
                 </h2>
                 <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -260,7 +258,7 @@ export default function Home() {
 
             <section id="schedule" className="py-20 sm:py-32">
               <div className="container mx-auto max-w-3xl text-center">
-                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
+                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-primary">
                   Workshop Schedule
                 </h2>
                 <p className="mt-4 text-lg text-muted-foreground">
@@ -326,13 +324,13 @@ export default function Home() {
 
             <section id="location" className="py-20 sm:py-32">
               <div className="container mx-auto max-w-4xl text-center">
-                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
+                <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                   Location
                 </h2>
                 <p className="mt-4 text-lg text-muted-foreground">
                   Join us at the heart of innovation.
                 </p>
-                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="mt-12 grid grid-cols-1 items-center gap-8 md:grid-cols-2">
                   <div className="w-full">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2856053880896!2d80.04248560906781!3d12.824811887424941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70ce1c18cd9%3A0xffb39775f24c16e9!2sTech%20Park%20Building%2C%20SRM%20University%2C%20Potheri%2C%20SRM%20Nagar%2C%20Kattankulathur%2C%20Tamil%20Nadu%20603203!5e0!3m2!1sen!2sin!4v1757371884091!5m2!1sen!2sin"
@@ -345,8 +343,8 @@ export default function Home() {
                       className="rounded-lg shadow-lg"
                     ></iframe>
                   </div>
-                  <div className="text-left flex items-center gap-4">
-                    <MapPin className="h-12 w-12 text-primary flex-shrink-0" />
+                  <div className="flex items-center gap-4 text-left">
+                    <MapPin className="h-12 w-12 flex-shrink-0 text-primary" />
                     <div>
                       <h4 className="text-xl font-bold">Our Venue</h4>
                       <p className="text-muted-foreground">
@@ -360,7 +358,7 @@ export default function Home() {
 
             <section id="faq" className="py-20 sm:py-32">
               <div className="mx-auto max-w-3xl">
-                <h2 className="text-center font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-accent">
+                <h2 className="text-center font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                   Frequently Asked Questions
                 </h2>
                 <Accordion type="single" collapsible className="mt-12 w-full">
