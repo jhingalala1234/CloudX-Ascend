@@ -129,7 +129,10 @@ export default function Home() {
                     Workshop Overview
                   </h2>
                    <p className="text-lg text-muted-foreground">
-                    Cloud Ascend is a full-day, hands-on workshop designed for anyone looking to break into the world of cloud computing — no prior knowledge required. <strong>Even if you’ve never touched AWS or heard of Docker and Kubernetes, this is your chance to start from zero and actually build.</strong> Guided by <strong>AWS Community Builders</strong>, you’ll explore fundamentals, experiment with containerization, and unlock the power of the AWS Q CLI through practical labs. Along the way, you’ll win swags, connect with peers, and walk out with real skills you can showcase. Skip this, and you’re skipping the easiest entry point into the future of cloud.
+                    Cloud Ascend is a full-day, hands-on workshop designed for anyone — no prior cloud experience required. From your very first step in the cloud to building with AWS, Docker, Kubernetes, and the AWS Q CLI, you’ll learn by doing, not just listening.
+                  </p>
+                  <p className="text-lg text-muted-foreground">
+                    Guided by AWS Community Builders, this workshop is packed with labs, swags, and community learning. You’ll walk out with real projects, a certificate, and practical skills that set you apart. Miss it, and you’re missing the easiest way to step into the future of cloud.
                   </p>
                 </div>
                 <div>
