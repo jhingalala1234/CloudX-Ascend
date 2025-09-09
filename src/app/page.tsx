@@ -7,13 +7,14 @@ import {
   Code,
   Zap,
   Star,
-  Clock,
-  BookOpen,
-  MapPin,
   Gift,
   Users,
   Linkedin,
   Utensils,
+  MapPin,
+  Github,
+  Mail,
+  Instagram,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -33,7 +34,7 @@ export default function Home() {
   return (
     <Dialog>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
-        <header className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-sm">
+        <header className="fixed top-0 z-50 w-full bg-background/95 shadow-md">
           <div className="container mx-auto flex h-20 items-center justify-between px-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
@@ -82,19 +83,25 @@ export default function Home() {
                 FAQ
               </Link>
             </nav>
+            <DialogTrigger asChild>
+              <Button variant="glass" className="hidden md:flex">
+                Register Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </DialogTrigger>
           </div>
         </header>
 
-        <main className="flex-1 pt-20">
-          <div className="container mx-auto px-4">
+        <div className="flex-1 snap-y snap-mandatory overflow-y-scroll h-screen">
+          <main className="flex-1">
             <section
               id="home"
-              className="relative flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center overflow-hidden text-center"
+              className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-center snap-start"
             >
               <div className="absolute inset-0 -z-10">
                 <div className="absolute inset-0 bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
               </div>
-              <div className="relative mx-auto max-w-5xl">
+              <div className="relative mx-auto max-w-5xl px-4">
                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   Cloud Ascend:
                   <br />
@@ -109,7 +116,8 @@ export default function Home() {
                   <DialogTrigger asChild>
                     <Button
                       size="lg"
-                      className="h-14 rounded-full bg-primary px-12 text-lg font-bold text-primary-foreground transition-transform hover:scale-105 hover:bg-primary/90"
+                      variant="glass"
+                      className="h-14 px-12 text-lg font-bold"
                     >
                       Register Now
                       <ArrowRight className="ml-2 h-5 w-5" />
@@ -119,8 +127,8 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="overview" className="py-20 sm:py-32">
-              <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+            <section id="overview" className="py-20 sm:py-32 snap-start flex items-center min-h-screen">
+              <div className="container mx-auto px-4 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
                 <div className="space-y-6">
                   <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                     Workshop Overview
@@ -145,7 +153,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="learn" className="py-20 sm:py-32">
+            <section id="learn" className="py-20 sm:py-32 snap-start flex items-center min-h-screen">
               <div className="container mx-auto text-center">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                   What You’ll Learn
@@ -191,7 +199,7 @@ export default function Home() {
               </div>
             </section>
             
-            <section id="sessions" className="py-20 sm:py-32">
+            <section id="sessions" className="py-20 sm:py-32 snap-start flex items-center min-h-screen">
               <div className="container mx-auto max-w-4xl text-center">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                   Deep Dive Sessions
@@ -217,12 +225,11 @@ export default function Home() {
                               <p className="font-bold">Abinaya S V</p>
                               <span className="text-muted-foreground/50">|</span>
                               <Link href="https://www.linkedin.com/in/abinayasv/" target="_blank" rel="noopener noreferrer">
-                                <Linkedin className="h-5 w-5 text-[#0077b5] transition-colors hover:text-[#0077b5]/80" />
+                                <Linkedin className="h-5 w-5 text-blue-500 transition-colors hover:text-blue-500/80" />
                               </Link>
                             </div>
                             <p className="text-sm text-primary">AWS Community Builder - Data</p>
-                            <p className="text-sm text-muted-foreground">Data Associate</p>
-                            <p className="text-sm text-muted-foreground">PwC Acceleration Center India</p>
+                            <p className="text-sm text-muted-foreground">Data Associate, PwC Acceleration Center India</p>
                           </div>
                         </div>
                       </CardContent>
@@ -255,12 +262,11 @@ export default function Home() {
                               <p className="font-bold">Jeevitha M</p>
                               <span className="text-muted-foreground/50">|</span>
                               <Link href="https://www.linkedin.com/in/jeevitha-m-357979223/" target="_blank" rel="noopener noreferrer">
-                                <Linkedin className="h-5 w-5 text-[#0077b5] transition-colors hover:text-[#0077b5]/80" />
+                                <Linkedin className="h-5 w-5 text-blue-500 transition-colors hover:text-blue-500/80" />
                               </Link>
                             </div>
                             <p className="text-sm text-primary">AWS Community Builder - AI Engineering</p>
-                            <p className="text-sm text-muted-foreground">Generative AI &amp; Data Science Engineer</p>
-                            <p className="text-sm text-muted-foreground">BigTapp Analytics</p>
+                            <p className="text-sm text-muted-foreground">Generative AI & Data Science Engineer, BigTapp Analytics</p>
                           </div>
                         </div>
                       </CardContent>
@@ -279,7 +285,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="py-20 text-center sm:py-32">
+            <section className="py-20 text-center sm:py-32 snap-start flex items-center min-h-screen">
               <div className="container mx-auto">
                 <p className="text-lg text-muted-foreground">
                   …and for that CloudX touch...
@@ -293,7 +299,7 @@ export default function Home() {
               </div>
             </section>
             
-            <section id="schedule" className="py-20 sm:py-32">
+            <section id="schedule" className="py-20 sm:py-32 snap-start flex items-center min-h-screen">
               <div className="container mx-auto max-w-3xl text-center">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                   Workshop Schedule
@@ -372,7 +378,7 @@ export default function Home() {
               </div>
             </section>
             
-            <section id="location" className="py-20 sm:py-32">
+            <section id="location" className="py-20 sm:py-32 snap-start flex items-center min-h-screen">
               <div className="container mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 md:grid-cols-2">
                 <div className="flex flex-col gap-8 text-center md:text-left">
                   <div className="space-y-4">
@@ -408,8 +414,8 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="faq" className="py-20 sm:py-32">
-              <div className="mx-auto max-w-3xl">
+            <section id="faq" className="py-20 sm:py-32 snap-start flex items-center min-h-screen">
+              <div className="mx-auto max-w-3xl container px-4">
                 <h2 className="text-center font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                   Frequently Asked Questions
                 </h2>
@@ -509,27 +515,34 @@ export default function Home() {
                 </Accordion>
               </div>
             </section>
-          </div>
-        </main>
-
-        <footer className="border-t border-border/50">
-          <div className="container mx-auto py-12 px-4 text-center text-muted-foreground">
-            <div className="mb-4">
-              <DialogTrigger asChild>
-                <Button
-                  size="lg"
-                  className="h-14 rounded-full bg-primary px-12 text-lg font-bold text-primary-foreground transition-transform hover:scale-105 hover:bg-primary/90"
-                >
-                  Secure Your Spot Now
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </DialogTrigger>
-            </div>
-            <p className="mt-8 text-sm">
-              © {new Date().getFullYear()} Cloud Ascend. All rights reserved.
-            </p>
-          </div>
-        </footer>
+            
+            <footer className="border-t border-border/50 snap-start flex items-center min-h-[50vh]">
+              <div className="container mx-auto py-12 px-4 text-center text-muted-foreground">
+                <div className="mb-8">
+                  <DialogTrigger asChild>
+                    <Button
+                      size="lg"
+                      variant="glass"
+                      className="h-14 px-12 text-lg font-bold"
+                    >
+                      Secure Your Spot Now
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </DialogTrigger>
+                </div>
+                <div className="flex justify-center gap-6 mb-8">
+                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="h-6 w-6" /></Link>
+                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Github className="h-6 w-6" /></Link>
+                    <Link href="mailto:example@example.com" className="text-muted-foreground hover:text-primary transition-colors"><Mail className="h-6 w-6" /></Link>
+                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="h-6 w-6" /></Link>
+                </div>
+                <p className="text-sm">
+                  © 2025 | CloudX-SRMIST. All Rights Reserved.
+                </p>
+              </div>
+            </footer>
+          </main>
+        </div>
       </div>
       <RegistrationForm />
       <ScrollToTop />
