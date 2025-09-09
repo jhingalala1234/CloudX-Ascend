@@ -2,7 +2,6 @@
 'use server';
 
 import {db} from '@/lib/server/firebase-admin';
-import {redirect} from 'next/navigation';
 
 export async function saveRegistration(formData: {
   name: string;
@@ -34,6 +33,5 @@ export async function saveRegistration(formData: {
     throw new Error('Failed to save registration.');
   }
 
-  // Redirect to a success page after registration
-  redirect('/success');
+  // No redirect here, it will be handled on the client
 }

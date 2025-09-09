@@ -7,6 +7,7 @@ import { z } from 'zod';
 import { ArrowRight, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -41,6 +42,7 @@ type FormData = z.infer<typeof formSchema>;
 
 export default function RegisterPage() {
   const { toast } = useToast();
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -72,19 +74,41 @@ export default function RegisterPage() {
       reader.readAsDataURL(file);
       reader.onloadend = async () => {
         const base64data = reader.result as string;
-        await saveRegistration({ ...values, paymentScreenshot: base64data });
+        try {
+            await saveRegistration({ ...values, paymentScreenshot: base64data });
+            toast({
+                title: 'Registration Submitted',
+                description: "We've received your registration and will verify it shortly.",
+            });
+            router.push('/success');
+        } catch (serverError) {
+             console.error('Error saving registration:', serverError);
+            toast({
+                title: 'Error',
+                description: 'Failed to save registration. Please try again.',
+                variant: 'destructive',
+            });
+            setIsSubmitting(false);
+        }
       };
+      reader.onerror = () => {
+        console.error('Error reading file');
+        toast({
+          title: 'Error',
+          description: 'Failed to read the uploaded file. Please try again.',
+          variant: 'destructive',
+        });
+        setIsSubmitting(false);
+      }
     } catch (error) {
       console.error('Error processing form:', error);
       toast({
         title: 'Error',
         description:
-          'Failed to process registration. Please try again later.',
+          'An unexpected error occurred. Please try again later.',
         variant: 'destructive',
       });
-    } finally {
-      // This will be reached before the file reader is done
-      // The redirect will happen in the server action
+       setIsSubmitting(false);
     }
   }
 
@@ -107,97 +131,116 @@ export default function RegisterPage() {
           </div>
         </header>
         <main className="flex-1 flex items-center justify-center pt-20">
-             <div className="w-full max-w-lg p-8 space-y-6 bg-card text-card-foreground rounded-lg shadow-lg">
+             <div className="w-full max-w-2xl p-8 space-y-6 bg-card text-card-foreground rounded-lg shadow-lg">
                 <div className="text-center">
                     <h1 className="text-3xl font-bold text-primary">Register for Cloud Ascend</h1>
                     <p className="text-muted-foreground mt-2">Secure your spot for a full day of hands-on cloud learning.</p>
                 </div>
-                <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Full Name</FormLabel>
-                            <FormControl>
-                            <Input placeholder="Jane Doe" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                        )}
-                    />
-                     <FormField
-                        control={form.control}
-                        name="registrationNumber"
-                        render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Registration Number</FormLabel>
-                            <FormControl>
-                            <Input placeholder="RA2111003010XXX" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>SRMIST Email</FormLabel>
-                            <FormControl>
-                            <Input placeholder="jd1234@srmist.edu.in" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="phoneNumber"
-                        render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Phone Number</FormLabel>
-                            <FormControl>
-                            <Input type="tel" placeholder="+91 1234567890" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                        )}
-                    />
-                     <FormField
-                        control={form.control}
-                        name="paymentScreenshot"
-                        render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Payment Screenshot</FormLabel>
-                             <FormDescription>
-                                Please pay ₹99 to <a href="https://razorpay.me/pl/M2FFrP5P7l9KxN/view" target="_blank" rel="noopener noreferrer" className="text-primary underline">this link</a> and upload the screenshot.
-                            </FormDescription>
-                            <FormControl>
-                            <Input type="file" accept="image/*" {...fileRef} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                        )}
-                    />
-                    
-                    <Button type="submit" className="w-full" disabled={isSubmitting}>
-                        {isSubmitting ? (
-                            <>
-                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            Processing...
-                            </>
-                        ) : (
-                            <>
-                            Register & Proceed
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                            </>
-                        )}
-                    </Button>
-                    </form>
-                </Form>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div className="space-y-4 rounded-lg bg-muted/30 p-6">
+                        <h3 className="text-lg font-semibold">Payment Details</h3>
+                        <p className="text-muted-foreground text-sm">
+                            Please pay ₹99 to secure your spot.
+                        </p>
+                        <div className="flex flex-col items-center gap-4">
+                            <Image src="/payments/qr-code.jpg" alt="UPI QR Code" width={200} height={200} className="rounded-md" data-ai-hint="qr code"/>
+                            <p className="text-sm text-center">Scan the QR code with any UPI app.</p>
+                            <span className="text-xs text-muted-foreground">OR</span>
+                             <a href="upi://pay?pa=sarthak.lal@ptaxis&am=99&pn=CloudX%20Workshop" className="w-full">
+                                <Button variant="outline" className="w-full">Pay with UPI</Button>
+                             </a>
+                        </div>
+                        <p className="text-xs text-muted-foreground pt-4">After payment, please upload the screenshot of the transaction in the form.</p>
+                    </div>
+
+                    <Form {...form}>
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                        <FormField
+                            control={form.control}
+                            name="name"
+                            render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Full Name</FormLabel>
+                                <FormControl>
+                                <Input placeholder="Jane Doe" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="registrationNumber"
+                            render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Registration Number</FormLabel>
+                                <FormControl>
+                                <Input placeholder="RA2111003010XXX" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>SRMIST Email</FormLabel>
+                                <FormControl>
+                                <Input placeholder="jd1234@srmist.edu.in" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="phoneNumber"
+                            render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Phone Number</FormLabel>
+                                <FormControl>
+                                <Input type="tel" placeholder="+91 1234567890" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="paymentScreenshot"
+                            render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Payment Screenshot</FormLabel>
+                                <FormDescription>
+                                    Upload the screenshot of your ₹99 payment.
+                                </FormDescription>
+                                <FormControl>
+                                <Input type="file" accept="image/*" {...fileRef} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                            )}
+                        />
+                        
+                        <Button type="submit" className="w-full" disabled={isSubmitting}>
+                            {isSubmitting ? (
+                                <>
+                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                Processing...
+                                </>
+                            ) : (
+                                <>
+                                Register & Proceed
+                                <ArrowRight className="ml-2 h-4 w-4" />
+                                </>
+                            )}
+                        </Button>
+                        </form>
+                    </Form>
+                 </div>
             </div>
         </main>
     </div>
