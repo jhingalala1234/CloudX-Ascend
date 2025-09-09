@@ -101,7 +101,7 @@ export default function Home() {
                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   Cloud Ascend:
                   <br />
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                     Elevate Your Skills.
                   </span>
                 </h1>
@@ -128,15 +128,8 @@ export default function Home() {
                   <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                     Workshop Overview
                   </h2>
-                  <p className="text-lg text-muted-foreground">
-                    Cloud Ascend is an immersive full-day workshop for anyone
-                    ready to master AWS, containerization with Docker and
-                    Kubernetes, and the power of the AWS Q CLI.
-                  </p>
-                  <p className="text-lg text-muted-foreground">
-                    Hosted by AWS Community Builders, this event is your chance
-                    to learn from experts, participate in hands-on labs, win
-                    swag, and network with fellow cloud enthusiasts.
+                   <p className="text-lg text-muted-foreground">
+                    Cloud Ascend is a full-day, hands-on workshop designed for anyone looking to break into the world of cloud computing — no prior knowledge required. <strong>Even if you’ve never touched AWS or heard of Docker and Kubernetes, this is your chance to start from zero and actually build.</strong> Guided by <strong>AWS Community Builders</strong>, you’ll explore fundamentals, experiment with containerization, and unlock the power of the AWS Q CLI through practical labs. Along the way, you’ll win swags, connect with peers, and walk out with real skills you can showcase. Skip this, and you’re skipping the easiest entry point into the future of cloud.
                   </p>
                 </div>
                 <div>
