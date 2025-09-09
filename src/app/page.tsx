@@ -62,12 +62,6 @@ export default function Home() {
                 Sessions
               </Link>
               <Link
-                href="#speakers"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                Speakers
-              </Link>
-              <Link
                 href="#schedule"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
@@ -102,7 +96,7 @@ export default function Home() {
                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   Cloud Ascend:
                   <br />
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                     Elevate Your Skills.
                   </span>
                 </h1>
@@ -213,12 +207,18 @@ export default function Home() {
                         <p className="text-muted-foreground">Your first steps into the cloud. Begin with the essentials, then dive into building a data lake on AWS, while gaining practical exposure to Docker and Kubernetes.</p>
                         <div className="flex items-center gap-4">
                           <Avatar>
-                            <AvatarImage src="https://picsum.photos/200" alt="Abinaya S V" />
+                            <AvatarImage src="/speakers/speaker1.png" alt="Abinaya S V" />
                             <AvatarFallback>AS</AvatarFallback>
                           </Avatar>
                           <div>
-                            <p className="font-bold">Abinaya S V</p>
-                            <p className="text-sm text-primary">AWS Community Builder</p>
+                            <div className="flex items-center gap-2">
+                              <p className="font-bold">Abinaya S V</p>
+                              <Link href="https://www.linkedin.com/in/abinayasv/" target="_blank" rel="noopener noreferrer">
+                                <Linkedin className="h-5 w-5 text-primary transition-colors hover:text-primary/80" />
+                              </Link>
+                            </div>
+                            <p className="text-sm text-primary">AWS Community Builder - Data</p>
+                            <p className="text-sm text-muted-foreground">PwC Acceleration Centers in India</p>
                           </div>
                         </div>
                       </CardContent>
@@ -243,12 +243,18 @@ export default function Home() {
                         <p className="text-muted-foreground">Step into the future of development with the AWS Q CLI, a generative AI assistant built for the command line. Learn how to use AI to build, debug, and automate faster than ever.</p>
                          <div className="flex items-center gap-4">
                           <Avatar>
-                            <AvatarImage src="https://picsum.photos/201" alt="Jeevitha M" />
+                            <AvatarImage src="/speakers/speaker2.png" alt="Jeevitha M" />
                             <AvatarFallback>JM</AvatarFallback>
                           </Avatar>
                           <div>
-                            <p className="font-bold">Jeevitha M</p>
-                            <p className="text-sm text-accent">Senior Cloud Architect</p>
+                            <div className="flex items-center gap-2">
+                              <p className="font-bold">Jeevitha M</p>
+                              <Link href="https://www.linkedin.com/in/jeevitha-m-357979223/" target="_blank" rel="noopener noreferrer">
+                                <Linkedin className="h-5 w-5 text-accent transition-colors hover:text-accent/80" />
+                              </Link>
+                            </div>
+                            <p className="text-sm text-accent">AWS Community Builder - AI Engineering</p>
+                            <p className="text-sm text-muted-foreground">BigTapp Analytics</p>
                           </div>
                         </div>
                       </CardContent>
@@ -280,67 +286,7 @@ export default function Home() {
                 </p>
               </div>
             </section>
-
-            <section id="speakers" className="py-20 sm:py-32">
-              <div className="text-center">
-                <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
-                  Meet the Speakers
-                </h2>
-                <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                  Learn from the best. Our speakers are recognized AWS
-                  Community Builders and industry veterans.
-                </p>
-                <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2">
-                  <div className="flex flex-col items-center gap-4">
-                    <Avatar className="h-32 w-32">
-                      <AvatarImage
-                        src="https://picsum.photos/200"
-                        alt="Abinaya S V"
-                      />
-                      <AvatarFallback>AS</AvatarFallback>
-                    </Avatar>
-                    <div className="text-center">
-                      <div className="flex items-center justify-center gap-2">
-                        <h3 className="text-2xl font-bold">Abinaya S V</h3>
-                        <Link href="https://www.linkedin.com/in/abinayasv/" target="_blank" rel="noopener noreferrer">
-                          <Linkedin className="h-6 w-6 text-primary transition-colors hover:text-primary/80" />
-                        </Link>
-                      </div>
-                      <p className="text-primary">AWS Community Builder - Data</p>
-                      <p className="mt-2 text-muted-foreground">
-                        Data Associate
-                        <br />
-                        PwC Acceleration Centers in India
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center gap-4">
-                    <Avatar className="h-32 w-32">
-                      <AvatarImage
-                        src="https://picsum.photos/201"
-                        alt="Jeevitha M"
-                      />
-                      <AvatarFallback>JM</AvatarFallback>
-                    </Avatar>
-                    <div className="text-center">
-                       <div className="flex items-center justify-center gap-2">
-                        <h3 className="text-2xl font-bold">Jeevitha M</h3>
-                        <Link href="https://www.linkedin.com/in/jeevitha-m-357979223/" target="_blank" rel="noopener noreferrer">
-                          <Linkedin className="h-6 w-6 text-accent transition-colors hover:text-accent/80" />
-                        </Link>
-                      </div>
-                      <p className="text-accent">AWS Community Builder - AI Engineering</p>
-                      <p className="mt-2 text-muted-foreground">
-                        Generative AI & Data Science Engineer
-                        <br />
-                        BigTapp Analytics
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
+            
             <section id="schedule" className="py-20 sm:py-32">
               <div className="container mx-auto max-w-3xl text-center">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
