@@ -341,7 +341,7 @@ export default function Home() {
                 NO PRIOR KNOWLEDGE REQUIRED
               </h2>
               <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
-                Don't worry if you don't know anything. Come as you are — beginners, enthusiasts, and experts — everyone’s welcome.
+                Don’t worry if you don’t know anything. Come as you are. Beginners, enthusiasts, and experts are all welcome.
               </p>
             </div>
           </section>
@@ -576,3 +576,5 @@ export default function Home() {
     </>
   );
 }
+
+    
