@@ -26,13 +26,11 @@ import {
 } from '@/components/ui/accordion';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { RegistrationForm } from '@/components/registration-form';
-import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 import { ScrollToTop } from '@/components/scroll-to-top';
 
 export default function Home() {
   return (
-    <Dialog>
+    <>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
         <header className="fixed top-0 z-50 w-full bg-background/95 shadow-md">
           <div className="container mx-auto flex h-20 items-center justify-between px-4">
@@ -83,12 +81,12 @@ export default function Home() {
                 FAQ
               </Link>
             </nav>
-            <DialogTrigger asChild>
-              <Button variant="glass" className="hidden md:flex">
+            <Button asChild variant="glass" className="hidden md:flex">
+              <Link href="/register">
                 Register Now
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </DialogTrigger>
+              </Link>
+            </Button>
           </div>
         </header>
 
@@ -112,16 +110,17 @@ export default function Home() {
                 One Day. Real Projects. From Cloud Basics to Docker, Kubernetes, and AWS Q CLI — Build, Deploy & Leave with skills that stick.
               </p>
               <div className="mt-10">
-                <DialogTrigger asChild>
-                  <Button
-                    size="lg"
-                    variant="glass"
-                    className="h-14 px-12 text-lg font-bold"
-                  >
+                <Button
+                  asChild
+                  size="lg"
+                  variant="glass"
+                  className="h-14 px-12 text-lg font-bold"
+                >
+                  <Link href="/register">
                     Register Now
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </DialogTrigger>
+                  </Link>
+                </Button>
               </div>
             </div>
           </section>
@@ -518,16 +517,17 @@ export default function Home() {
           <footer className="border-t border-border/50 snap-start flex items-center min-h-[50vh]">
             <div className="container mx-auto py-12 px-4 text-center text-muted-foreground">
               <div className="mb-8">
-                <DialogTrigger asChild>
-                  <Button
-                    size="lg"
-                    variant="glass"
-                    className="h-14 px-12 text-lg font-bold"
-                  >
+                <Button
+                  asChild
+                  size="lg"
+                  variant="glass"
+                  className="h-14 px-12 text-lg font-bold"
+                >
+                  <Link href="/register">
                     Secure Your Spot Now
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </DialogTrigger>
+                  </Link>
+                </Button>
               </div>
               <p className="text-sm mb-8">
                 © 2025 | CloudX-SRMIST. All Rights Reserved.
@@ -542,10 +542,7 @@ export default function Home() {
           </footer>
         </main>
       </div>
-      <RegistrationForm />
       <ScrollToTop />
-    </Dialog>
+    </>
   );
 }
-
-    
