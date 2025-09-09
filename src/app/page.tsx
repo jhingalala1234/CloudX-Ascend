@@ -308,20 +308,23 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        09:00 AM - 09:15 AM - Inaugration &amp; Introduction
+                        09:00 AM – 09:15 AM | Inauguration & Introduction
                       </h4>
+                      <p className="text-muted-foreground">
+                        Kick off the day with a warm welcome, overview of the workshop, and what you’ll achieve by the end of it.
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-6">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
-                      <BookOpen className="h-6 w-6" />
+                      <Cloud className="h-6 w-6" />
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        09:15 AM - 12:05 PM - Session 1
+                        09:15 AM – 12:05 PM | Session 1: CloudSteps
                       </h4>
                       <p className="text-muted-foreground">
-                        Your first steps with cloud. An introduction to building a data lake on AWS, with hands-on experience in Docker &amp; Kubernetes.
+                        Your first steps with the cloud. Get hands-on with building a data lake on AWS, and gain practical experience with Docker and Kubernetes.
                       </p>
                     </div>
                   </li>
@@ -331,10 +334,10 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        12:05 PM - 12:55 PM - Lunch break
+                        12:05 PM – 12:55 PM | Lunch Break
                       </h4>
                       <p className="text-muted-foreground">
-                        Refuel and connect with other attendees. (Refreshments provided)
+                        Refuel, network, and exchange ideas with fellow attendees. (Refreshments provided)
                       </p>
                     </div>
                   </li>
@@ -344,10 +347,10 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        1:00 PM - 3:30 PM - Session 2
+                        01:00 PM – 03:30 PM | Session 2: CloudUnlocked
                       </h4>
                       <p className="text-muted-foreground">
-                        Explore the future of development by building with the AWS Q CLI.
+                        Step into the future of development by building with the AWS Q CLI. Learn how to use AI to speed up tasks, debug, and automate workflows.
                       </p>
                     </div>
                   </li>
@@ -357,10 +360,10 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        03:30 PM - 04:00 PM - Q&amp;A Session, Quiz &amp; Prize Distribution
+                        03:30 PM – 04:00 PM | Q&A, Quiz & Prize Distribution
                       </h4>
                       <p className="text-muted-foreground">
-                        Test your knowledge, win exclusive swag, and get your questions answered by the experts.
+                        Test your knowledge, win exclusive AWS swag, and get all your questions answered by the experts.
                       </p>
                     </div>
                   </li>
