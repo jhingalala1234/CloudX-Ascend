@@ -250,10 +250,10 @@ export default function Home() {
                             <div className="flex items-center gap-2">
                               <p className="font-bold">Jeevitha M</p>
                               <Link href="https://www.linkedin.com/in/jeevitha-m-357979223/" target="_blank" rel="noopener noreferrer">
-                                <Linkedin className="h-5 w-5 text-accent transition-colors hover:text-accent/80" />
+                                <Linkedin className="h-5 w-5 text-primary transition-colors hover:text-primary/80" />
                               </Link>
                             </div>
-                            <p className="text-sm text-accent">AWS Community Builder - AI Engineering</p>
+                            <p className="text-sm text-primary">AWS Community Builder - AI Engineering</p>
                             <p className="text-sm text-muted-foreground">BigTapp Analytics</p>
                           </div>
                         </div>
