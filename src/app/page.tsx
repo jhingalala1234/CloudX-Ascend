@@ -92,7 +92,7 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="flex-1 snap-y snap-mandatory overflow-y-scroll h-screen pt-20">
+        <main className="flex-1 snap-y snap-mandatory h-screen overflow-y-scroll pt-20 hide-scrollbar">
           <section
             id="home"
             className="relative flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center overflow-hidden text-center snap-start"
@@ -228,7 +228,7 @@ export default function Home() {
                             </Link>
                           </div>
                           <p className="text-sm text-primary">AWS Community Builder - Data</p>
-                          <p className="text-sm text-muted-foreground">Data Associate, PwC Acceleration Center India</p>
+                          <p className="text-sm text-muted-foreground">Data Associate, PwC Acceleration Center</p>
                         </div>
                       </div>
                     </CardContent>
@@ -529,15 +529,15 @@ export default function Home() {
                   </Button>
                 </DialogTrigger>
               </div>
-              <div className="flex justify-center gap-6 mb-8">
+              <p className="text-sm mb-8">
+                © 2025 | CloudX-SRMIST. All Rights Reserved.
+              </p>
+              <div className="flex justify-center gap-6">
                   <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="h-6 w-6" /></Link>
                   <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Github className="h-6 w-6" /></Link>
                   <Link href="mailto:example@example.com" className="text-muted-foreground hover:text-primary transition-colors"><Mail className="h-6 w-6" /></Link>
                   <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="h-6 w-6" /></Link>
               </div>
-              <p className="text-sm">
-                © 2025 | CloudX-SRMIST. All Rights Reserved.
-              </p>
             </div>
           </footer>
         </main>
@@ -547,5 +547,3 @@ export default function Home() {
     </Dialog>
   );
 }
-
-    
