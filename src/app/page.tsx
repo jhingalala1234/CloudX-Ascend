@@ -106,9 +106,7 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-                  Join our exclusive, full-day workshop on AWS, Docker,
-                  Kubernetes, and the AWS Q CLI. A hands-on experience to take
-                  your cloud skills to the next level.
+                  One day. Real projects. From cloud basics to Docker, Kubernetes, and AWS Q CLI — build, deploy, and leave with skills that stick.
                 </p>
                 <div className="mt-10">
                   <DialogTrigger asChild>
