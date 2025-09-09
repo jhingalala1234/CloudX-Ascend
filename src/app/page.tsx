@@ -101,7 +101,7 @@ export default function Home() {
                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   Cloud Ascend:
                   <br />
-                  <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     Elevate Your Skills.
                   </span>
                 </h1>
@@ -209,7 +209,7 @@ export default function Home() {
                         <CardTitle className="text-2xl text-accent">Session 01: CloudSteps</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
-                        <p className="text-muted-foreground">Your first steps with the cloud. An introduction to building a data lake on AWS, with hands-on experience in Docker & Kubernetes.</p>
+                        <p className="text-muted-foreground">Your first steps into the cloud. Begin with the essentials, then dive into building a data lake on AWS, while gaining practical exposure to Docker and Kubernetes.</p>
                         <div className="flex items-center gap-4">
                           <Avatar>
                             <AvatarImage src="https://picsum.photos/200" alt="Jane Doe" />
@@ -225,10 +225,10 @@ export default function Home() {
                     <div className="bg-muted/50 p-6 md:col-span-1">
                       <h4 className="font-bold text-lg mb-2">Key Takeaways</h4>
                       <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                        <li>Understand core AWS services.</li>
-                        <li>Build a functional data lake.</li>
-                        <li>Containerize an application with Docker.</li>
-                        <li>Orchestrate with Kubernetes basics.</li>
+                        <li>Grasp core AWS services and concepts</li>
+                        <li>Build and manage a functional data lake</li>
+                        <li>Containerize applications with Docker</li>
+                        <li>Orchestrate workloads with Kubernetes basics</li>
                       </ul>
                     </div>
                   </Card>
@@ -239,7 +239,7 @@ export default function Home() {
                         <CardTitle className="text-2xl text-accent">Session 02: CloudUnlocked</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
-                        <p className="text-muted-foreground">Explore the future of development by building with the AWS Q CLI, a powerful generative AI assistant for the command line.</p>
+                        <p className="text-muted-foreground">Step into the future of development with the AWS Q CLI, a generative AI assistant built for the command line. Learn how to use AI to build, debug, and automate faster than ever.</p>
                          <div className="flex items-center gap-4">
                           <Avatar>
                             <AvatarImage src="https://picsum.photos/201" alt="John Smith" />
@@ -255,10 +255,10 @@ export default function Home() {
                      <div className="bg-muted/50 p-6 md:col-span-1">
                       <h4 className="font-bold text-lg mb-2">Key Takeaways</h4>
                       <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                        <li>Introduction to Generative AI.</li>
-                        <li>Set up and use the AWS Q CLI.</li>
-                        <li>Build and debug applications with AI.</li>
-                        <li>Automate tasks with natural language.</li>
+                        <li>Understand generative AI fundamentals</li>
+                        <li>Set up and work with the AWS Q CLI</li>
+                        <li>Build and debug apps with AI assistance</li>
+                        <li>Automate tasks using natural language commands</li>
                       </ul>
                     </div>
                   </Card>
