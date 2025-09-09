@@ -284,7 +284,7 @@ export default function Home() {
                   …and for that CloudX touch...
                 </p>
                 <h2 className="font-headline mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-bold uppercase tracking-tighter text-transparent sm:text-5xl md:text-6xl">
-                  No prior knowledge required
+                  NO PRIOR KNOWLEDGE REQUIRED
                 </h2>
                 <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
                   Don't worry if you don't know anything. Come as you are — beginners, enthusiasts, and experts — everyone’s welcome.
@@ -308,11 +308,8 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        09:00 AM - Registration &amp; Breakfast
+                        09:00 AM - 09:15 AM - Inaugration &amp; Introduction
                       </h4>
-                      <p className="text-muted-foreground">
-                        Coffee, networking, and setup.
-                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-6">
@@ -321,7 +318,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        09:15 AM - 12:00 PM: Session 01 by Abinaya S V
+                        09:15 AM - 12:05 PM - Session 1
                       </h4>
                       <p className="text-muted-foreground">
                         Your first steps with cloud. An introduction to building a data lake on AWS, with hands-on experience in Docker &amp; Kubernetes.
@@ -334,10 +331,10 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        12:00 PM - 01:00 PM: Lunch Break
+                        12:05 PM - 12:55 PM - Lunch break
                       </h4>
                       <p className="text-muted-foreground">
-                        Refuel and connect with other attendees.
+                        Refuel and connect with other attendees. (Refreshments provided)
                       </p>
                     </div>
                   </li>
@@ -347,7 +344,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        01:00 PM - 03:00 PM: Session 02 by Jeevitha M
+                        1:00 PM - 3:30 PM - Session 2
                       </h4>
                       <p className="text-muted-foreground">
                         Explore the future of development by building with the AWS Q CLI.
@@ -360,36 +357,10 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        03:00 PM - 03:15 PM: Quiz &amp; Swag
+                        03:30 PM - 04:00 PM - Q&amp;A Session, Quiz &amp; Prize Distribution
                       </h4>
                       <p className="text-muted-foreground">
-                        Test your knowledge and win exclusive AWS swag! Refreshments from Burger King will be provided.
-                      </p>
-                    </div>
-                  </li>
-                   <li className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
-                       <Users className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold">
-                        03:15 PM - 04:30 PM: Q&amp;A and Networking
-                      </h4>
-                      <p className="text-muted-foreground">
-                        Ask your questions to the experts and network with peers.
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                      <Clock className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold">
-                        04:30 PM - Wrap-up
-                      </h4>
-                      <p className="text-muted-foreground">
-                        Final remarks and closing.
+                        Test your knowledge, win exclusive swag, and get your questions answered by the experts.
                       </p>
                     </div>
                   </li>
@@ -497,5 +468,3 @@ export default function Home() {
     </Dialog>
   );
 }
-
-    
