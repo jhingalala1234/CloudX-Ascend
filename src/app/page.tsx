@@ -414,32 +414,94 @@ export default function Home() {
                 <Accordion type="single" collapsible className="mt-12 w-full">
                   <AccordionItem value="item-1">
                     <AccordionTrigger className="text-lg">
-                      Who is this workshop for?
+                      Who can attend this workshop?
                     </AccordionTrigger>
                     <AccordionContent className="text-base text-muted-foreground">
-                      This workshop is ideal for developers, junior DevOps
-                      engineers, students, and anyone interested in learning
-                      about cloud computing with AWS.
+                      Anyone! Beginners, enthusiasts, and aspiring cloud
+                      professionals are all welcome. No prior knowledge of
+                      cloud computing is required.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-2">
                     <AccordionTrigger className="text-lg">
-                      Are there any prerequisites?
+                      Do I need to know AWS, Docker, or Kubernetes?
                     </AccordionTrigger>
                     <AccordionContent className="text-base text-muted-foreground">
-                      No prerequisite knowledge is required! We welcome everyone,
-                      from beginners to those with some experience. You will
-                      need to bring your own laptop.
+                      Not at all. This workshop is designed to take you from
+                      zero to hands-on experience with AWS, Docker, Kubernetes,
+                      and the AWS Q CLI.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-3">
                     <AccordionTrigger className="text-lg">
-                      What does the ticket price include?
+                      What should I bring?
                     </AccordionTrigger>
                     <AccordionContent className="text-base text-muted-foreground">
-                      Your ticket includes full access to all sessions,
-                      hands-on labs, lunch, Burger King refreshments, and the
-                      chance to win AWS swag. OD will be provided for students.
+                      Bring a laptop, a charged mind, and enthusiasm to learn.
+                      Everything else — labs, guidance, and resources — will be
+                      provided.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-4">
+                    <AccordionTrigger className="text-lg">
+                      What’s included in the ticket?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-base text-muted-foreground">
+                      <ul className="list-disc space-y-2 pl-6">
+                        <li>Full-day access to both sessions</li>
+                        <li>Hands-on labs and projects</li>
+                        <li>Swags and prizes for quiz winners</li>
+                        <li>Refreshments from Burger King</li>
+                        <li>Certificate of Participation</li>
+                        <li>Full-day OD</li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-5">
+                    <AccordionTrigger className="text-lg">
+                      Will I get a certificate?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-base text-muted-foreground">
+                      Yes! All participants will receive a Certificate of
+                      Participation.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-6">
+                    <AccordionTrigger className="text-lg">
+                      Are there any group discounts or offers?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-base text-muted-foreground">
+                      Currently, the ticket is ₹99 per participant. Limited
+                      seats — register early to secure your spot.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-7">
+                    <AccordionTrigger className="text-lg">
+                      Can I network with the speakers?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-base text-muted-foreground">
+                      Absolutely. AWS Community Builders will be available
+                      throughout the day to answer questions and provide
+                      guidance.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-8">
+                    <AccordionTrigger className="text-lg">
+                      What if I miss a session?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-base text-muted-foreground">
+                      We highly recommend attending both sessions to get the
+                      full hands-on experience. Partial attendance may limit
+                      your ability to complete the exercises.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-9">
+                    <AccordionTrigger className="text-lg">
+                      How do I register?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-base text-muted-foreground">
+                      Click the “Register Now” button on this page and secure
+                      your seat. Seats are limited and expected to fill fast.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
