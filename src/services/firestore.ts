@@ -8,6 +8,7 @@ export async function saveRegistration(formData: {
   registrationNumber: string;
   email: string;
   phoneNumber: string;
+  upiRefId: string;
   paymentScreenshot: string; // This will be a base64 string
 }) {
   try {
