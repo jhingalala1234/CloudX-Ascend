@@ -1,21 +1,23 @@
 
 import * as admin from 'firebase-admin';
+import serviceAccount from './google-credentials.json';
 
 let db: admin.firestore.Firestore;
 
 function initializeFirebaseAdmin() {
-  // The GOOGLE_APPLICATION_CREDENTIALS environment variable is the standard way
-  // to provide credentials to Google Cloud services. The Firebase Admin SDK
-  // automatically detects and uses it.
   if (admin.apps.length > 0) {
     db = admin.firestore();
     return;
   }
 
   try {
-    // This will automatically use the credentials from the path specified
-    // in the GOOGLE_APPLICATION_CREDENTIALS environment variable.
-    admin.initializeApp();
+    // The type assertion is needed because the imported JSON
+    // is not automatically recognized as a ServiceAccount type.
+    const serviceAccountInfo = serviceAccount as admin.ServiceAccount;
+
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccountInfo),
+    });
     
     db = admin.firestore();
     console.log('Firebase Admin SDK initialized successfully.');
