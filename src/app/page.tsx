@@ -13,6 +13,7 @@ import {
   Gift,
   Users,
   Linkedin,
+  Utensils,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -330,7 +331,7 @@ export default function Home() {
                   </li>
                    <li className="flex items-start gap-6">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/80 text-primary-foreground">
-                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3z"/></svg>
+                       <Utensils className="h-6 w-6" />
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
