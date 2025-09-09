@@ -285,7 +285,7 @@ export default function Home() {
                   …and for that CloudX touch...
                 </p>
                 <h2 className="font-headline mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-bold uppercase tracking-tighter text-transparent sm:text-5xl md:text-6xl">
-                  No prior knowledge required
+                  NO PRIOR KNOWLEDGE REQUIRED
                 </h2>
                 <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
                   Don't worry if you don't know anything. Come as you are — beginners, enthusiasts, and experts — everyone’s welcome.
@@ -373,14 +373,16 @@ export default function Home() {
             </section>
             
             <section id="location" className="py-20 sm:py-32">
-              <div className="container mx-auto max-w-4xl text-center">
-                <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
-                  Location
-                </h2>
-                <p className="mt-4 text-lg text-muted-foreground">
-                  Join us at the heart of innovation.
-                </p>
-                <div className="mt-12 grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+              <div className="container mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 md:grid-cols-2">
+                <div className="flex flex-col gap-8 text-center md:text-left">
+                  <div className="space-y-4">
+                    <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
+                      Location
+                    </h2>
+                    <p className="text-lg text-muted-foreground">
+                      Join us at the heart of innovation.
+                    </p>
+                  </div>
                   <div className="flex items-center gap-4 text-left">
                     <MapPin className="h-12 w-12 flex-shrink-0 text-primary" />
                     <div>
@@ -390,18 +392,18 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  <div className="w-full">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!d3890.2856053880896!2d80.04248560906781!3d12.824811887424941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70ce1c18cd9%3A0xffb39775f24c16e9!2sTech%20Park%20Building%2C%20SRM%20University%2C%20Potheri%2C%20SRM%20Nagar%2C%20Kattankulathur%2C%20Tamil%20Nadu%20603203!5e0!3m2!1sen!2sin!4v1757371884091!5m2!1sen!2sin"
-                      width="100%"
-                      height="300"
-                      style={{ border: 0 }}
-                      allowFullScreen={true}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="rounded-lg shadow-lg"
-                    ></iframe>
-                  </div>
+                </div>
+                <div className="w-full">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!d3890.2856053880896!2d80.04248560906781!3d12.824811887424941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70ce1c18cd9%3A0xffb39775f24c16e9!2sTech%20Park%20Building%2C%20SRM%20University%2C%20Potheri%2C%20SRM%20Nagar%2C%20Kattankulathur%2C%20Tamil%20Nadu%20603203!5e0!3m2!1sen!2sin!4v1757371884091!5m2!1sen!2sin"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-lg shadow-lg"
+                  ></iframe>
                 </div>
               </div>
             </section>
