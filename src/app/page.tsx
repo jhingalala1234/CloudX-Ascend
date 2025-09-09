@@ -151,12 +151,10 @@ export default function Home() {
             <section id="learn" className="py-20 sm:py-32">
               <div className="container mx-auto text-center">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
-                  What You'll Learn
+                  What You’ll Learn
                 </h2>
                 <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
-                  Our curriculum is packed with practical knowledge and hands-on
-                  exercises to ensure you leave with valuable, real-world
-                  skills.
+                  This isn’t theory. Every session is hands-on, so you leave with real projects and skills you can show off.
                 </p>
                 <div className="mt-12 grid grid-cols-1 gap-8 text-left md:grid-cols-2 lg:grid-cols-3">
                   <Card>
@@ -166,8 +164,7 @@ export default function Home() {
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
-                        Get a solid foundation in cloud computing and learn how
-                        to build and manage a data lake on AWS.
+                        Kickstart your cloud journey with the fundamentals of AWS, then build and manage your very own data lake — the backbone of modern data-driven applications.
                       </p>
                     </CardContent>
                   </Card>
@@ -178,8 +175,7 @@ export default function Home() {
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
-                        Dive into containerization and orchestration, essential
-                        skills for modern DevOps and application deployment.
+                        Master the essentials of containerization and orchestration. Learn how to package, run, and scale applications the way the industry does it.
                       </p>
                     </CardContent>
                   </Card>
@@ -190,9 +186,7 @@ export default function Home() {
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
-                        Explore the future of development with the AWS Q CLI,
-                        building intelligent applications powered by generative
-                        AI.
+                        Step into the future with the AWS Q CLI. Build intelligent, AI-powered solutions and see how generative AI is reshaping cloud development.
                       </p>
                     </CardContent>
                   </Card>
