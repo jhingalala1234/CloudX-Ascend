@@ -304,7 +304,7 @@ export default function Home() {
                 </p>
                 <ul className="mt-12 space-y-8 text-left">
                   <li className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
                       <Star className="h-6 w-6" />
                     </div>
                     <div>
@@ -317,7 +317,7 @@ export default function Home() {
                     </div>
                   </li>
                   <li className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
                       <Cloud className="h-6 w-6" />
                     </div>
                     <div>
@@ -330,7 +330,7 @@ export default function Home() {
                     </div>
                   </li>
                    <li className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/80 text-primary-foreground">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary/80 text-primary-foreground">
                        <Utensils className="h-6 w-6" />
                     </div>
                     <div>
@@ -343,7 +343,7 @@ export default function Home() {
                     </div>
                   </li>
                   <li className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
                       <Zap className="h-6 w-6" />
                     </div>
                     <div>
@@ -356,7 +356,7 @@ export default function Home() {
                     </div>
                   </li>
                   <li className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
                       <Gift className="h-6 w-6" />
                     </div>
                     <div>
