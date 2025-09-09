@@ -207,7 +207,7 @@ export default function Home() {
                         <p className="text-muted-foreground">Your first steps into the cloud. Begin with the essentials, then dive into building a data lake on AWS, while gaining practical exposure to Docker and Kubernetes.</p>
                         <div className="flex items-center gap-4">
                           <Avatar>
-                            <AvatarImage src="/speakers/speaker1.png" alt="Abinaya S V" />
+                            <AvatarImage src="/speakers/speaker1.jpeg" alt="Abinaya S V" />
                             <AvatarFallback>AS</AvatarFallback>
                           </Avatar>
                           <div>
@@ -244,7 +244,7 @@ export default function Home() {
                         <p className="text-muted-foreground">Step into the future of development with the AWS Q CLI, a generative AI assistant built for the command line. Learn how to use AI to build, debug, and automate faster than ever.</p>
                          <div className="flex items-center gap-4">
                           <Avatar>
-                            <AvatarImage src="/speakers/speaker2.png" alt="Jeevitha M" />
+                            <AvatarImage src="/speakers/speaker2.jpeg" alt="Jeevitha M" />
                             <AvatarFallback>JM</AvatarFallback>
                           </Avatar>
                           <div>
@@ -494,5 +494,3 @@ export default function Home() {
     </Dialog>
   );
 }
-
-    
