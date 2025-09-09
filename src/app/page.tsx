@@ -106,7 +106,7 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-                  One day. Real projects. From cloud basics to Docker, Kubernetes, and AWS Q CLI — build, deploy, and leave with skills that stick.
+                  One Day. Real Projects. From Cloud Basics to Docker, Kubernetes, and AWS Q CLI — Build, Deploy & Leave with skills that stick.
                 </p>
                 <div className="mt-10">
                   <DialogTrigger asChild>
@@ -454,7 +454,7 @@ export default function Home() {
                 <div className="mt-12 grid grid-cols-1 items-center gap-8 md:grid-cols-2">
                   <div className="w-full">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2856053880896!2d80.04248560906781!3d12.824811887424941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70ce1c18cd9%3A0xffb39775f24c16e9!2sTech%20Park%20Building%2C%20SRM%20University%2C%20Potheri%2C%20SRM%20Nagar%2C%20Kattankulathur%2C%20Tamil%20Nadu%20603203!5e0!3m2!1sen!2sin!4v1757371884091!5m2!1sen!2sin"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!d3890.2856053880896!2d80.04248560906781!3d12.824811887424941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70ce1c18cd9%3A0xffb39775f24c16e9!2sTech%20Park%20Building%2C%20SRM%20University%2C%20Potheri%2C%20SRM%20Nagar%2C%20Kattankulathur%2C%20Tamil%20Nadu%20603203!5e0!3m2!1sen!2sin!4v1757371884091!5m2!1sen!2sin"
                       width="100%"
                       height="300"
                       style={{ border: 0 }}
