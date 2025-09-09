@@ -56,7 +56,7 @@ export default function Home() {
                 href="#learn"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
-                What you'll learn
+                Learnings
               </Link>
               <Link
                 href="#sessions"
@@ -112,7 +112,7 @@ export default function Home() {
                       <Link href="#overview" className="text-muted-foreground transition-colors hover:text-primary">Overview</Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Link href="#learn" className="text-muted-foreground transition-colors hover:text-primary">What you'll learn</Link>
+                      <Link href="#learn" className="text-muted-foreground transition-colors hover:text-primary">Learnings</Link>
                     </SheetClose>
                     <SheetClose asChild>
                       <Link href="#sessions" className="text-muted-foreground transition-colors hover:text-primary">Sessions</Link>
@@ -149,10 +149,10 @@ export default function Home() {
             </div>
             <div className="relative mx-auto max-w-5xl">
               <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
-                Cloud Ascend:
+                Cloud Ascend
                 <br />
                 <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                  Elevate Your Skills.
+                  Elevate Your Skills
                 </span>
               </h1>
               <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
