@@ -213,8 +213,9 @@ export default function Home() {
                           <div>
                             <div className="flex items-center gap-2">
                               <p className="font-bold">Abinaya S V</p>
+                              <span className="text-muted-foreground/50">|</span>
                               <Link href="https://www.linkedin.com/in/abinayasv/" target="_blank" rel="noopener noreferrer">
-                                <Linkedin className="h-5 w-5 text-primary transition-colors hover:text-primary/80" />
+                                <Linkedin className="h-5 w-5 text-[#0077b5] transition-colors hover:text-[#0077b5]/80" />
                               </Link>
                             </div>
                             <p className="text-sm text-primary">AWS Community Builder - Data</p>
@@ -249,8 +250,9 @@ export default function Home() {
                           <div>
                             <div className="flex items-center gap-2">
                               <p className="font-bold">Jeevitha M</p>
+                              <span className="text-muted-foreground/50">|</span>
                               <Link href="https://www.linkedin.com/in/jeevitha-m-357979223/" target="_blank" rel="noopener noreferrer">
-                                <Linkedin className="h-5 w-5 text-primary transition-colors hover:text-primary/80" />
+                                <Linkedin className="h-5 w-5 text-[#0077b5] transition-colors hover:text-[#0077b5]/80" />
                               </Link>
                             </div>
                             <p className="text-sm text-primary">AWS Community Builder - AI Engineering</p>
@@ -492,3 +494,5 @@ export default function Home() {
     </Dialog>
   );
 }
+
+    
