@@ -11,6 +11,7 @@ import {
   MapPin,
   Gift,
   Users,
+  Linkedin,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -212,11 +213,11 @@ export default function Home() {
                         <p className="text-muted-foreground">Your first steps into the cloud. Begin with the essentials, then dive into building a data lake on AWS, while gaining practical exposure to Docker and Kubernetes.</p>
                         <div className="flex items-center gap-4">
                           <Avatar>
-                            <AvatarImage src="https://picsum.photos/200" alt="Jane Doe" />
-                            <AvatarFallback>JD</AvatarFallback>
+                            <AvatarImage src="https://picsum.photos/200" alt="Abinaya S V" />
+                            <AvatarFallback>AS</AvatarFallback>
                           </Avatar>
                           <div>
-                            <p className="font-bold">Jane Doe</p>
+                            <p className="font-bold">Abinaya S V</p>
                             <p className="text-sm text-primary">AWS Community Builder</p>
                           </div>
                         </div>
@@ -242,11 +243,11 @@ export default function Home() {
                         <p className="text-muted-foreground">Step into the future of development with the AWS Q CLI, a generative AI assistant built for the command line. Learn how to use AI to build, debug, and automate faster than ever.</p>
                          <div className="flex items-center gap-4">
                           <Avatar>
-                            <AvatarImage src="https://picsum.photos/201" alt="John Smith" />
-                            <AvatarFallback>JS</AvatarFallback>
+                            <AvatarImage src="https://picsum.photos/201" alt="Jeevitha M" />
+                            <AvatarFallback>JM</AvatarFallback>
                           </Avatar>
                           <div>
-                            <p className="font-bold">John Smith</p>
+                            <p className="font-bold">Jeevitha M</p>
                             <p className="text-sm text-accent">Senior Cloud Architect</p>
                           </div>
                         </div>
@@ -294,16 +295,22 @@ export default function Home() {
                     <Avatar className="h-32 w-32">
                       <AvatarImage
                         src="https://picsum.photos/200"
-                        alt="Jane Doe"
+                        alt="Abinaya S V"
                       />
-                      <AvatarFallback>JD</AvatarFallback>
+                      <AvatarFallback>AS</AvatarFallback>
                     </Avatar>
                     <div className="text-center">
-                      <h3 className="text-2xl font-bold">Jane Doe</h3>
-                      <p className="text-primary">AWS Community Builder</p>
+                      <div className="flex items-center justify-center gap-2">
+                        <h3 className="text-2xl font-bold">Abinaya S V</h3>
+                        <Link href="https://www.linkedin.com/in/abinayasv/" target="_blank" rel="noopener noreferrer">
+                          <Linkedin className="h-6 w-6 text-primary transition-colors hover:text-primary/80" />
+                        </Link>
+                      </div>
+                      <p className="text-primary">AWS Community Builder - Data</p>
                       <p className="mt-2 text-muted-foreground">
-                        Jane is a DevOps enthusiast with over 10 years of
-                        experience in building scalable cloud infrastructures.
+                        Data Associate
+                        <br />
+                        PwC Acceleration Centers in India
                       </p>
                     </div>
                   </div>
@@ -311,16 +318,22 @@ export default function Home() {
                     <Avatar className="h-32 w-32">
                       <AvatarImage
                         src="https://picsum.photos/201"
-                        alt="John Smith"
+                        alt="Jeevitha M"
                       />
-                      <AvatarFallback>JS</AvatarFallback>
+                      <AvatarFallback>JM</AvatarFallback>
                     </Avatar>
                     <div className="text-center">
-                      <h3 className="text-2xl font-bold">John Smith</h3>
-                      <p className="text-accent">Senior Cloud Architect</p>
+                       <div className="flex items-center justify-center gap-2">
+                        <h3 className="text-2xl font-bold">Jeevitha M</h3>
+                        <Link href="https://www.linkedin.com/in/jeevitha-m-357979223/" target="_blank" rel="noopener noreferrer">
+                          <Linkedin className="h-6 w-6 text-accent transition-colors hover:text-accent/80" />
+                        </Link>
+                      </div>
+                      <p className="text-accent">AWS Community Builder - AI Engineering</p>
                       <p className="mt-2 text-muted-foreground">
-                        John specializes in serverless architectures and has
-                        helped numerous startups scale their applications on AWS.
+                        Generative AI & Data Science Engineer
+                        <br />
+                        BigTapp Analytics
                       </p>
                     </div>
                   </div>
@@ -357,7 +370,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        09:15 AM - 12:00 PM: Session 01 by Jane Doe
+                        09:15 AM - 12:00 PM: Session 01 by Abinaya S V
                       </h4>
                       <p className="text-muted-foreground">
                         Your first steps with cloud. An introduction to building a data lake on AWS, with hands-on experience in Docker & Kubernetes.
@@ -383,7 +396,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        01:00 PM - 03:00 PM: Session 02 by John Smith
+                        01:00 PM - 03:00 PM: Session 02 by Jeevitha M
                       </h4>
                       <p className="text-muted-foreground">
                         Explore the future of development by building with the AWS Q CLI.
