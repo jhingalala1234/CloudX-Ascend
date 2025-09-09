@@ -222,7 +222,7 @@ export default function Home() {
                             </div>
                             <p className="text-sm text-primary">AWS Community Builder - Data</p>
                             <p className="text-sm text-muted-foreground">Data Associate</p>
-                            <p className="text-sm text-muted-foreground">PwC Acceleration Centers in India</p>
+                            <p className="text-sm text-muted-foreground">PwC Acceleration Center India</p>
                           </div>
                         </div>
                       </CardContent>
@@ -285,7 +285,7 @@ export default function Home() {
                   …and for that CloudX touch...
                 </p>
                 <h2 className="font-headline mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-bold uppercase tracking-tighter text-transparent sm:text-5xl md:text-6xl">
-                  NO PRIOR KNOWLEDGE REQUIRED
+                  No prior knowledge required
                 </h2>
                 <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
                   Don't worry if you don't know anything. Come as you are — beginners, enthusiasts, and experts — everyone’s welcome.
@@ -381,6 +381,15 @@ export default function Home() {
                   Join us at the heart of innovation.
                 </p>
                 <div className="mt-12 grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+                  <div className="flex items-center gap-4 text-left">
+                    <MapPin className="h-12 w-12 flex-shrink-0 text-primary" />
+                    <div>
+                      <h4 className="text-xl font-bold">Our Venue</h4>
+                      <p className="text-muted-foreground">
+                        iMac Lab, 14th Floor, Tech Park 1, SRMIST, Kattankulathur
+                      </p>
+                    </div>
+                  </div>
                   <div className="w-full">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!d3890.2856053880896!2d80.04248560906781!3d12.824811887424941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70ce1c18cd9%3A0xffb39775f24c16e9!2sTech%20Park%20Building%2C%20SRM%20University%2C%20Potheri%2C%20SRM%20Nagar%2C%20Kattankulathur%2C%20Tamil%20Nadu%20603203!5e0!3m2!1sen!2sin!4v1757371884091!5m2!1sen!2sin"
@@ -392,15 +401,6 @@ export default function Home() {
                       referrerPolicy="no-referrer-when-downgrade"
                       className="rounded-lg shadow-lg"
                     ></iframe>
-                  </div>
-                  <div className="flex items-center gap-4 text-left">
-                    <MapPin className="h-12 w-12 flex-shrink-0 text-primary" />
-                    <div>
-                      <h4 className="text-xl font-bold">Our Venue</h4>
-                      <p className="text-muted-foreground">
-                        iMac Lab, 14th Floor, Tech Park 1, SRMIST, Kattankulathur
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
