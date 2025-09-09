@@ -1,7 +1,8 @@
-
 import * as admin from 'firebase-admin';
+import * as dotenv from 'dotenv';
 
-// This function ensures that the environment variable is loaded.
+dotenv.config();
+
 function getServiceAccount() {
   const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT;
   if (!serviceAccount) {
@@ -20,25 +21,23 @@ function getServiceAccount() {
 
 let db: admin.firestore.Firestore;
 
-const serviceAccountConfig = getServiceAccount();
-
-if (serviceAccountConfig) {
-  if (!admin.apps.length) {
-    try {
+try {
+  const serviceAccount = getServiceAccount();
+  if (serviceAccount) {
+    if (!admin.apps.length) {
       admin.initializeApp({
-        credential: admin.credential.cert(serviceAccountConfig),
+        credential: admin.credential.cert(serviceAccount),
       });
       console.log('Firebase Admin SDK initialized successfully.');
-    } catch (e) {
-      console.error('Error initializing Firebase Admin SDK:', e);
     }
+    db = admin.firestore();
+  } else {
+    db = {} as admin.firestore.Firestore;
+    console.log('Using dummy Firestore object because service account is not available.');
   }
-  db = admin.firestore();
-} else {
-  // This is a dummy object to avoid crashing the app when db is used.
-  // Functions will fail, but the app will run.
-  db = {} as admin.firestore.Firestore;
-  console.log('Using dummy Firestore object.');
+} catch (e) {
+    console.error('Critical error initializing Firebase Admin SDK:', e);
+    db = {} as admin.firestore.Firestore;
 }
 
 
