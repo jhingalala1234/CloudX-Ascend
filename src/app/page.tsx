@@ -155,7 +155,7 @@ export default function Home() {
                   <Card>
                     <CardHeader>
                       <Cloud className="mb-4 h-10 w-10 text-primary" />
-                      <CardTitle>AWS & Data Lakes</CardTitle>
+                      <CardTitle>AWS &amp; Data Lakes</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
@@ -166,7 +166,7 @@ export default function Home() {
                   <Card>
                     <CardHeader>
                       <Code className="mb-4 h-10 w-10 text-accent" />
-                      <CardTitle>Docker & Kubernetes</CardTitle>
+                      <CardTitle>Docker &amp; Kubernetes</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
@@ -256,6 +256,7 @@ export default function Home() {
                               </Link>
                             </div>
                             <p className="text-sm text-primary">AWS Community Builder - AI Engineering</p>
+                            <p className="text-sm text-muted-foreground">Generative AI &amp; Data Science Engineer</p>
                             <p className="text-sm text-muted-foreground">BigTapp Analytics</p>
                           </div>
                         </div>
@@ -305,7 +306,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        09:00 AM - Registration & Breakfast
+                        09:00 AM - Registration &amp; Breakfast
                       </h4>
                       <p className="text-muted-foreground">
                         Coffee, networking, and setup.
@@ -321,7 +322,7 @@ export default function Home() {
                         09:15 AM - 12:00 PM: Session 01 by Abinaya S V
                       </h4>
                       <p className="text-muted-foreground">
-                        Your first steps with cloud. An introduction to building a data lake on AWS, with hands-on experience in Docker & Kubernetes.
+                        Your first steps with cloud. An introduction to building a data lake on AWS, with hands-on experience in Docker &amp; Kubernetes.
                       </p>
                     </div>
                   </li>
@@ -357,7 +358,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        03:00 PM - 03:15 PM: Quiz & Swag
+                        03:00 PM - 03:15 PM: Quiz &amp; Swag
                       </h4>
                       <p className="text-muted-foreground">
                         Test your knowledge and win exclusive AWS swag! Refreshments from Burger King will be provided.
@@ -370,7 +371,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        03:15 PM - 04:30 PM: Q&A and Networking
+                        03:15 PM - 04:30 PM: Q&amp;A and Networking
                       </h4>
                       <p className="text-muted-foreground">
                         Ask your questions to the experts and network with peers.
