@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -280,13 +281,13 @@ export default function Home() {
             <section className="py-20 text-center sm:py-32">
               <div className="container mx-auto">
                 <p className="text-lg text-muted-foreground">
-                  ...and for a "CloudX" touch to the events
+                  …and for that CloudX touch...
                 </p>
-                <h2 className="font-headline mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl md:text-6xl">
-                  NO PREQUISITE KNOWLEDGE REQUIRED.
+                <h2 className="font-headline mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-bold uppercase tracking-tighter text-transparent sm:text-5xl md:text-6xl">
+                  No prior knowledge required
                 </h2>
                 <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
-                  Don't worry if you don't know anything. All are welcome.
+                  Don't worry if you don't know anything. Come as you are — beginners, enthusiasts, and experts — everyone’s welcome.
                 </p>
               </div>
             </section>
@@ -496,3 +497,5 @@ export default function Home() {
     </Dialog>
   );
 }
+
+    
