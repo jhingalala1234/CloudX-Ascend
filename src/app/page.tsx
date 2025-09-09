@@ -15,6 +15,7 @@ import {
   Github,
   Mail,
   Instagram,
+  Menu,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -27,6 +28,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollToTop } from '@/components/scroll-to-top';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
 export default function Home() {
   return (
@@ -87,18 +89,65 @@ export default function Home() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
+            <div className="md:hidden">
+               <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline" size="icon">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Toggle navigation menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                  <div className="grid gap-6 p-6">
+                     <Link href="/" className="flex items-center gap-2">
+                      <Image
+                        src="/logo.png"
+                        alt="Cloud Ascend Logo"
+                        width={120}
+                        height={40}
+                        className="h-10 w-auto"
+                      />
+                    </Link>
+                    <SheetClose asChild>
+                      <Link href="#overview" className="text-muted-foreground transition-colors hover:text-primary">Overview</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link href="#learn" className="text-muted-foreground transition-colors hover:text-primary">What you'll learn</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link href="#sessions" className="text-muted-foreground transition-colors hover:text-primary">Sessions</Link>
+                    </SheetClose>
+                     <SheetClose asChild>
+                      <Link href="#schedule" className="text-muted-foreground transition-colors hover:text-primary">Schedule</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link href="#location" className="text-muted-foreground transition-colors hover:text-primary">Location</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                     <Link href="#faq" className="text-muted-foreground transition-colors hover:text-primary">FAQ</Link>
+                    </SheetClose>
+                     <Button asChild variant="glass" className="w-full">
+                      <Link href="/register">
+                        Register Now
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </header>
 
         <main className="flex-1 snap-y snap-mandatory h-screen overflow-y-scroll pt-20 hide-scrollbar">
           <section
             id="home"
-            className="relative flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center overflow-hidden text-center snap-start"
+            className="relative flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center overflow-hidden text-center snap-start px-4"
           >
             <div className="absolute inset-0 -z-10">
               <div className="absolute inset-0 bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
             </div>
-            <div className="relative mx-auto max-w-5xl px-4">
+            <div className="relative mx-auto max-w-5xl">
               <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                 Cloud Ascend:
                 <br />
@@ -152,7 +201,7 @@ export default function Home() {
           </section>
 
           <section id="learn" className="py-10 sm:py-16 snap-start flex items-center min-h-screen">
-            <div className="container mx-auto text-center">
+            <div className="container mx-auto text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 What You’ll Learn
               </h2>
@@ -198,7 +247,7 @@ export default function Home() {
           </section>
           
           <section id="sessions" className="py-10 sm:py-16 snap-start flex items-center min-h-screen">
-            <div className="container mx-auto max-w-4xl text-center">
+            <div className="container mx-auto max-w-4xl text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Deep Dive Sessions
               </h2>
@@ -284,7 +333,7 @@ export default function Home() {
           </section>
 
           <section className="py-10 text-center sm:py-16 snap-start flex items-center min-h-screen">
-            <div className="container mx-auto">
+            <div className="container mx-auto px-4">
               <p className="text-lg text-muted-foreground">
                 …and for that CloudX touch...
               </p>
@@ -298,7 +347,7 @@ export default function Home() {
           </section>
           
           <section id="schedule" className="py-10 sm:py-16 snap-start flex items-center min-h-screen">
-            <div className="container mx-auto max-w-3xl text-center">
+            <div className="container mx-auto max-w-3xl text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Workshop Schedule
               </h2>
@@ -377,7 +426,7 @@ export default function Home() {
           </section>
           
           <section id="location" className="py-10 sm:py-16 snap-start flex items-center min-h-screen">
-            <div className="container mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 md:grid-cols-2">
+            <div className="container mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 md:grid-cols-2 px-4">
               <div className="flex flex-col gap-8 text-center md:text-left">
                 <div className="space-y-4">
                   <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
@@ -430,7 +479,7 @@ export default function Home() {
                 </AccordionItem>
                 <AccordionItem value="item-2">
                   <AccordionTrigger className="text-lg">
-                    Do I need to know AWS, Docker, or Kubernetes?
+                    Any Pre-requisite knowledge required?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
                     Not at all. This workshop is designed to take you from
@@ -472,15 +521,6 @@ export default function Home() {
                     Participation.
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-6">
-                  <AccordionTrigger className="text-lg">
-                    Are there any group discounts or offers?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-base text-muted-foreground">
-                    Currently, the ticket is ₹99 per participant. Limited
-                    seats — register early to secure your spot.
-                  </AccordionContent>
-                </AccordionItem>
                 <AccordionItem value="item-7">
                   <AccordionTrigger className="text-lg">
                     Can I network with the speakers?
@@ -491,17 +531,7 @@ export default function Home() {
                     guidance.
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-8">
-                  <AccordionTrigger className="text-lg">
-                    What if I miss a session?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-base text-muted-foreground">
-                    We highly recommend attending both sessions to get the
-                    full hands-on experience. Partial attendance may limit
-                    your ability to complete the exercises.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-9">
+                 <AccordionItem value="item-8">
                   <AccordionTrigger className="text-lg">
                     How do I register?
                   </AccordionTrigger>
