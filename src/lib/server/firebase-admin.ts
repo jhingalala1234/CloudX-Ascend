@@ -6,39 +6,29 @@ dotenv.config();
 function getServiceAccount() {
   const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT;
   if (!serviceAccount) {
-    console.warn(
+    throw new Error(
       'Firebase Admin SDK not initialized. Missing FIREBASE_SERVICE_ACCOUNT environment variable.'
     );
-    return null;
   }
   try {
     return JSON.parse(serviceAccount);
   } catch (e) {
     console.error('Failed to parse FIREBASE_SERVICE_ACCOUNT:', e);
-    return null;
+    throw new Error('Could not parse FIREBASE_SERVICE_ACCOUNT.');
   }
 }
 
-let db: admin.firestore.Firestore;
-
-try {
-  const serviceAccount = getServiceAccount();
-  if (serviceAccount) {
-    if (!admin.apps.length) {
-      admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
-      });
-      console.log('Firebase Admin SDK initialized successfully.');
-    }
-    db = admin.firestore();
-  } else {
-    db = {} as admin.firestore.Firestore;
-    console.log('Using dummy Firestore object because service account is not available.');
-  }
-} catch (e) {
+if (!admin.apps.length) {
+  try {
+    const serviceAccount = getServiceAccount();
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+    });
+    console.log('Firebase Admin SDK initialized successfully.');
+  } catch (e) {
     console.error('Critical error initializing Firebase Admin SDK:', e);
-    db = {} as admin.firestore.Firestore;
+  }
 }
 
-
-export {db};
+const db = admin.firestore();
+export { db };

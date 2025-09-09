@@ -1,7 +1,7 @@
 
 'use server';
 
-import {db} from '@/lib/server/firebase-admin';
+import { db } from '@/lib/server/firebase-admin';
 
 export async function saveRegistration(formData: {
   name: string;
@@ -12,6 +12,10 @@ export async function saveRegistration(formData: {
   paymentScreenshot: string; // This will be a base64 string
 }) {
   try {
+    if (!db) {
+        throw new Error('Firestore database is not initialized.');
+    }
+
     const { paymentScreenshot, ...registrationData } = formData;
     
     // For now, we will just save the base64 string length.
