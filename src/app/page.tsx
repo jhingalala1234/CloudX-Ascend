@@ -10,6 +10,7 @@ import {
   BookOpen,
   MapPin,
   Gift,
+  Users,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -54,6 +55,12 @@ export default function Home() {
                 What you'll learn
               </Link>
               <Link
+                href="#sessions"
+                className="text-muted-foreground transition-colors hover:text-primary"
+              >
+                Sessions
+              </Link>
+              <Link
                 href="#speakers"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
@@ -94,7 +101,7 @@ export default function Home() {
                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   Cloud Ascend:
                   <br />
-                  <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     Elevate Your Skills.
                   </span>
                 </h1>
@@ -165,7 +172,8 @@ export default function Home() {
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
-                        Get a solid foundation in cloud computing and learn how to build and manage a data lake on AWS.
+                        Get a solid foundation in cloud computing and learn how
+                        to build and manage a data lake on AWS.
                       </p>
                     </CardContent>
                   </Card>
@@ -176,20 +184,95 @@ export default function Home() {
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
-                        Dive into containerization and orchestration, essential skills for modern DevOps and application deployment.
+                        Dive into containerization and orchestration, essential
+                        skills for modern DevOps and application deployment.
                       </p>
                     </CardContent>
                   </Card>
-                   <Card>
+                  <Card>
                     <CardHeader>
                       <Zap className="mb-4 h-10 w-10 text-primary" />
                       <CardTitle>Generative AI with AWS Q</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
-                        Explore the future of development with the AWS Q CLI, building intelligent applications powered by generative AI.
+                        Explore the future of development with the AWS Q CLI,
+                        building intelligent applications powered by generative
+                        AI.
                       </p>
                     </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </section>
+            
+            <section id="sessions" className="py-20 sm:py-32">
+              <div className="container mx-auto max-w-4xl text-center">
+                <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
+                  Deep Dive Sessions
+                </h2>
+                <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
+                  Our expert-led sessions are designed to give you hands-on experience and deep insights.
+                </p>
+                <div className="mt-12 space-y-12 text-left">
+                  <Card className="overflow-hidden md:grid md:grid-cols-3">
+                    <div className="md:col-span-2">
+                       <CardHeader>
+                        <CardTitle className="text-2xl text-accent">Session 01: CloudSteps</CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-muted-foreground">Your first steps with the cloud. An introduction to building a data lake on AWS, with hands-on experience in Docker & Kubernetes.</p>
+                        <div className="flex items-center gap-4">
+                          <Avatar>
+                            <AvatarImage src="https://picsum.photos/200" alt="Jane Doe" />
+                            <AvatarFallback>JD</AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <p className="font-bold">Jane Doe</p>
+                            <p className="text-sm text-primary">AWS Community Builder</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </div>
+                    <div className="bg-muted/50 p-6 md:col-span-1">
+                      <h4 className="font-bold text-lg mb-2">Key Takeaways</h4>
+                      <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                        <li>Understand core AWS services.</li>
+                        <li>Build a functional data lake.</li>
+                        <li>Containerize an application with Docker.</li>
+                        <li>Orchestrate with Kubernetes basics.</li>
+                      </ul>
+                    </div>
+                  </Card>
+                  
+                  <Card className="overflow-hidden md:grid md:grid-cols-3">
+                     <div className="md:col-span-2">
+                       <CardHeader>
+                        <CardTitle className="text-2xl text-accent">Session 02: CloudUnlocked</CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-muted-foreground">Explore the future of development by building with the AWS Q CLI, a powerful generative AI assistant for the command line.</p>
+                         <div className="flex items-center gap-4">
+                          <Avatar>
+                            <AvatarImage src="https://picsum.photos/201" alt="John Smith" />
+                            <AvatarFallback>JS</AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <p className="font-bold">John Smith</p>
+                            <p className="text-sm text-accent">Senior Cloud Architect</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </div>
+                     <div className="bg-muted/50 p-6 md:col-span-1">
+                      <h4 className="font-bold text-lg mb-2">Key Takeaways</h4>
+                      <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                        <li>Introduction to Generative AI.</li>
+                        <li>Set up and use the AWS Q CLI.</li>
+                        <li>Build and debug applications with AI.</li>
+                        <li>Automate tasks with natural language.</li>
+                      </ul>
+                    </div>
                   </Card>
                 </div>
               </div>
@@ -286,36 +369,62 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        10:00 AM - Session 01: CloudSteps by Jane Doe
+                        09:15 AM - 12:00 PM: Session 01 by Jane Doe
                       </h4>
                       <p className="text-muted-foreground">
                         Your first steps with cloud. An introduction to building a data lake on AWS, with hands-on experience in Docker & Kubernetes.
                       </p>
                     </div>
                   </li>
+                   <li className="flex items-start gap-6">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/80 text-primary-foreground">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-utensils"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3z"/></svg>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold">
+                        12:00 PM - 01:00 PM: Lunch Break
+                      </h4>
+                      <p className="text-muted-foreground">
+                        Refuel and connect with other attendees.
+                      </p>
+                    </div>
+                  </li>
                   <li className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
                       <Zap className="h-6 w-6" />
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        01:30 PM - Session 02: CloudUnlocked by John Smith
+                        01:00 PM - 03:00 PM: Session 02 by John Smith
                       </h4>
                       <p className="text-muted-foreground">
                         Explore the future of development by building with the AWS Q CLI.
                       </p>
                     </div>
                   </li>
-                   <li className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                  <li className="flex items-start gap-6">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
                       <Gift className="h-6 w-6" />
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        03:00 PM - Quiz & Swag
+                        03:00 PM - 03:15 PM: Quiz & Swag
                       </h4>
                       <p className="text-muted-foreground">
                         Test your knowledge and win exclusive AWS swag! Refreshments from Burger King will be provided.
+                      </p>
+                    </div>
+                  </li>
+                   <li className="flex items-start gap-6">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                       <Users className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold">
+                        03:15 PM - 04:30 PM: Q&A and Networking
+                      </h4>
+                      <p className="text-muted-foreground">
+                        Ask your questions to the experts and network with peers.
                       </p>
                     </div>
                   </li>
@@ -325,17 +434,17 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        04:30 PM - Q&A and Wrap-up
+                        04:30 PM - Wrap-up
                       </h4>
                       <p className="text-muted-foreground">
-                        Final questions, doubt clearing, and closing remarks.
+                        Final remarks and closing.
                       </p>
                     </div>
                   </li>
                 </ul>
               </div>
             </section>
-
+            
             <section id="location" className="py-20 sm:py-32">
               <div className="container mx-auto max-w-4xl text-center">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
