@@ -27,10 +27,7 @@ export async function saveRegistration(formData: {
       createdAt: new Date(),
     });
     
-    // You could store the image in a subcollection if needed
-    // await docRef.collection('uploads').add({
-    //   paymentScreenshot,
-    // });
+    console.log('Registration saved with ID:', docRef.id);
 
   } catch (error) {
     console.error('Error saving registration to Firestore:', error);
