@@ -219,6 +219,7 @@ export default function Home() {
                               </Link>
                             </div>
                             <p className="text-sm text-primary">AWS Community Builder - Data</p>
+                            <p className="text-sm text-muted-foreground">Data Associate</p>
                             <p className="text-sm text-muted-foreground">PwC Acceleration Centers in India</p>
                           </div>
                         </div>
