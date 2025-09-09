@@ -161,39 +161,33 @@ export default function Home() {
                   <Card>
                     <CardHeader>
                       <Cloud className="mb-4 h-10 w-10 text-primary" />
-                      <CardTitle>Session 01: CloudSteps</CardTitle>
+                      <CardTitle>AWS & Data Lakes</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
-                        Your first steps with cloud. Learn to build a data lake
-                        on AWS and get hands-on experience with Docker &
-                        Kubernetes.
+                        Get a solid foundation in cloud computing and learn how to build and manage a data lake on AWS.
                       </p>
                     </CardContent>
                   </Card>
                   <Card>
                     <CardHeader>
-                      <Zap className="mb-4 h-10 w-10 text-accent" />
-                      <CardTitle>Session 02: CloudUnlocked</CardTitle>
+                      <Code className="mb-4 h-10 w-10 text-accent" />
+                      <CardTitle>Docker & Kubernetes</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
-                        Explore the future with the AWS Q CLI. Build something
-                        amazing and participate in a quiz to win exclusive AWS
-                        swag.
+                        Dive into containerization and orchestration, essential skills for modern DevOps and application deployment.
                       </p>
                     </CardContent>
                   </Card>
-                  <Card>
+                   <Card>
                     <CardHeader>
-                      <Gift className="mb-4 h-10 w-10 text-primary" />
-                      <CardTitle>Perks & Refreshments</CardTitle>
+                      <Zap className="mb-4 h-10 w-10 text-primary" />
+                      <CardTitle>Generative AI with AWS Q</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
-                        Full-day OD is included for students. Plus, enjoy
-                        refreshments from Burger King to keep you energized
-                        throughout the day!
+                        Explore the future of development with the AWS Q CLI, building intelligent applications powered by generative AI.
                       </p>
                     </CardContent>
                   </Card>
@@ -292,11 +286,10 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        10:00 AM - Session 01: CloudSteps
+                        10:00 AM - Session 01: CloudSteps by Jane Doe
                       </h4>
                       <p className="text-muted-foreground">
-                        Your first steps with cloud, Data Lakes, Docker &
-                        Kubernetes.
+                        Your first steps with cloud. An introduction to building a data lake on AWS, with hands-on experience in Docker & Kubernetes.
                       </p>
                     </div>
                   </li>
@@ -306,24 +299,36 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        01:30 PM - Session 02: CloudUnlocked
+                        01:30 PM - Session 02: CloudUnlocked by John Smith
                       </h4>
                       <p className="text-muted-foreground">
-                        Building with the AWS Q CLI, followed by a quiz for AWS
-                        swag!
+                        Explore the future of development by building with the AWS Q CLI.
+                      </p>
+                    </div>
+                  </li>
+                   <li className="flex items-start gap-6">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                      <Gift className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold">
+                        03:00 PM - Quiz & Swag
+                      </h4>
+                      <p className="text-muted-foreground">
+                        Test your knowledge and win exclusive AWS swag! Refreshments from Burger King will be provided.
                       </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
                       <Clock className="h-6 w-6" />
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        05:00 PM - Q&A and Wrap-up
+                        04:30 PM - Q&A and Wrap-up
                       </h4>
                       <p className="text-muted-foreground">
-                        Final questions and closing remarks.
+                        Final questions, doubt clearing, and closing remarks.
                       </p>
                     </div>
                   </li>
