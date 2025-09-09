@@ -9,6 +9,7 @@ import {
   Clock,
   BookOpen,
   MapPin,
+  Gift,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -19,7 +20,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { RegistrationForm } from '@/components/registration-form';
 import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 import { ScrollToTop } from '@/components/scroll-to-top';
@@ -33,7 +34,7 @@ export default function Home() {
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.png"
-                alt="CloudX Logo"
+                alt="Cloud Ascend Logo"
                 width={120}
                 height={40}
                 className="h-10 w-auto"
@@ -91,16 +92,16 @@ export default function Home() {
               </div>
               <div className="relative mx-auto max-w-5xl">
                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
-                  The Future of Cloud,
+                  Cloud Ascend:
                   <br />
                   <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                    Today.
+                    Elevate Your Skills.
                   </span>
                 </h1>
                 <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-                  Join our exclusive, full-day workshop on AWS & DevOps. A
-                  hands-on experience led by industry experts to elevate your
-                  cloud skills.
+                  Join our exclusive, full-day workshop on AWS, Docker,
+                  Kubernetes, and the AWS Q CLI. A hands-on experience to take
+                  your cloud skills to the next level.
                 </p>
                 <div className="mt-10">
                   <DialogTrigger asChild>
@@ -119,19 +120,18 @@ export default function Home() {
             <section id="overview" className="py-20 sm:py-32">
               <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
                 <div className="space-y-6">
-                  <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-primary">
+                  <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                     Workshop Overview
                   </h2>
                   <p className="text-lg text-muted-foreground">
-                    This immersive full-day workshop is designed for developers,
-                    DevOps engineers, and tech enthusiasts looking to master the
-                    essentials of Amazon Web Services (AWS) and modern DevOps
-                    practices.
+                    Cloud Ascend is an immersive full-day workshop for anyone
+                    ready to master AWS, containerization with Docker and
+                    Kubernetes, and the power of the AWS Q CLI.
                   </p>
                   <p className="text-lg text-muted-foreground">
-                    Hosted by AWS Community Builders, this event offers a unique
-                    opportunity to learn from experts, engage in hands-on labs,
-                    and network with peers.
+                    Hosted by AWS Community Builders, this event is your chance
+                    to learn from experts, participate in hands-on labs, win
+                    swag, and network with fellow cloud enthusiasts.
                   </p>
                 </div>
                 <div>
@@ -149,7 +149,7 @@ export default function Home() {
 
             <section id="learn" className="py-20 sm:py-32">
               <div className="container mx-auto text-center">
-                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-primary">
+                <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                   What You'll Learn
                 </h2>
                 <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
@@ -157,36 +157,43 @@ export default function Home() {
                   exercises to ensure you leave with valuable, real-world
                   skills.
                 </p>
-                <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                  <Card className="text-left">
-                    <CardContent className="pt-6">
+                <div className="mt-12 grid grid-cols-1 gap-8 text-left md:grid-cols-2 lg:grid-cols-3">
+                  <Card>
+                    <CardHeader>
                       <Cloud className="mb-4 h-10 w-10 text-primary" />
-                      <h3 className="text-xl font-bold">AWS Fundamentals</h3>
-                      <p className="mt-2 text-muted-foreground">
-                        Deep dive into core AWS services like EC2, S3, IAM, and
-                        VPC.
+                      <CardTitle>Session 01: CloudSteps</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">
+                        Your first steps with cloud. Learn to build a data lake
+                        on AWS and get hands-on experience with Docker &
+                        Kubernetes.
                       </p>
                     </CardContent>
                   </Card>
-                  <Card className="text-left">
-                    <CardContent className="pt-6">
-                      <Code className="mb-4 h-10 w-10 text-accent" />
-                      <h3 className="text-xl font-bold">
-                        Infrastructure as Code
-                      </h3>
-                      <p className="mt-2 text-muted-foreground">
-                        Learn to automate your infrastructure with Terraform and
-                        AWS CDK.
+                  <Card>
+                    <CardHeader>
+                      <Zap className="mb-4 h-10 w-10 text-accent" />
+                      <CardTitle>Session 02: CloudUnlocked</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">
+                        Explore the future with the AWS Q CLI. Build something
+                        amazing and participate in a quiz to win exclusive AWS
+                        swag.
                       </p>
                     </CardContent>
                   </Card>
-                  <Card className="text-left">
-                    <CardContent className="pt-6">
-                      <Zap className="mb-4 h-10 w-10 text-primary" />
-                      <h3 className="text-xl font-bold">CI/CD Pipelines</h3>
-                      <p className="mt-2 text-muted-foreground">
-                        Build and deploy applications automatically with GitHub
-                        Actions and AWS CodePipeline.
+                  <Card>
+                    <CardHeader>
+                      <Gift className="mb-4 h-10 w-10 text-primary" />
+                      <CardTitle>Perks & Refreshments</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">
+                        Full-day OD is included for students. Plus, enjoy
+                        refreshments from Burger King to keep you energized
+                        throughout the day!
                       </p>
                     </CardContent>
                   </Card>
@@ -199,7 +206,7 @@ export default function Home() {
                 <p className="text-lg text-muted-foreground">
                   ...and for a "CloudX" touch to the events
                 </p>
-                <h2 className="font-headline mt-4 bg-gradient-to-r from-accent to-primary bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl md:text-6xl">
+                <h2 className="font-headline mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl md:text-6xl">
                   NO PREQUISITE KNOWLEDGE REQUIRED.
                 </h2>
                 <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
@@ -210,7 +217,7 @@ export default function Home() {
 
             <section id="speakers" className="py-20 sm:py-32">
               <div className="text-center">
-                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-primary">
+                <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                   Meet the Speakers
                 </h2>
                 <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -258,7 +265,7 @@ export default function Home() {
 
             <section id="schedule" className="py-20 sm:py-32">
               <div className="container mx-auto max-w-3xl text-center">
-                <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-primary">
+                <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                   Workshop Schedule
                 </h2>
                 <p className="mt-4 text-lg text-muted-foreground">
@@ -272,7 +279,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        09:00 AM - Registration
+                        09:00 AM - Registration & Breakfast
                       </h4>
                       <p className="text-muted-foreground">
                         Coffee, networking, and setup.
@@ -285,10 +292,11 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        10:00 AM - AWS Deep Dive
+                        10:00 AM - Session 01: CloudSteps
                       </h4>
                       <p className="text-muted-foreground">
-                        Hands-on lab with core services.
+                        Your first steps with cloud, Data Lakes, Docker &
+                        Kubernetes.
                       </p>
                     </div>
                   </li>
@@ -298,10 +306,11 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold">
-                        01:30 PM - DevOps & CI/CD
+                        01:30 PM - Session 02: CloudUnlocked
                       </h4>
                       <p className="text-muted-foreground">
-                        Automating your workflows.
+                        Building with the AWS Q CLI, followed by a quiz for AWS
+                        swag!
                       </p>
                     </div>
                   </li>
@@ -377,9 +386,9 @@ export default function Home() {
                       Are there any prerequisites?
                     </AccordionTrigger>
                     <AccordionContent className="text-base text-muted-foreground">
-                      A basic understanding of command-line interfaces and
-                      general programming concepts is helpful, but not strictly
-                      required. You will need to bring your own laptop.
+                      No prerequisite knowledge is required! We welcome everyone,
+                      from beginners to those with some experience. You will
+                      need to bring your own laptop.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-3">
@@ -388,8 +397,8 @@ export default function Home() {
                     </AccordionTrigger>
                     <AccordionContent className="text-base text-muted-foreground">
                       Your ticket includes full access to all sessions,
-                      hands-on labs, lunch, coffee, and networking
-                      opportunities.
+                      hands-on labs, lunch, Burger King refreshments, and the
+                      chance to win AWS swag. OD will be provided for students.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -412,7 +421,7 @@ export default function Home() {
               </DialogTrigger>
             </div>
             <p className="mt-8 text-sm">
-              © {new Date().getFullYear()} CloudX. All rights reserved.
+              © {new Date().getFullYear()} Cloud Ascend. All rights reserved.
             </p>
           </div>
         </footer>

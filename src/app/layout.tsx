@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'CloudX Workshop Hub',
-  description: 'Join us for a deep dive into AWS, DevOps, and Q CLI. Hosted by AWS Community Builders.',
+  title: 'Cloud Ascend',
+  description: 'Join us for Cloud Ascend, a deep dive into AWS, DevOps, and the Q CLI. Hosted by AWS Community Builders.',
 };
 
 export default function RootLayout({
