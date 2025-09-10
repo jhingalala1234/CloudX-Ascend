@@ -26,8 +26,9 @@ export async function saveRegistration(data: RegistrationData) {
     }
 
     const buffer = Buffer.from(base64Data, 'base64');
+    const bucket = storage.bucket();
     const filePath = `screenshots/${Date.now()}-${data.registrationNumber}-${fileName}`;
-    const file = storage.file(filePath);
+    const file = bucket.file(filePath);
 
     await file.save(buffer, {
       metadata: {
@@ -37,7 +38,7 @@ export async function saveRegistration(data: RegistrationData) {
 
     await file.makePublic();
     
-    const screenshotUrl = `https://storage.googleapis.com/${process.env.FIREBASE_PROJECT_ID}.appspot.com/${filePath}`;
+    const screenshotUrl = `https://storage.googleapis.com/${process.env.FIREBASE_STORAGE_BUCKET}/${filePath}`;
 
     const registrationDoc = {
       name: data.name,
