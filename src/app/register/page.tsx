@@ -39,7 +39,7 @@ const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
   registrationNumber: z.string().min(1, 'Registration number is required.'),
   email: z.string().min(2, 'SRMIST ID is required.'),
-  phoneNumber: z.string().min(10, 'Please enter a valid phone number.'),
+  phoneNumber: z.string().regex(/^[6-9]\d{9}$/, 'Please enter a valid 10-digit Indian mobile number.'),
   paymentScreenshot: z
     .any()
     .refine((files) => files?.length == 1, 'Payment screenshot is required.')
@@ -107,7 +107,7 @@ export default function RegisterPage() {
         name: formData.name,
         registrationNumber: formData.registrationNumber,
         email: `${formData.email}@srmist.edu.in`,
-        phoneNumber: formData.phoneNumber,
+        phoneNumber: `+91${formData.phoneNumber}`,
         upiId: upiId,
         paymentScreenshot: {
             fileName: screenshotFile.name,
@@ -226,17 +226,27 @@ export default function RegisterPage() {
                             )}
                           />
                           <FormField
-                              control={form.control}
-                              name="phoneNumber"
-                              render={({ field }) => (
+                            control={form.control}
+                            name="phoneNumber"
+                            render={({ field }) => (
                               <FormItem>
-                                  <FormLabel>Phone Number</FormLabel>
-                                  <FormControl>
-                                  <Input type="tel" placeholder="+91 1234567890" {...field} />
-                                  </FormControl>
-                                  <FormMessage />
+                                <FormLabel>Phone Number</FormLabel>
+                                <FormControl>
+                                  <div className="flex items-center">
+                                    <span className="inline-flex h-10 items-center rounded-l-md border border-r-0 border-input bg-muted px-3 text-muted-foreground">
+                                      +91
+                                    </span>
+                                    <Input
+                                      type="tel"
+                                      placeholder="9876543210"
+                                      className="rounded-l-none"
+                                      {...field}
+                                    />
+                                  </div>
+                                </FormControl>
+                                <FormMessage />
                               </FormItem>
-                              )}
+                            )}
                           />
                           <FormField
                               control={form.control}
