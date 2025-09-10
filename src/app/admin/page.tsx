@@ -6,13 +6,11 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
 import { Label } from '@/components/ui/label';
 import { Loader2, Check, X } from 'lucide-react';
-import Link from 'next/link';
 
-import { verifyAdmin, getRegistrations, updateRegistrationStatus, getScreenshotUrl } from '@/services/admin';
+import { verifyAdmin, getRegistrations, updateRegistrationStatus } from '@/services/admin';
 
 type Registration = {
   id: string;
@@ -38,46 +36,12 @@ export default function AdminPage() {
 
   const [registrations, setRegistrations] = useState<Registration[]>([]);
   const [isFetchingRegistrations, setIsFetchingRegistrations] = useState(true);
-  const [screenshotUrls, setScreenshotUrls] = useState<Record<string, string>>({});
-
 
   useEffect(() => {
     if (isLoggedIn) {
       fetchRegistrations();
     }
   }, [isLoggedIn]);
-
-  useEffect(() => {
-    if (registrations.length > 0) {
-      const fetchUrls = async () => {
-        const urlsToFetch = registrations.filter(
-          (reg) => reg.screenshotPath && !screenshotUrls[reg.id]
-        );
-
-        if (urlsToFetch.length === 0) return;
-
-        const urlPromises = urlsToFetch.map(async (reg) => {
-          try {
-            const url = await getScreenshotUrl({ path: reg.screenshotPath });
-            return { id: reg.id, url };
-          } catch (error) {
-            console.error(`Failed to get URL for ${reg.screenshotPath}:`, error);
-            return { id: reg.id, url: '' }; // Store empty string on error
-          }
-        });
-
-        const newUrlsArray = await Promise.all(urlPromises);
-        const newUrls = newUrlsArray.reduce((acc, { id, url }) => {
-          if (id) acc[id] = url;
-          return acc;
-        }, {} as Record<string, string>);
-
-        setScreenshotUrls((prev) => ({ ...prev, ...newUrls }));
-      };
-      fetchUrls();
-    }
-  }, [registrations]);
-
 
   const fetchRegistrations = async () => {
     setIsFetchingRegistrations(true);
@@ -215,7 +179,7 @@ export default function AdminPage() {
                         <th className="p-4 text-left font-medium">Reg. Number</th>
                         <th className="p-4 text-left font-medium">Email</th>
                         <th className="p-4 text-left font-medium">Payment ID</th>
-                        <th className="p-4 text-center font-medium">Screenshot</th>
+                        <th className="p-4 text-left font-medium">Screenshot Path</th>
                         <th className="p-4 text-center font-medium">Status</th>
                         <th className="p-4 text-center font-medium">Actions</th>
                     </tr>
@@ -232,35 +196,8 @@ export default function AdminPage() {
                             <td className="p-4 font-mono">{reg.registrationNumber}</td>
                             <td className="p-4">{reg.email}</td>
                             <td className="p-4 font-mono">{reg.paymentId}</td>
-                            <td className="p-4 text-center">
-                                {reg.screenshotPath && screenshotUrls[reg.id] ? (
-                                    <Dialog>
-                                        <DialogTrigger asChild>
-                                            <button className="rounded-md overflow-hidden border-2 border-transparent hover:border-primary transition-all">
-                                                <Image
-                                                    src={screenshotUrls[reg.id]}
-                                                    alt={`Screenshot for ${reg.name}`}
-                                                    width={64}
-                                                    height={64}
-                                                    className="object-cover h-16 w-16"
-                                                />
-                                            </button>
-                                        </DialogTrigger>
-                                        <DialogContent className="max-w-3xl p-2">
-                                            <Image
-                                                src={screenshotUrls[reg.id]}
-                                                alt={`Screenshot for ${reg.name}`}
-                                                width={1200}
-                                                height={800}
-                                                className="w-full h-auto rounded-md"
-                                            />
-                                        </DialogContent>
-                                    </Dialog>
-                                ) : reg.screenshotPath ? (
-                                    <Loader2 className="h-4 w-4 animate-spin mx-auto" />
-                                ) : (
-                                    <span>-</span>
-                                )}
+                            <td className="p-4 font-mono text-xs">
+                                {reg.screenshotPath || '-'}
                             </td>
                             <td className="p-4 text-center">
                                 <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
@@ -295,5 +232,3 @@ export default function AdminPage() {
     </div>
   );
 }
-
-    
