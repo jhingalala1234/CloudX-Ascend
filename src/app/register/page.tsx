@@ -1,3 +1,4 @@
+
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -37,13 +38,7 @@ import { saveRegistration } from '@/services/registration';
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
   registrationNumber: z.string().min(1, 'Registration number is required.'),
-  email: z
-    .string()
-    .email('Invalid email address.')
-    .refine(
-      (email) => email.endsWith('@srmist.edu.in'),
-      'Only @srmist.edu.in emails are allowed.'
-    ),
+  email: z.string().min(2, 'SRMIST ID is required.'),
   phoneNumber: z.string().min(10, 'Please enter a valid phone number.'),
   paymentScreenshot: z
     .any()
@@ -111,7 +106,7 @@ export default function RegisterPage() {
       await saveRegistration({
         name: formData.name,
         registrationNumber: formData.registrationNumber,
-        email: formData.email,
+        email: `${formData.email}@srmist.edu.in`,
         phoneNumber: formData.phoneNumber,
         upiId: upiId,
         paymentScreenshot: {
@@ -209,17 +204,26 @@ export default function RegisterPage() {
                               )}
                           />
                           <FormField
-                              control={form.control}
-                              name="email"
-                              render={({ field }) => (
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
                               <FormItem>
-                                  <FormLabel>SRMIST Email</FormLabel>
-                                  <FormControl>
-                                  <Input placeholder="jd1234@srmist.edu.in" {...field} />
-                                  </FormControl>
-                                  <FormMessage />
+                                <FormLabel>SRMIST Email</FormLabel>
+                                <FormControl>
+                                  <div className="flex items-center">
+                                    <Input
+                                      placeholder="ab1234"
+                                      className="rounded-r-none"
+                                      {...field}
+                                    />
+                                    <span className="inline-flex h-10 items-center rounded-r-md border border-l-0 border-input bg-muted px-3 text-muted-foreground">
+                                      @srmist.edu.in
+                                    </span>
+                                  </div>
+                                </FormControl>
+                                <FormMessage />
                               </FormItem>
-                              )}
+                            )}
                           />
                           <FormField
                               control={form.control}
