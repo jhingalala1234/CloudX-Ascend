@@ -9,7 +9,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyA5dTyFu7dwAd_0Cz6yCPTE1F8z0KvzbNg",
   authDomain: "cloudx-cloudascend.firebaseapp.com",
   projectId: "cloudx-cloudascend",
-  storageBucket: "cloudx-cloudascend.appspot.com",
+  storageBucket: "cloudx-cloudascend.firebasestorage.app",
   messagingSenderId: "546113219928",
   appId: "1:546113219928:web:1b582e7300617490f9492d",
   measurementId: "G-GSPZXXWWEC"
