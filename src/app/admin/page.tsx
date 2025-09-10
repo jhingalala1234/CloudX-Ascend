@@ -51,15 +51,19 @@ export default function AdminPage() {
             const urls: Record<string, string> = {};
             for (const reg of registrations) {
                 if(reg.screenshotPath && !screenshotUrls[reg.id]) {
-                    const url = await getScreenshotUrl(reg.screenshotPath);
-                    urls[reg.id] = url;
+                    try {
+                        const url = await getScreenshotUrl({ path: reg.screenshotPath });
+                        urls[reg.id] = url;
+                    } catch (error) {
+                        console.error(`Failed to get URL for ${reg.screenshotPath}`, error);
+                    }
                 }
-            }));
+            }
             setScreenshotUrls(prev => ({...prev, ...urls}));
         };
         fetchUrls();
     }
-  }, [registrations]);
+  }, [registrations, screenshotUrls]);
 
 
   const fetchRegistrations = async () => {
@@ -261,5 +265,7 @@ export default function AdminPage() {
     </div>
   );
 }
+
+    
 
     
