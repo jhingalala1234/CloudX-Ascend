@@ -11,16 +11,8 @@ function initializeFirebaseAdmin() {
   }
 
   try {
-    const serviceAccountJson = process.env.FIREBASE_SERVICE_ACCOUNT;
-    if (!serviceAccountJson) {
-      throw new Error('FIREBASE_SERVICE_ACCOUNT environment variable is not set.');
-    }
-    
-    const serviceAccount = JSON.parse(serviceAccountJson);
-
-    admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
-    });
+    // The GOOGLE_APPLICATION_CREDENTIALS env var will be picked up automatically.
+    admin.initializeApp();
     
     db = admin.firestore();
     console.log('Firebase Admin SDK initialized successfully.');
