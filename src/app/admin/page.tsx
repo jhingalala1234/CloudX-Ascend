@@ -10,8 +10,7 @@ import { Label } from '@/components/ui/label';
 import { Loader2, ExternalLink, Check, X } from 'lucide-react';
 import Link from 'next/link';
 
-import { verifyAdmin, getRegistrations, updateRegistrationStatus } from '@/services/admin';
-import { storage as adminStorage} from '@/lib/server/firebase-admin';
+import { verifyAdmin, getRegistrations, updateRegistrationStatus, getScreenshotUrl } from '@/services/admin';
 
 type Registration = {
   id: string;
@@ -20,29 +19,13 @@ type Registration = {
   email: string;
   phoneNumber: string;
   upiId: string;
-  screenshotPath: string; // Changed from screenshotUrl
+  screenshotPath: string;
   status: 'pending_verification' | 'verified' | 'rejected';
   createdAt: {
     _seconds: number;
     _nanoseconds: number;
   };
 };
-
-async function getScreenshotUrl(path: string) {
-    if (!path) return '';
-    try {
-        const file = adminStorage.bucket().file(path);
-        const [url] = await file.getSignedUrl({
-            action: 'read',
-            expires: Date.now() + 15 * 60 * 1000, // 15 minutes
-        });
-        return url;
-    } catch (error) {
-        console.error("Error getting signed URL: ", error);
-        return '';
-    }
-}
-
 
 export default function AdminPage() {
   const [username, setUsername] = useState('');
@@ -66,12 +49,18 @@ export default function AdminPage() {
     if (registrations.length > 0) {
         const fetchUrls = async () => {
             const urls: Record<string, string> = {};
-            for (const reg of registrations) {
-                if(reg.screenshotPath && !screenshotUrls[reg.id]) {
-                    const url = await getScreenshotUrl(reg.screenshotPath);
-                    urls[reg.id] = url;
+            // Use Promise.all to fetch URLs in parallel for better performance
+            await Promise.all(registrations.map(async (reg) => {
+                if (reg.screenshotPath && !screenshotUrls[reg.id]) {
+                    try {
+                        const url = await getScreenshotUrl({ path: reg.screenshotPath });
+                        urls[reg.id] = url;
+                    } catch (error) {
+                        console.error(`Failed to get URL for ${reg.screenshotPath}:`, error);
+                        urls[reg.id] = ''; // Store empty string on error
+                    }
                 }
-            }
+            }));
             setScreenshotUrls(prev => ({...prev, ...urls}));
         };
         fetchUrls();
@@ -230,14 +219,16 @@ export default function AdminPage() {
                             <td className="p-4">{reg.email}</td>
                             <td className="p-4 font-mono">{reg.upiId}</td>
                             <td className="p-4 text-center">
-                                {screenshotUrls[reg.id] ? (
+                                {reg.screenshotPath && screenshotUrls[reg.id] ? (
                                     <Link href={screenshotUrls[reg.id]} target="_blank" rel="noopener noreferrer" title="View Screenshot">
                                         <Button variant="outline" size="icon">
                                             <ExternalLink className="h-4 w-4" />
                                         </Button>
                                     </Link>
-                                ) : (
+                                ) : reg.screenshotPath ? (
                                     <Loader2 className="h-4 w-4 animate-spin mx-auto" />
+                                ) : (
+                                    <span>-</span>
                                 )}
                             </td>
                             <td className="p-4 text-center">
@@ -272,3 +263,5 @@ export default function AdminPage() {
     </div>
   );
 }
+
+    

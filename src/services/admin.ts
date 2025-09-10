@@ -1,7 +1,7 @@
 
 'use server';
 
-import { firestore } from '@/lib/server/firebase-admin';
+import { firestore, storage } from '@/lib/server/firebase-admin';
 
 export async function verifyAdmin({ username, password }: { username: string, password?: string }) {
   if (!password) {
@@ -54,3 +54,24 @@ export async function updateRegistrationStatus({ registrationId, status }: { reg
 
     return { success: true };
 }
+
+
+export async function getScreenshotUrl({ path }: { path: string }) {
+    if (!path) {
+        throw new Error('A path is required to generate a signed URL.');
+    }
+    try {
+        const file = storage.bucket().file(path);
+        const [url] = await file.getSignedUrl({
+            action: 'read',
+            // URL expires in 15 minutes
+            expires: Date.now() + 15 * 60 * 1000, 
+        });
+        return url;
+    } catch (error) {
+        console.error("Error generating signed URL on the server: ", error);
+        throw new Error('Could not get screenshot URL.');
+    }
+}
+
+    
