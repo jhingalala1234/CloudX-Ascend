@@ -1,4 +1,3 @@
-
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -33,6 +32,7 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { Label } from '@/components/ui/label';
+import { saveRegistration } from '@/services/registration';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -45,10 +45,26 @@ const formSchema = z.object({
       'Only @srmist.edu.in emails are allowed.'
     ),
   phoneNumber: z.string().min(10, 'Please enter a valid phone number.'),
-  paymentScreenshot: z.any().refine((files) => files?.length == 1, 'Payment screenshot is required.'),
+  paymentScreenshot: z
+    .any()
+    .refine((files) => files?.length == 1, 'Payment screenshot is required.')
+    .refine((files) => files?.[0]?.size <= 5_000_000, `Max file size is 5MB.`)
+    .refine(
+      (files) => ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'].includes(files?.[0]?.type),
+      '.jpg, .jpeg, .png and .webp files are accepted.'
+    ),
 });
 
 type FormData = z.infer<typeof formSchema>;
+
+const fileToBase64 = (file: File): Promise<string> =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = (error) => reject(error);
+  });
+
 
 export default function RegisterPage() {
   const { toast } = useToast();
@@ -87,14 +103,38 @@ export default function RegisterPage() {
     
     setIsDialogOpen(false);
     setIsSubmitting(true);
+    
+    const screenshotFile = formData.paymentScreenshot[0];
+    const screenshotBase64 = await fileToBase64(screenshotFile);
 
-    toast({
-        title: 'Registration temporarily disabled',
-        description: "We're sorry, registrations are not being accepted at this moment.",
+    try {
+      await saveRegistration({
+        name: formData.name,
+        registrationNumber: formData.registrationNumber,
+        email: formData.email,
+        phoneNumber: formData.phoneNumber,
+        upiId: upiId,
+        paymentScreenshot: {
+            fileName: screenshotFile.name,
+            fileType: screenshotFile.type,
+            fileSize: screenshotFile.size,
+            fileContent: screenshotBase64,
+        },
+      });
+
+      router.push('/success');
+
+    } catch (error) {
+      console.error('Registration failed:', error);
+      toast({
+        title: 'Registration Failed',
+        description:
+          'There was a problem submitting your registration. Please try again.',
         variant: 'destructive',
-    });
-    setIsSubmitting(false);
-
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
