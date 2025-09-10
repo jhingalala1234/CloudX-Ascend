@@ -151,7 +151,7 @@ export default function Home() {
               <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                 AWS Ascend
                 <br />
-                <span className="inline-block bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                   Elevate Your Skills
                 </span>
               </h1>
@@ -181,10 +181,10 @@ export default function Home() {
                 <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                   Workshop Overview
                 </h2>
-                 <p className="text-lg text-muted-foreground">
+                 <p className="text-lg text-muted-foreground text-justify">
                   AWS Ascend is a full-day, hands-on workshop designed for anyone — no prior cloud experience required. From your very first step in the cloud to building a data lake on AWS and exploring generative AI with the AWS Q CLI, you’ll learn by doing, not just listening.
                 </p>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg text-muted-foreground text-justify">
                   Guided by AWS Community Builders, this workshop is packed with labs, swags, and community learning. You’ll walk out with real projects, a certificate, and practical skills that set you apart. Miss it, and you’re missing the easiest way to step into the future of cloud.
                 </p>
               </div>
