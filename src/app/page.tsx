@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
-        <header className="w-full bg-background/95 shadow-md">
+        <header className="sticky top-0 z-50 w-full bg-background/95 shadow-md backdrop-blur-sm">
           <div className="container mx-auto flex h-20 items-center justify-between px-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
@@ -577,3 +577,5 @@ export default function Home() {
     </>
   );
 }
+
+    
