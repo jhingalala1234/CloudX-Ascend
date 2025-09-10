@@ -2,11 +2,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
 import { Label } from '@/components/ui/label';
 import { Loader2, Check, X } from 'lucide-react';
 
@@ -32,7 +30,6 @@ export default function AdminPage() {
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
 
   const [registrations, setRegistrations] = useState<Registration[]>([]);
   const [isFetchingRegistrations, setIsFetchingRegistrations] = useState(true);
@@ -54,12 +51,7 @@ export default function AdminPage() {
       });
       setRegistrations(sortedRegistrations);
     } catch (error) {
-      console.error(error);
-      toast({
-        title: 'Error fetching registrations',
-        description: 'Could not load attendee data. Please try again.',
-        variant: 'destructive',
-      });
+      console.error("Error fetching registrations:", error);
     } finally {
       setIsFetchingRegistrations(false);
     }
@@ -72,19 +64,12 @@ export default function AdminPage() {
       const { success } = await verifyAdmin({ username, password });
       if (success) {
         setIsLoggedIn(true);
-        toast({
-          title: 'Login Successful',
-          description: 'Welcome to the admin panel.',
-        });
       } else {
         throw new Error('Invalid credentials');
       }
     } catch (error) {
-      toast({
-        title: 'Login Failed',
-        description: 'Please check your username and password.',
-        variant: 'destructive',
-      });
+      console.error("Login Failed:", error);
+      alert('Login Failed: Please check your username and password.');
     } finally {
       setIsLoading(false);
     }
@@ -96,17 +81,10 @@ export default function AdminPage() {
 
     try {
       await updateRegistrationStatus({ registrationId: id, status });
-      toast({
-        title: `Registration ${status}`,
-        description: `The attendee has been marked as ${status}.`,
-      });
     } catch (error) {
       setRegistrations(originalRegistrations);
-      toast({
-        title: 'Update Failed',
-        description: 'Could not update the registration status. Please try again.',
-        variant: 'destructive',
-      });
+      console.error("Update Failed:", error);
+      alert('Could not update the registration status. Please try again.');
     }
   };
   
