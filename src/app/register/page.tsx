@@ -32,7 +32,7 @@ import { Progress } from '@/components/ui/progress';
 const userDetailsSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
   registrationNumber: z.string().min(1, 'Registration number is required.'),
-  email: z.string().min(2, 'SRMIST ID is required.'),
+  email: z.string().min(2, 'SRMIST ID is required.').refine(val => !val.includes('@'), { message: "Only enter the part of your email before '@srmist.edu.in'." }),
   phoneNumber: z.string().regex(/^[6-9]\d{9}$/, 'Please enter a valid 10-digit Indian mobile number.'),
 });
 
