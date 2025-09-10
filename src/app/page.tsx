@@ -430,7 +430,7 @@ export default function Home() {
           </section>
           
           <section id="location" className="py-12 sm:py-20 animate-slide-up-fade">
-            <div className="container mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 md:grid-cols-2 px-4">
+            <div className="container mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 px-4 md:grid-cols-2">
               <div className="flex flex-col gap-8 text-center md:text-left">
                 <div className="space-y-4">
                   <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
@@ -441,7 +441,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex items-center gap-4 text-left">
-                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-primary">
+                   <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-primary">
                     <MapPin className="h-8 w-8 text-primary-foreground" />
                   </div>
                   <div>
@@ -551,7 +551,7 @@ export default function Home() {
           </section>
           
           <footer className="border-t border-border/50 animate-fade-in">
-            <div className="container mx-auto pt-12 pb-8 px-4 text-center text-muted-foreground">
+            <div className="container mx-auto py-8 px-4 text-center text-muted-foreground">
               <p className="text-sm">
                 © 2025 | CloudX-SRMIST. All Rights Reserved.
               </p>

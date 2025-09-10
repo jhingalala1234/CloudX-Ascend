@@ -49,13 +49,14 @@ export default function AdminPage() {
     if (registrations.length > 0) {
         const fetchUrls = async () => {
             const urls: Record<string, string> = {};
-            for (const reg of registrations) {
-                if(reg.screenshotPath && !screenshotUrls[reg.id]) {
+            await Promise.all(registrations.map(async (reg) => {
+                if (reg.screenshotPath && !screenshotUrls[reg.id]) {
                     try {
                         const url = await getScreenshotUrl({ path: reg.screenshotPath });
                         urls[reg.id] = url;
                     } catch (error) {
-                        console.error(`Failed to get URL for ${reg.screenshotPath}`, error);
+                        console.error(`Failed to get URL for ${reg.screenshotPath}:`, error);
+                        urls[reg.id] = ''; 
                     }
                 }
             }
@@ -265,7 +266,3 @@ export default function AdminPage() {
     </div>
   );
 }
-
-    
-
-    
