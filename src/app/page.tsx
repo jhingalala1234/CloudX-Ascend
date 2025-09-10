@@ -16,7 +16,6 @@ import {
   Mail,
   Instagram,
   Menu,
-  Rocket,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -86,7 +85,7 @@ export default function Home() {
             </nav>
             <Button asChild variant="glass" className="hidden md:flex">
               <Link href="/register">
-                Register Now
+                Secure Your Spot Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -129,7 +128,7 @@ export default function Home() {
                     </SheetClose>
                      <Button asChild variant="glass" className="w-full">
                       <Link href="/register">
-                        Register Now
+                        Secure Your Spot Now
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Link>
                     </Button>
@@ -152,12 +151,13 @@ export default function Home() {
               <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                 AWS Ascend
                 <br />
-                <span className="inline-flex items-center justify-center gap-4 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                  Elevate Your Skills <Rocket className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20" />
+                <span className="inline-block bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                  Elevate Your Skills
                 </span>
               </h1>
+              <p className="mt-4 text-xl font-medium text-muted-foreground">Powered By <span className="font-bold bg-gradient-to-r from-orange-400 to-white bg-clip-text text-transparent">Amazon Q</span></p>
               <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-                One Day. Real Projects. From Cloud Basics to Docker, Kubernetes, and AWS Q CLI — Build, Deploy & Leave with skills that stick.
+                One Day. Two Sessions. Real Projects. Directly From Industry Mentors. 
               </p>
               <div className="mt-10">
                 <Button
@@ -167,7 +167,7 @@ export default function Home() {
                   className="h-14 px-12 text-lg font-bold"
                 >
                   <Link href="/register">
-                    Register Now
+                    Secure Your Spot Now
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -537,7 +537,7 @@ export default function Home() {
                     How do I register?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
-                    Click the “Register Now” button on this page and secure
+                    Click the “Secure Your Spot Now” button on this page and secure
                     your seat. Seats are limited and expected to fill fast.
                   </AccordionContent>
                 </AccordionItem>
