@@ -44,10 +44,6 @@ const formSchema = z.object({
     .any()
     .refine((files) => files?.length == 1, 'Payment screenshot is required.')
     .refine((files) => files?.[0]?.size <= 5_000_000, `Max file size is 5MB.`)
-    .refine(
-      (files) => ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'].includes(files?.[0]?.type),
-      '.jpg, .jpeg, .png and .webp files are accepted.'
-    ),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -257,7 +253,7 @@ export default function RegisterPage() {
                                       Upload the screenshot of your ₹99 payment.
                                   </FormDescription>
                                   <FormControl>
-                                  <Input type="file" accept="image/*" {...fileRef} />
+                                  <Input type="file" {...fileRef} />
                                   </FormControl>
                                   <FormMessage />
                               </FormItem>
