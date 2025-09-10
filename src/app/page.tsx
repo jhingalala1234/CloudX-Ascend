@@ -438,8 +438,8 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex items-center gap-4 text-left">
-                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-accent">
-                    <MapPin className="h-8 w-8 text-primary" />
+                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-primary">
+                    <MapPin className="h-8 w-8 text-primary-foreground" />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold">Our Venue</h4>
@@ -579,5 +579,3 @@ export default function Home() {
     </>
   );
 }
-
-    
