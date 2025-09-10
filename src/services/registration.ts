@@ -40,9 +40,13 @@ export async function saveRegistration(data: RegistrationData) {
       },
     });
 
-    await file.makePublic();
-    
-    const screenshotUrl = `https://storage.googleapis.com/${bucket.name}/${filePath}`;
+    // Instead of making the file public, generate a long-lived signed URL.
+    // This respects the "public access prevention" policy.
+    const [signedUrl] = await file.getSignedUrl({
+      action: 'read',
+      // Set a very distant expiration date.
+      expires: '01-01-2100', 
+    });
 
     const registrationDoc = {
       name: data.name,
@@ -50,7 +54,7 @@ export async function saveRegistration(data: RegistrationData) {
       email: data.email,
       phoneNumber: data.phoneNumber,
       upiId: data.upiId,
-      screenshotUrl: screenshotUrl,
+      screenshotUrl: signedUrl, // Save the signed URL
       createdAt: new Date(),
       status: 'pending_verification',
     };
