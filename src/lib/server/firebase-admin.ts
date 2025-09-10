@@ -1,3 +1,4 @@
+
 'use server';
 
 import * as admin from 'firebase-admin';
@@ -15,9 +16,16 @@ function initializeFirebaseAdmin() {
   }
 
   try {
-    // The type assertion is necessary because the JSON import doesn't match the expected type perfectly.
+    // Correctly format the private key by replacing the literal `\n` with actual newlines.
+    // This is the most common cause of initialization failures.
+    const privateKey = serviceAccount.private_key.replace(/\\n/g, '\n');
+
     admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
+      credential: admin.credential.cert({
+        projectId: serviceAccount.project_id,
+        clientEmail: serviceAccount.client_email,
+        privateKey: privateKey,
+      }),
     });
 
     db = admin.firestore();
