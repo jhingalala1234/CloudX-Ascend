@@ -449,7 +449,7 @@ export default function Home() {
               </div>
               <div className="w-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!d3890.2856053880896!2d80.04248560906781!3d12.824811887424941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70ce1c18cd9%3A0xffb39775f24c16e9!2sTech%20Park%20Building%2C%20SRM%20University%2C%20Potheri%2C%20SRM%20Nagar%2C%20Kattankulathur%2C%20Tamil%20Nadu%20603203!5e0!3m2!1sen!2sin!4v1757371884091!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2856053880896!2d80.04248560906781!3d12.824811887424941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70ce1c18cd9%3A0xffb39775f24c16e9!2sTech%20Park%20Building%2C%20SRM%20University%2C%20Potheri%2C%20SRM%20Nagar%2C%20Kattankulathur%2C%20Tamil%20Nadu%20603203!5e0!3m2!1sen!2sin!4v1757371884091!5m2!1sen!2sin"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
@@ -546,7 +546,7 @@ export default function Home() {
           </section>
           
           <footer className="border-t border-border/50">
-            <div className="container mx-auto py-12 px-4 text-center text-muted-foreground">
+            <div className="container mx-auto pt-12 pb-8 px-4 text-center text-muted-foreground">
               <div className="mb-8">
                 <Button
                   asChild
@@ -564,10 +564,10 @@ export default function Home() {
                 © 2025 | CloudX-SRMIST. All Rights Reserved.
               </p>
               <div className="flex justify-center gap-6">
-                  <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="h-6 w-6" /></Link>
-                  <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Github className="h-6 w-6" /></Link>
-                  <Link href="mailto:example@example.com" className="text-muted-foreground hover:text-primary transition-colors"><Mail className="h-6 w-6" /></Link>
-                  <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="h-6 w-6" /></Link>
+                  <Link href="https://www.linkedin.com/company/cloudx-srmist/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[#0077B5] transition-colors"><Linkedin className="h-6 w-6" /></Link>
+                  <Link href="https://github.com/CloudX-SRMIST" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors"><Github className="h-6 w-6" /></Link>
+                  <Link href="mailto:cloudx.srmist@gmail.com" className="text-muted-foreground hover:text-[#EA4335] transition-colors"><Mail className="h-6 w-6" /></Link>
+                  <Link href="https://www.instagram.com/cloudx.srmist/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[#E4405F] transition-colors"><Instagram className="h-6 w-6" /></Link>
               </div>
             </div>
           </footer>
