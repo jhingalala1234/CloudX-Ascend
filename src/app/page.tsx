@@ -186,7 +186,7 @@ export default function Home() {
                   Workshop Overview
                 </h2>
                  <p className="text-lg text-muted-foreground text-justify">
-                  AWS Ascend is a full-day, hands-on workshop designed for anyone — no prior cloud experience required. From your very first step in the cloud to building a data lake on AWS and exploring generative AI with the AWS Q CLI, you’ll learn by doing, not just listening.
+                  AWS Ascend is a full-day, hands-on workshop designed for anyone & no prior cloud experience required. From your very first step in the cloud to building a data lake on AWS and exploring generative AI with the AWS Q CLI, you’ll learn by doing, not just listening.
                 </p>
                 <p className="text-lg text-muted-foreground text-justify">
                   Guided by AWS Community Builders, this workshop is packed with labs, swags, and community learning. You’ll walk out with real projects, a certificate, and practical skills that set you apart. Miss it, and you’re missing the easiest way to step into the future of cloud.
@@ -221,7 +221,7 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Start with the building blocks of the cloud. Learn core AWS services and concepts so you’re not just following along — you actually understand how the cloud works.
+                      Start with the building blocks of the cloud. Learn core AWS services and concepts so you’re not just following along, you actually understand how the cloud works.
                     </p>
                   </CardContent>
                 </Card>
