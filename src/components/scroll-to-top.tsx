@@ -34,7 +34,7 @@ export function ScrollToTop() {
       size="icon"
       onClick={scrollToTop}
       className={cn(
-        'fixed bottom-8 right-8 z-50 h-12 w-12 transition-all duration-300 [filter:drop-shadow(0_4px_8px_rgba(0,0,0,0.4))]',
+        'fixed bottom-8 right-8 z-50 h-12 w-12 border-0 transition-all duration-300 [filter:drop-shadow(0_4px_8px_rgba(0,0,0,0.4))]',
         isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
       )}
       style={{
