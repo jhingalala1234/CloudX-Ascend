@@ -2,6 +2,7 @@
 'use server';
 
 import { firestore, storage } from '@/lib/server/firebase-admin';
+import type { Timestamp } from 'firebase-admin/firestore';
 
 export async function verifyAdmin({ username, password }: { username: string, password?: string }) {
   if (!password) {
@@ -26,8 +27,6 @@ export async function verifyAdmin({ username, password }: { username: string, pa
 }
 
 export async function getRegistrations() {
-  // Removed .orderBy('createdAt', 'desc') to avoid needing a composite index.
-  // The data will be unsorted from the server, but this prevents query failures.
   const registrationsRef = firestore.collection('registrations');
   const snapshot = await registrationsRef.get();
   
@@ -37,7 +36,17 @@ export async function getRegistrations() {
 
   const registrations: any[] = [];
   snapshot.forEach(doc => {
-    registrations.push({ id: doc.id, ...doc.data() });
+    const data = doc.data();
+    // Convert Timestamp to a plain object
+    const createdAt = data.createdAt as Timestamp;
+    registrations.push({ 
+      id: doc.id, 
+      ...data,
+      createdAt: createdAt ? {
+        _seconds: createdAt.seconds,
+        _nanoseconds: createdAt.nanoseconds
+      } : null
+    });
   });
   
   return registrations;
