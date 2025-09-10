@@ -20,21 +20,30 @@ interface RegistrationData {
 export async function saveRegistration(data: RegistrationData) {
   try {
     const client = await clientPromise;
-    const db = client.db(); // dbName is now inferred from the connection options
+    const db = client.db(); 
     const collection = db.collection('registrations');
 
-    const result = await collection.insertOne({
-      ...data,
+    // Do not save the large base64 content to MongoDB.
+    // This is the root cause of the failure, as it exceeds the 16MB document limit.
+    const { fileContent, ...screenshotMetadata } = data.paymentScreenshot;
+
+    const registrationDocument = {
       _id: randomUUID(),
       status: 'pending_verification',
       createdAt: new Date(),
-    });
+      name: data.name,
+      registrationNumber: data.registrationNumber,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      upiId: data.upiId,
+      paymentScreenshot: screenshotMetadata, // Save only metadata
+    };
+
+    const result = await collection.insertOne(registrationDocument);
 
     return { success: true, insertedId: result.insertedId };
   } catch (e: any) {
-    // Log the detailed error on the server for diagnostics
     console.error('Detailed error saving to MongoDB:', e);
-    // Throw a generic error to the client to avoid leaking implementation details
     throw new Error('Failed to save registration.');
   }
 }
