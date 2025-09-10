@@ -173,7 +173,7 @@ export default function Home() {
                   variant="glass"
                   className="h-14 px-12 text-lg font-bold"
                 >
-                  <Link href="/register">Secure your Spot now</Link>
+                  <Link href="/register">Secure Your Spot Now</Link>
                 </Button>
               </div>
             </div>
@@ -438,7 +438,10 @@ export default function Home() {
               </p>
               <div className="mt-8">
                 <Button asChild size="lg" variant="glass">
-                  <Link href="/register">REGISTER NOW!</Link>
+                  <Link href="/register">
+                    REGISTER NOW!
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
               </div>
             </div>

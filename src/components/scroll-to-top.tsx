@@ -30,13 +30,16 @@ export function ScrollToTop() {
 
   return (
     <Button
-      variant="outline"
+      variant="glass"
       size="icon"
       onClick={scrollToTop}
       className={cn(
-        'fixed bottom-8 right-8 z-50 h-12 w-12 rounded-full bg-primary text-primary-foreground transition-opacity hover:bg-primary/90',
+        'fixed bottom-8 right-8 z-50 h-12 w-12 transition-opacity',
         isVisible ? 'opacity-100' : 'opacity-0'
       )}
+      style={{
+        clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+      }}
       aria-label="Take me up"
     >
       <ArrowUp className="h-6 w-6" />
