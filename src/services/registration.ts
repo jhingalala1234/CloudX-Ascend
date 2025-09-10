@@ -1,7 +1,7 @@
 
 'use server';
 
-import clientPromise from '@/lib/server/mongodb';
+import { createMongoClient } from '@/lib/server/mongodb';
 import { randomUUID } from 'crypto';
 
 interface RegistrationData {
@@ -19,13 +19,15 @@ interface RegistrationData {
 }
 
 export async function saveRegistration(data: RegistrationData) {
+  const client = createMongoClient();
+  
   try {
-    const client = await clientPromise;
+    await client.connect();
     const db = client.db(); 
     const collection = db.collection('registrations');
 
     // Do not save the large base64 content to MongoDB.
-    // This is the root cause of the failure, as it exceeds the 16MB document limit.
+    // This can exceed the 16MB document limit.
     const { fileContent, ...screenshotMetadata } = data.paymentScreenshot;
 
     const registrationDocument = {
@@ -46,6 +48,8 @@ export async function saveRegistration(data: RegistrationData) {
   } catch (e: any) {
     console.error('Detailed error saving to MongoDB:', e);
     throw new Error('Failed to save registration.');
+  } finally {
+    // Ensure the client is closed after the operation is complete.
+    await client.close();
   }
 }
-
