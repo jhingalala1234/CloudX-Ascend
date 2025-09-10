@@ -1,9 +1,7 @@
 
 'use server';
 
-// This service is temporarily disabled.
-// The Firebase Admin SDK needs to be reconfigured with credentials
-// for the new Firebase project before this service can function correctly.
+import { firestore, storage } from '@/lib/server/firebase-admin';
 
 interface RegistrationData {
   name: string;
@@ -19,9 +17,47 @@ interface RegistrationData {
 }
 
 export async function saveRegistration(data: RegistrationData) {
-  console.log("Registration service is temporarily disabled. Data was not saved.", data);
-  // This function is disabled until the server is correctly configured
-  // with a new service account key for the new Firebase project.
-  // throw new Error('Registration functionality is currently disabled pending server reconfiguration.');
-  return { success: true, insertedId: 'temp-id-replace-later' };
+  try {
+    // 1. Upload the image to Firebase Storage
+    const { base64, contentType, fileName } = data.paymentScreenshot;
+    
+    // Remove the data URI prefix
+    const base64Data = base64.split(';base64,').pop();
+    if (!base64Data) {
+      throw new Error('Invalid Base64 data for screenshot.');
+    }
+
+    const buffer = Buffer.from(base64Data, 'base64');
+    const filePath = `screenshots/${Date.now()}-${fileName}`;
+    const file = storage.file(filePath);
+
+    await file.save(buffer, {
+      metadata: {
+        contentType: contentType,
+      },
+    });
+
+    // Make the file public and get its URL
+    await file.makePublic();
+    const screenshotUrl = file.publicUrl();
+
+    // 2. Save registration data to Firestore
+    const registrationDoc = {
+      name: data.name,
+      registrationNumber: data.registrationNumber,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      upiId: data.upiId,
+      screenshotUrl: screenshotUrl,
+      createdAt: new Date(),
+      status: 'pending_verification',
+    };
+
+    const docRef = await firestore.collection('registrations').add(registrationDoc);
+
+    return { success: true, insertedId: docRef.id };
+  } catch (error) {
+    console.error('Error saving registration to Firebase:', error);
+    throw new Error('Failed to save registration.');
+  }
 }
