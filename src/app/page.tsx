@@ -564,10 +564,10 @@ export default function Home() {
                 © 2025 | CloudX-SRMIST. All Rights Reserved.
               </p>
               <div className="flex justify-center gap-6 mt-4">
-                  <Link href="https://www.linkedin.com/company/cloudx-srmist/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[#0077B5] transition-colors"><Linkedin className="h-6 w-6" /></Link>
-                  <Link href="https://github.com/CloudX-SRMIST" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors"><Github className="h-6 w-6" /></Link>
                   <Link href="mailto:cloudx.srmist@gmail.com" className="text-muted-foreground hover:text-[#EA4335] transition-colors"><Mail className="h-6 w-6" /></Link>
+                  <Link href="https://www.linkedin.com/company/cloudx-srmist/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[#0077B5] transition-colors"><Linkedin className="h-6 w-6" /></Link>
                   <Link href="https://www.instagram.com/cloudx.srmist/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[#E4405F] transition-colors"><Instagram className="h-6 w-6" /></Link>
+                  <Link href="https://github.com/CloudX-SRMIST" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors"><Github className="h-6 w-6" /></Link>
               </div>
             </div>
           </footer>
