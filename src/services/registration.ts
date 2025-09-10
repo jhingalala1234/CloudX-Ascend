@@ -20,7 +20,7 @@ interface RegistrationData {
 export async function saveRegistration(data: RegistrationData) {
   try {
     const client = await clientPromise;
-    const db = client.db('cloudx-events');
+    const db = client.db(); // dbName is now inferred from the connection options
     const collection = db.collection('registrations');
 
     const result = await collection.insertOne({
@@ -31,9 +31,10 @@ export async function saveRegistration(data: RegistrationData) {
     });
 
     return { success: true, insertedId: result.insertedId };
-  } catch (e) {
-    console.error('Failed to save registration:', e);
-    // Throwing a generic error to the client to avoid leaking implementation details
+  } catch (e: any) {
+    // Log the detailed error on the server for diagnostics
+    console.error('Detailed error saving to MongoDB:', e);
+    // Throw a generic error to the client to avoid leaking implementation details
     throw new Error('Failed to save registration.');
   }
 }

@@ -11,6 +11,7 @@ const options = {
     strict: true,
     deprecationErrors: true,
   },
+  dbName: 'cloudx-events'
 };
 
 let client: MongoClient;
