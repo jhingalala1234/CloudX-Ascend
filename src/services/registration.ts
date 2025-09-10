@@ -33,10 +33,11 @@ export async function saveRegistration(data: RegistrationData) {
       metadata: {
         contentType: contentType,
       },
-      public: true,
     });
+
+    await file.makePublic();
     
-    const screenshotUrl = `https://storage.googleapis.com/${storage.name}/${filePath}`;
+    const screenshotUrl = `https://storage.googleapis.com/${process.env.FIREBASE_STORAGE_BUCKET}/${filePath}`;
 
     const registrationDoc = {
       name: data.name,
@@ -54,6 +55,7 @@ export async function saveRegistration(data: RegistrationData) {
     return { success: true, insertedId: docRef.id };
   } catch (error) {
     console.error('Error saving registration to Firebase:', error);
-    throw new Error('Failed to save registration.');
+    throw error;
   }
 }
+
