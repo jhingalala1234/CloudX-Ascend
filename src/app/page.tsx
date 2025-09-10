@@ -437,7 +437,7 @@ export default function Home() {
                 Not Free. Not Crowded. The Cloud Doesn’t Wait — Neither Should You.
               </p>
               <div className="mt-8">
-                <Button asChild size="lg" variant="default">
+                <Button asChild size="lg" variant="glass">
                   <Link href="/register">REGISTER NOW!</Link>
                 </Button>
               </div>
