@@ -48,3 +48,4 @@ export async function saveRegistration(data: RegistrationData) {
     throw new Error('Failed to save registration.');
   }
 }
+
