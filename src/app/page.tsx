@@ -164,7 +164,7 @@ export default function Home() {
                 </h1>
               </div>
               <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
-                 Powered By Amazon Q on 25th September at iMac Lab, TP 1
+                 Powered By <span className="font-bold bg-gradient-to-r from-orange-400 to-white bg-clip-text text-transparent">Amazon Q</span> | 25th Sept, iMac Lab
               </p>
               <div className="mt-10">
                 <Button
