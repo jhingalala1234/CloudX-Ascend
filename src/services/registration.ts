@@ -31,15 +31,16 @@ export async function saveRegistration(data: RegistrationData) {
     const filePath = `screenshots/${Date.now()}-${data.registrationNumber}-${fileName}`;
     const file = storage.file(filePath);
 
+    // Correctly await the file save operation
     await file.save(buffer, {
       metadata: {
         contentType: contentType,
       },
+      public: true, // Make the file public upon upload
     });
-
-    // Make the file public and get its URL
-    await file.makePublic();
-    const screenshotUrl = file.publicUrl();
+    
+    // Get the public URL
+    const screenshotUrl = `https://storage.googleapis.com/${storage.name}/${filePath}`;
 
     // 2. Save registration data to Firestore
     const registrationDoc = {
