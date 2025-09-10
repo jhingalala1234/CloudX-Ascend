@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "apply:cors": "gcloud storage buckets update gs://cloudx-cloudascend.appspot.com --cors-file=cors.json"
+    "apply:cors": "gcloud storage buckets update gs://cloudx-cloudascend.firebasestorage.app --cors-file=cors.json"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",
