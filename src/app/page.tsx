@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
-        <header className="fixed top-0 z-50 w-full bg-background/95 shadow-md">
+        <header className="w-full bg-background/95 shadow-md">
           <div className="container mx-auto flex h-20 items-center justify-between px-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
@@ -140,10 +140,10 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="flex-1 snap-y snap-mandatory h-screen overflow-y-scroll pt-20 hide-scrollbar">
+        <main className="flex-1">
           <section
             id="home"
-            className="relative flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center overflow-hidden text-center snap-start px-4"
+            className="relative flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center overflow-hidden text-center px-4"
           >
             <div className="absolute inset-0 -z-10">
               <div className="absolute inset-0 bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
@@ -177,7 +177,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="overview" className="py-10 sm:py-16 snap-start flex items-center min-h-screen">
+          <section id="overview" className="py-20 sm:py-24">
             <div className="container mx-auto px-4 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
               <div className="space-y-6">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
@@ -203,7 +203,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="learn" className="py-10 sm:py-16 snap-start flex items-center min-h-screen">
+          <section id="learn" className="py-20 sm:py-24">
             <div className="container mx-auto text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 What You’ll Learn
@@ -249,7 +249,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="sessions" className="py-10 sm:py-16 snap-start flex items-center min-h-screen">
+          <section id="sessions" className="py-20 sm:py-24">
             <div className="container mx-auto max-w-4xl text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Deep Dive into Sessions
@@ -333,7 +333,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="py-10 text-center snap-start flex items-center">
+          <section className="py-10 text-center">
             <div className="container mx-auto px-4">
               <p className="text-lg text-muted-foreground">
                 & For the CloudX touch
@@ -347,7 +347,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="schedule" className="py-10 sm:py-16 snap-start flex items-center min-h-screen">
+          <section id="schedule" className="py-20 sm:py-24">
             <div className="container mx-auto max-w-3xl text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Workshop Schedule
@@ -426,7 +426,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="location" className="py-10 sm:py-16 snap-start flex items-center min-h-screen">
+          <section id="location" className="py-20 sm:py-24">
             <div className="container mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 md:grid-cols-2 px-4">
               <div className="flex flex-col gap-8 text-center md:text-left">
                 <div className="space-y-4">
@@ -462,7 +462,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="faq" className="py-10 sm:py-16 snap-start flex items-center min-h-screen">
+          <section id="faq" className="py-20 sm:py-24">
             <div className="mx-auto max-w-3xl container px-4">
               <h2 className="text-center font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Frequently Asked Questions
@@ -545,7 +545,7 @@ export default function Home() {
             </div>
           </section>
           
-          <footer className="border-t border-border/50 snap-start flex items-center min-h-[50vh]">
+          <footer className="border-t border-border/50">
             <div className="container mx-auto py-12 px-4 text-center text-muted-foreground">
               <div className="mb-8">
                 <Button
