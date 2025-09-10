@@ -1,8 +1,16 @@
 
 [
   {
-    "origin": ["*"],
-    "method": ["GET", "POST", "PUT", "HEAD"],
+    "origin": [
+      "https://okayhaiji.vercel.app",
+      "https://6000-firebase-studio-1757365735732.cluster-44kx2eiocbhe2tyk3zoyo3ryuo.cloudworkstations.dev"
+    ],
+    "method": [
+      "GET",
+      "POST",
+      "PUT",
+      "HEAD"
+    ],
     "responseHeader": [
       "Content-Type",
       "Access-Control-Allow-Origin"
