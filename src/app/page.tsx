@@ -163,9 +163,8 @@ export default function Home() {
                   Elevate Your Skills
                 </h1>
               </div>
-              <p className="mt-4 text-xl font-medium text-muted-foreground">Powered By <span className="font-bold bg-gradient-to-r from-orange-400 to-white bg-clip-text text-transparent">Amazon Q</span></p>
-              <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-                One Day. Two Sessions. Real Projects. Directly From Industry Mentors. 
+              <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
+                 Powered By Amazon Q on 25th September at iMac Lab, TP 1
               </p>
               <div className="mt-10">
                 <Button
