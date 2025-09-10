@@ -1,22 +1,25 @@
 
 import * as admin from 'firebase-admin';
-import serviceAccount from './google-credentials.json';
 
 let db: admin.firestore.Firestore;
 
 function initializeFirebaseAdmin() {
+  // If the app is already initialized, don't do it again
   if (admin.apps.length > 0) {
     db = admin.firestore();
     return;
   }
 
   try {
-    // The type assertion is needed because the imported JSON
-    // is not automatically recognized as a ServiceAccount type.
-    const serviceAccountInfo = serviceAccount as admin.ServiceAccount;
+    const serviceAccountJson = process.env.FIREBASE_SERVICE_ACCOUNT;
+    if (!serviceAccountJson) {
+      throw new Error('FIREBASE_SERVICE_ACCOUNT environment variable is not set.');
+    }
+    
+    const serviceAccount = JSON.parse(serviceAccountJson);
 
     admin.initializeApp({
-      credential: admin.credential.cert(serviceAccountInfo),
+      credential: admin.credential.cert(serviceAccount),
     });
     
     db = admin.firestore();
