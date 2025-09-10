@@ -89,7 +89,8 @@ export default function RegisterPage() {
     const screenshotFile = values.paymentScreenshot[0] as File;
 
     try {
-      const storageRef = ref(storage, `screenshots/${Date.now()}-${userDetails.registrationNumber}-${screenshotFile.name}`);
+      const filePath = `screenshots/${Date.now()}-${userDetails.registrationNumber}-${screenshotFile.name}`;
+      const storageRef = ref(storage, filePath);
       const uploadTask = uploadBytesResumable(storageRef, screenshotFile);
 
       uploadTask.on('state_changed',
@@ -108,7 +109,6 @@ export default function RegisterPage() {
           setUploadProgress(null);
         },
         async () => {
-          const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
           setUploadProgress(100);
 
           await saveRegistration({
@@ -117,7 +117,7 @@ export default function RegisterPage() {
             email: `${userDetails.email}@srmist.edu.in`,
             phoneNumber: `+91${userDetails.phoneNumber}`,
             upiId: values.upiId,
-            screenshotUrl: downloadURL,
+            screenshotPath: filePath,
           });
 
           router.push('/success');

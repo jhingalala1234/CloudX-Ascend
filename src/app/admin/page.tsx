@@ -11,6 +11,7 @@ import { Loader2, ExternalLink, Check, X } from 'lucide-react';
 import Link from 'next/link';
 
 import { verifyAdmin, getRegistrations, updateRegistrationStatus } from '@/services/admin';
+import { storage as adminStorage} from '@/lib/server/firebase-admin';
 
 type Registration = {
   id: string;
@@ -19,13 +20,29 @@ type Registration = {
   email: string;
   phoneNumber: string;
   upiId: string;
-  screenshotUrl: string;
+  screenshotPath: string; // Changed from screenshotUrl
   status: 'pending_verification' | 'verified' | 'rejected';
   createdAt: {
     _seconds: number;
     _nanoseconds: number;
   };
 };
+
+async function getScreenshotUrl(path: string) {
+    if (!path) return '';
+    try {
+        const file = adminStorage.bucket().file(path);
+        const [url] = await file.getSignedUrl({
+            action: 'read',
+            expires: Date.now() + 15 * 60 * 1000, // 15 minutes
+        });
+        return url;
+    } catch (error) {
+        console.error("Error getting signed URL: ", error);
+        return '';
+    }
+}
+
 
 export default function AdminPage() {
   const [username, setUsername] = useState('');
@@ -36,12 +53,31 @@ export default function AdminPage() {
 
   const [registrations, setRegistrations] = useState<Registration[]>([]);
   const [isFetchingRegistrations, setIsFetchingRegistrations] = useState(true);
+  const [screenshotUrls, setScreenshotUrls] = useState<Record<string, string>>({});
+
 
   useEffect(() => {
     if (isLoggedIn) {
       fetchRegistrations();
     }
   }, [isLoggedIn]);
+
+  useEffect(() => {
+    if (registrations.length > 0) {
+        const fetchUrls = async () => {
+            const urls: Record<string, string> = {};
+            for (const reg of registrations) {
+                if(reg.screenshotPath && !screenshotUrls[reg.id]) {
+                    const url = await getScreenshotUrl(reg.screenshotPath);
+                    urls[reg.id] = url;
+                }
+            }
+            setScreenshotUrls(prev => ({...prev, ...urls}));
+        };
+        fetchUrls();
+    }
+  }, [registrations]);
+
 
   const fetchRegistrations = async () => {
     setIsFetchingRegistrations(true);
@@ -194,11 +230,15 @@ export default function AdminPage() {
                             <td className="p-4">{reg.email}</td>
                             <td className="p-4 font-mono">{reg.upiId}</td>
                             <td className="p-4 text-center">
-                                <Link href={reg.screenshotUrl} target="_blank" rel="noopener noreferrer" title="View Screenshot">
-                                    <Button variant="outline" size="icon">
-                                        <ExternalLink className="h-4 w-4" />
-                                    </Button>
-                                </Link>
+                                {screenshotUrls[reg.id] ? (
+                                    <Link href={screenshotUrls[reg.id]} target="_blank" rel="noopener noreferrer" title="View Screenshot">
+                                        <Button variant="outline" size="icon">
+                                            <ExternalLink className="h-4 w-4" />
+                                        </Button>
+                                    </Link>
+                                ) : (
+                                    <Loader2 className="h-4 w-4 animate-spin mx-auto" />
+                                )}
                             </td>
                             <td className="p-4 text-center">
                                 <span className={`px-2 py-1 text-xs font-semibold rounded-full ${

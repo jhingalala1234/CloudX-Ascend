@@ -9,7 +9,7 @@ interface RegistrationData {
   email: string;
   phoneNumber: string;
   upiId: string;
-  screenshotUrl: string;
+  screenshotPath: string; // Changed from screenshotUrl
 }
 
 export async function saveRegistration(data: RegistrationData) {
