@@ -58,7 +58,9 @@ export const metadata: Metadata = {
     creator: `@${siteConfig.author}`,
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' },
+    ],
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
