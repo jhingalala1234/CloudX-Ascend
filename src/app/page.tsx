@@ -432,10 +432,10 @@ export default function Home() {
           <section className="py-10 text-center animate-slide-up-fade">
             <div className="container mx-auto px-4">
               <h2 className="font-headline mt-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-extrabold uppercase tracking-tighter text-transparent sm:text-5xl md:text-6xl">
-                Just 100 seats at ₹99
+                Just 100 seats at ₹99/- Each
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground md:text-xl">
-                Not free. Not crowded. The cloud doesn’t wait — neither should you.
+                Not Free. Not Crowded. The Cloud Doesn’t Wait — Neither Should You.
               </p>
             </div>
           </section>
