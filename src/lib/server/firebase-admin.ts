@@ -1,5 +1,6 @@
 
 import * as admin from 'firebase-admin';
+import serviceAccount from './google-credentials.json';
 
 let db: admin.firestore.Firestore;
 
@@ -11,8 +12,16 @@ function initializeFirebaseAdmin() {
   }
 
   try {
-    // The GOOGLE_APPLICATION_CREDENTIALS env var will be picked up automatically.
-    admin.initializeApp();
+    // The type assertion is necessary because the JSON import doesn't match the expected type perfectly.
+    const serviceAccountParams = {
+      projectId: serviceAccount.project_id,
+      clientEmail: serviceAccount.client_email,
+      privateKey: serviceAccount.private_key,
+    }
+
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccountParams)
+    });
     
     db = admin.firestore();
     console.log('Firebase Admin SDK initialized successfully.');
