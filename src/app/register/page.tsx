@@ -200,13 +200,13 @@ export default function RegisterPage() {
                         <FormItem>
                           <FormLabel>SRMIST Email</FormLabel>
                           <FormControl>
-                            <div className="flex items-center">
+                            <div className="flex items-center rounded-md border border-input focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
                               <Input
                                 placeholder="ab1234"
-                                className="rounded-r-none"
+                                className="border-0 rounded-r-none focus-visible:ring-0 focus-visible:ring-offset-0"
                                 {...field}
                               />
-                              <span className="inline-flex h-10 items-center rounded-r-md border border-l-0 border-input bg-muted px-3 text-muted-foreground">
+                              <span className="inline-flex h-10 items-center rounded-r-md border-l border-input bg-muted px-3 text-muted-foreground">
                                 @srmist.edu.in
                               </span>
                             </div>
@@ -222,14 +222,14 @@ export default function RegisterPage() {
                         <FormItem>
                           <FormLabel>Phone Number</FormLabel>
                           <FormControl>
-                            <div className="flex items-center">
-                              <span className="inline-flex h-10 items-center rounded-l-md border border-r-0 border-input bg-muted px-3 text-muted-foreground">
+                            <div className="flex items-center rounded-md border border-input focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
+                              <span className="inline-flex h-10 items-center rounded-l-md border-r border-input bg-muted px-3 text-muted-foreground">
                                 +91
                               </span>
                               <Input
                                 type="tel"
                                 placeholder="9876543210"
-                                className="rounded-l-none"
+                                className="border-0 rounded-l-none focus-visible:ring-0 focus-visible:ring-offset-0"
                                 {...field}
                               />
                             </div>
