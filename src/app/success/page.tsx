@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Linkedin, Github, Mail, Instagram } from 'lucide-react';
 import Image from 'next/image';
 
 export default function SuccessPage() {
@@ -25,10 +25,19 @@ export default function SuccessPage() {
                 <div className="flex justify-center">
                     <CheckCircle className="h-20 w-20 text-green-500" />
                 </div>
-                <h1 className="text-3xl font-bold text-primary">Registration Successful!</h1>
+                <h1 className="text-3xl font-bold text-primary">Registration Submitted!</h1>
                 <p className="text-muted-foreground">
-                    Thank you for registering. Your spot is secured pending payment verification. You will receive a confirmation email shortly.
+                    Thank you! Your ticket will be sent to your registered email address by the end of the day after we verify your payment.
                 </p>
+                <div className="text-sm text-muted-foreground pt-4">
+                    <p>In case of any issues or questions, feel free to reach out to us on our socials.</p>
+                     <div className="flex justify-center gap-6 mt-4">
+                        <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="h-6 w-6" /></Link>
+                        <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Github className="h-6 w-6" /></Link>
+                        <Link href="mailto:example@example.com" className="text-muted-foreground hover:text-primary transition-colors"><Mail className="h-6 w-6" /></Link>
+                        <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="h-6 w-6" /></Link>
+                    </div>
+                </div>
                 <Button asChild>
                     <Link href="/">Return to Homepage</Link>
                 </Button>
