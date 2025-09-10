@@ -252,7 +252,7 @@ export default function Home() {
           <section id="sessions" className="py-10 sm:py-16 snap-start flex items-center min-h-screen">
             <div className="container mx-auto max-w-4xl text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
-                Deep Dive Sessions
+                Deep Dive into Sessions
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
                 Our expert-led sessions are designed to give you hands-on experience and deep insights.
@@ -261,10 +261,10 @@ export default function Home() {
                 <Card className="overflow-hidden md:grid md:grid-cols-3">
                   <div className="md:col-span-2">
                      <CardHeader>
-                      <CardTitle className="text-2xl text-accent">Session 01: CloudSteps</CardTitle>
+                      <CardTitle className="text-2xl text-accent">Session 01 : CloudSteps</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <p className="text-muted-foreground">Your first steps into the cloud. Begin with the essentials, then dive into building a data lake on AWS, while gaining practical exposure to Docker and Kubernetes.</p>
+                      <p className="text-muted-foreground">Kick off your cloud journey by mastering AWS fundamentals and core data concepts. Then, get hands-on with building and managing a data lake on AWS.</p>
                       <div className="flex items-center gap-4">
                         <Avatar>
                           <AvatarImage src="/speakers/speaker1.jpeg" alt="Abinaya S V" />
@@ -287,10 +287,9 @@ export default function Home() {
                   <div className="bg-muted/50 p-6 md:col-span-1">
                     <h4 className="font-bold text-lg mb-2">Key Takeaways</h4>
                     <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                      <li>Grasp core AWS services and concepts</li>
-                      <li>Build and manage a functional data lake</li>
-                      <li>Containerize applications with Docker</li>
-                      <li>Orchestrate workloads with Kubernetes basics</li>
+                      <li>Grasp AWS cloud fundamentals.</li>
+                      <li>Learn the basics of data types and concepts.</li>
+                      <li>Build and manage a functional data lake on AWS.</li>
                     </ul>
                   </div>
                 </Card>
@@ -298,7 +297,7 @@ export default function Home() {
                 <Card className="overflow-hidden md:grid md:grid-cols-3">
                    <div className="md:col-span-2">
                      <CardHeader>
-                      <CardTitle className="text-2xl text-accent">Session 02: CloudUnlocked</CardTitle>
+                      <CardTitle className="text-2xl text-accent">Session 02 : CloudUnlocked</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <p className="text-muted-foreground">Step into the future of development with the AWS Q CLI, a generative AI assistant built for the command line. Learn how to use AI to build, debug, and automate faster than ever.</p>
