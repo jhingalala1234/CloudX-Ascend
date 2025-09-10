@@ -38,7 +38,7 @@ export function ScrollToTop() {
         isVisible ? 'opacity-100' : 'opacity-0'
       )}
       style={{
-        clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+        clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)',
       }}
       aria-label="Take me up"
     >
