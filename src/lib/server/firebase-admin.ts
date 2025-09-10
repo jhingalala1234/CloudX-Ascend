@@ -1,18 +1,22 @@
 
 import admin from 'firebase-admin';
-import serviceAccount from './google-credentials.json';
 
 // This check prevents the app from being initialized multiple times
 if (!admin.apps.length) {
   try {
+    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+
+    if (!process.env.FIREBASE_PROJECT_ID || !process.env.FIREBASE_CLIENT_EMAIL || !privateKey) {
+        throw new Error('Firebase environment variables are not set.');
+    }
+
     admin.initializeApp({
-      // We pass the entire service account object to `cert`.
-      // The `private_key` is explicitly corrected to handle the newline characters.
       credential: admin.credential.cert({
-        ...serviceAccount,
-        private_key: serviceAccount.private_key.replace(/\\n/g, '\n'),
+        projectId: process.env.FIREBASE_PROJECT_ID,
+        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+        privateKey: privateKey,
       }),
-      storageBucket: `${serviceAccount.project_id}.appspot.com`,
+      storageBucket: `${process.env.FIREBASE_PROJECT_ID}.appspot.com`,
     });
   } catch (error: any) {
     console.error('Firebase admin initialization error', error.stack);
