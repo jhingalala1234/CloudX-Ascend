@@ -152,7 +152,7 @@ export default function Home() {
               <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                 AWS Ascend
                 <br />
-                <span className="inline-flex items-center gap-4 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                <span className="inline-flex items-center justify-center gap-4 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                   Elevate Your Skills <Rocket className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20" />
                 </span>
               </h1>
