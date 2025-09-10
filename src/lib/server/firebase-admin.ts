@@ -2,30 +2,27 @@
 import admin from 'firebase-admin';
 import serviceAccount from './google-credentials.json';
 
-let app: admin.app.App;
-
+// This check prevents the app from being initialized multiple times
 if (!admin.apps.length) {
   try {
-    const privateKey = (serviceAccount as any).private_key.replace(/\\n/g, '\n');
-
-    app = admin.initializeApp({
+    admin.initializeApp({
+      // We pass the entire service account object to `cert`.
+      // The `private_key` is explicitly corrected to handle the newline characters.
       credential: admin.credential.cert({
-        projectId: serviceAccount.project_id,
-        clientEmail: serviceAccount.client_email,
-        privateKey,
+        ...serviceAccount,
+        private_key: serviceAccount.private_key.replace(/\\n/g, '\n'),
       }),
       storageBucket: `${serviceAccount.project_id}.appspot.com`,
     });
-  } catch (e: any) {
-    console.error('Firebase admin initialization error', e.stack);
+  } catch (error: any) {
+    console.error('Firebase admin initialization error', error.stack);
     throw new Error('Failed to initialize Firebase Admin SDK.');
   }
-} else {
-  app = admin.app();
 }
 
-const firestore = admin.firestore(app);
-const auth = admin.auth(app);
-const storage = admin.storage(app).bucket();
+// Export the initialized services
+const firestore = admin.firestore();
+const auth = admin.auth();
+const storage = admin.storage().bucket();
 
-export { app, firestore, auth, storage };
+export { firestore, auth, storage };
