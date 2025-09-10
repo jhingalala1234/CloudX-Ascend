@@ -237,7 +237,7 @@ export default function Home() {
                 <Card className="transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                   <CardHeader>
                     <Zap className="mb-4 h-10 w-10 text-primary" />
-                    <CardTitle>Generative AI with AWS Q</CardTitle>
+                    <CardTitle>Gen-AI with AWS Q</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
@@ -438,7 +438,9 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex items-center gap-4 text-left">
-                  <MapPin className="h-12 w-12 flex-shrink-0 text-primary" />
+                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-accent">
+                    <MapPin className="h-8 w-8 text-primary" />
+                  </div>
                   <div>
                     <h4 className="text-xl font-bold">Our Venue</h4>
                     <p className="text-muted-foreground">
