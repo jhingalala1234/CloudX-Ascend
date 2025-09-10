@@ -9,6 +9,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+
 
 import { Button } from '@/components/ui/button';
 import {
@@ -34,6 +36,8 @@ import {
 } from '@/components/ui/alert-dialog';
 import { Label } from '@/components/ui/label';
 import { saveRegistration } from '@/services/registration';
+import { storage } from '@/lib/firebase';
+import { Progress } from '@/components/ui/progress';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -48,15 +52,6 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-const fileToBase64 = (file: File): Promise<string> =>
-  new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result as string);
-    reader.onerror = (error) => reject(error);
-  });
-
-
 export default function RegisterPage() {
   const { toast } = useToast();
   const router = useRouter();
@@ -64,6 +59,8 @@ export default function RegisterPage() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState<FormData | null>(null);
   const [upiId, setUpiId] = useState('');
+  const [uploadProgress, setUploadProgress] = useState<number | null>(null);
+
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -94,25 +91,48 @@ export default function RegisterPage() {
     
     setIsDialogOpen(false);
     setIsSubmitting(true);
-    
-    const screenshotFile = formData.paymentScreenshot[0];
-    const screenshotBase64 = await fileToBase64(screenshotFile);
+    setUploadProgress(0);
+
+    const screenshotFile = formData.paymentScreenshot[0] as File;
 
     try {
-      await saveRegistration({
-        name: formData.name,
-        registrationNumber: formData.registrationNumber,
-        email: `${formData.email}@srmist.edu.in`,
-        phoneNumber: `+91${formData.phoneNumber}`,
-        upiId: upiId,
-        paymentScreenshot: {
-            fileName: screenshotFile.name,
-            contentType: screenshotFile.type,
-            base64: screenshotBase64,
-        },
-      });
+      // 1. Upload file to Firebase Storage on the client-side
+      const storageRef = ref(storage, `screenshots/${Date.now()}-${formData.registrationNumber}-${screenshotFile.name}`);
+      const uploadTask = uploadBytesResumable(storageRef, screenshotFile);
 
-      router.push('/success');
+      uploadTask.on('state_changed',
+        (snapshot) => {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setUploadProgress(progress);
+        },
+        (error) => {
+          console.error("Upload failed:", error);
+          toast({
+            title: 'Upload Failed',
+            description: 'Could not upload your screenshot. Please try again.',
+            variant: 'destructive',
+          });
+          setIsSubmitting(false);
+          setUploadProgress(null);
+        },
+        async () => {
+          // 2. Get the download URL
+          const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+          setUploadProgress(100);
+
+          // 3. Save registration data with the URL to Firestore via Server Action
+          await saveRegistration({
+            name: formData.name,
+            registrationNumber: formData.registrationNumber,
+            email: `${formData.email}@srmist.edu.in`,
+            phoneNumber: `+91${formData.phoneNumber}`,
+            upiId: upiId,
+            screenshotUrl: downloadURL,
+          });
+
+          router.push('/success');
+        }
+      );
 
     } catch (error) {
       console.error('Registration failed:', error);
@@ -122,8 +142,8 @@ export default function RegisterPage() {
           'There was a problem submitting your registration. Please try again.',
         variant: 'destructive',
       });
-    } finally {
-      setIsSubmitting(false);
+       setIsSubmitting(false);
+       setUploadProgress(null);
     }
   }
 
@@ -253,13 +273,18 @@ export default function RegisterPage() {
                                       Upload the screenshot of your ₹99 payment.
                                   </FormDescription>
                                   <FormControl>
-                                  <Input type="file" {...fileRef} />
+                                  <Input type="file" {...fileRef} accept="image/png, image/jpeg, image/jpg" />
                                   </FormControl>
                                   <FormMessage />
                               </FormItem>
                               )}
                           />
-                          
+                          {isSubmitting && uploadProgress !== null && (
+                            <div className="space-y-1">
+                                <Label>Uploading...</Label>
+                                <Progress value={uploadProgress} className="w-full" />
+                            </div>
+                          )}
                           <Button type="submit" className="w-full" disabled={isSubmitting}>
                               {isSubmitting ? (
                                   <>
@@ -280,7 +305,7 @@ export default function RegisterPage() {
           </main>
       </div>
 
-      <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+      <AlertDialog open={isDialogOpen} onOpenChange={(open) => !isSubmitting && setIsDialogOpen(open)}>
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Verify Payment</AlertDialogTitle>
@@ -300,8 +325,8 @@ export default function RegisterPage() {
           </div>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={handleFinalSubmit} disabled={!upiId}>
-              Submit Registration
+            <AlertDialogAction onClick={handleFinalSubmit} disabled={!upiId || isSubmitting}>
+               {isSubmitting ? 'Please wait...' : 'Submit Registration'}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

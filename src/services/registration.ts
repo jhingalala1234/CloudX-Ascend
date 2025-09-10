@@ -1,7 +1,7 @@
 
 'use server';
 
-import { firestore, storage } from '@/lib/server/firebase-admin';
+import { firestore } from '@/lib/server/firebase-admin';
 
 interface RegistrationData {
   name: string;
@@ -9,52 +9,18 @@ interface RegistrationData {
   email: string;
   phoneNumber: string;
   upiId: string;
-  paymentScreenshot: {
-    fileName: string;
-    contentType: string;
-    base64: string;
-  };
+  screenshotUrl: string;
 }
 
 export async function saveRegistration(data: RegistrationData) {
   try {
-    const { base64, contentType, fileName } = data.paymentScreenshot;
-    
-    const base64Data = base64.split(';base64,').pop();
-    if (!base64Data) {
-      throw new Error('Invalid Base64 data for screenshot.');
-    }
-    
-    const buffer = Buffer.from(base64Data, 'base64');
-    
-    // Explicitly define the bucket name to ensure the correct bucket is used.
-    const bucketName = 'cloud-ascend-cloudx.firebasestorage.app';
-    const bucket = storage.bucket(bucketName);
-    
-    const filePath = `screenshots/${Date.now()}-${data.registrationNumber}-${fileName}`;
-    const file = bucket.file(filePath);
-
-    await file.save(buffer, {
-      metadata: {
-        contentType: contentType,
-      },
-    });
-
-    // Instead of making the file public, generate a long-lived signed URL.
-    // This respects the "public access prevention" policy.
-    const [signedUrl] = await file.getSignedUrl({
-      action: 'read',
-      // Set a very distant expiration date.
-      expires: '01-01-2100', 
-    });
-
     const registrationDoc = {
       name: data.name,
       registrationNumber: data.registrationNumber,
       email: data.email,
       phoneNumber: data.phoneNumber,
       upiId: data.upiId,
-      screenshotUrl: signedUrl, // Save the signed URL
+      screenshotUrl: data.screenshotUrl, // We now receive the direct download URL
       createdAt: new Date(),
       status: 'pending_verification',
     };
