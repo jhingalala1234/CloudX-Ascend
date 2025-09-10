@@ -24,9 +24,13 @@ export async function saveRegistration(data: RegistrationData) {
     if (!base64Data) {
       throw new Error('Invalid Base64 data for screenshot.');
     }
-
+    
     const buffer = Buffer.from(base64Data, 'base64');
-    const bucket = storage.bucket();
+    
+    // Explicitly define the bucket name to ensure the correct bucket is used.
+    const bucketName = 'cloud-ascend-cloudx.firebasestorage.app';
+    const bucket = storage.bucket(bucketName);
+    
     const filePath = `screenshots/${Date.now()}-${data.registrationNumber}-${fileName}`;
     const file = bucket.file(filePath);
 
@@ -56,6 +60,7 @@ export async function saveRegistration(data: RegistrationData) {
     return { success: true, insertedId: docRef.id };
   } catch (error) {
     console.error('Error saving registration to Firebase:', error);
+    // Re-throw the original error to get a detailed stack trace on the client.
     throw error;
   }
 }
