@@ -174,10 +174,7 @@ export default function Home() {
                   variant="glass"
                   className="h-14 px-12 text-lg font-bold"
                 >
-                  <Link href="/register">
-                    Register
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
+                  <Link href="/register">Secure your Spot now</Link>
                 </Button>
               </div>
             </div>
@@ -555,19 +552,6 @@ export default function Home() {
           
           <footer className="border-t border-border/50 animate-fade-in">
             <div className="container mx-auto pt-12 pb-8 px-4 text-center text-muted-foreground">
-              <div className="mb-8">
-                <Button
-                  asChild
-                  size="lg"
-                  variant="glass"
-                  className="h-14 px-12 text-lg font-bold"
-                >
-                  <Link href="/register">
-                    Register
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-              </div>
               <p className="text-sm">
                 © 2025 | CloudX-SRMIST. All Rights Reserved.
               </p>
