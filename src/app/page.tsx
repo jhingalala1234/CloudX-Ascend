@@ -333,15 +333,15 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="py-20 text-center snap-start flex items-center">
+          <section className="py-10 text-center snap-start flex items-center">
             <div className="container mx-auto px-4">
               <p className="text-lg text-muted-foreground">
                 & For the CloudX touch
               </p>
-              <h2 className="font-headline mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-extrabold uppercase tracking-tighter text-transparent sm:text-5xl md:text-6xl">
+              <h2 className="font-headline mt-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-extrabold uppercase tracking-tighter text-transparent sm:text-5xl md:text-6xl">
                 NO PRIOR KNOWLEDGE REQUIRED
               </h2>
-              <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
+              <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground md:text-xl">
                 Don’t worry if you don’t know anything. Bring your Laptop & we'll have you covered.
               </p>
             </div>
@@ -469,7 +469,7 @@ export default function Home() {
               </h2>
               <Accordion type="single" collapsible className="mt-12 w-full">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger className="text-lg">
+                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
                     Who can attend this workshop?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
@@ -479,8 +479,8 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger className="text-lg">
-                    Any Pre-requisite knowledge required?
+                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
+                    Any Pre-requisites?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
                     Not at all. This workshop is designed to take you from
@@ -489,7 +489,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                  <AccordionTrigger className="text-lg">
+                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
                     What should I bring?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
@@ -499,7 +499,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
-                  <AccordionTrigger className="text-lg">
+                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
                     What’s included in the ticket?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
@@ -514,7 +514,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-5">
-                  <AccordionTrigger className="text-lg">
+                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
                     Will I get a certificate?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
@@ -523,7 +523,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-7">
-                  <AccordionTrigger className="text-lg">
+                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
                     Can I network with the speakers?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
@@ -533,7 +533,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                  <AccordionItem value="item-8">
-                  <AccordionTrigger className="text-lg">
+                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
                     How do I register?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
