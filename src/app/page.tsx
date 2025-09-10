@@ -169,7 +169,7 @@ export default function Home() {
                   className="h-14 px-12 text-lg font-bold"
                 >
                   <Link href="/register">
-                    Secure Your Spot Now
+                    Register
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -177,7 +177,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="overview" className="py-20 sm:py-24 animate-slide-up-fade">
+          <section id="overview" className="py-16 sm:py-24 animate-slide-up-fade">
             <div className="container mx-auto px-4 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
               <div className="space-y-6">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
@@ -192,7 +192,7 @@ export default function Home() {
               </div>
               <div>
                 <Image
-                  src="https://picsum.photos/600/400"
+                  src="https://picsum.photos/seed/1/600/400"
                   width={600}
                   height={400}
                   alt="Workshop in session"
@@ -203,7 +203,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="learn" className="py-20 sm:py-24 animate-slide-up-fade">
+          <section id="learn" className="py-16 sm:py-24 animate-slide-up-fade">
             <div className="container mx-auto text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 What You’ll Learn
@@ -249,7 +249,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="sessions" className="py-20 sm:py-24 animate-slide-up-fade">
+          <section id="sessions" className="py-16 sm:py-24 animate-slide-up-fade">
             <div className="container mx-auto max-w-4xl text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Deep Dive into Sessions
@@ -284,7 +284,7 @@ export default function Home() {
                       </div>
                     </CardContent>
                   </div>
-                  <div className="bg-muted/50 p-6 md:col-span-1">
+                  <div className="bg-muted/50 p-6 md:col-span-1 flex flex-col justify-center">
                     <h4 className="font-bold text-lg mb-2">Key Takeaways</h4>
                     <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                       <li>Grasp AWS cloud fundamentals.</li>
@@ -320,7 +320,7 @@ export default function Home() {
                       </div>
                     </CardContent>
                   </div>
-                   <div className="bg-muted/50 p-6 md:col-span-1">
+                   <div className="bg-muted/50 p-6 md:col-span-1 flex flex-col justify-center">
                     <h4 className="font-bold text-lg mb-2">Key Takeaways</h4>
                     <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                       <li>Understand Gen-AI Fundamentals</li>
@@ -347,7 +347,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="schedule" className="py-20 sm:py-24 animate-slide-up-fade">
+          <section id="schedule" className="py-16 sm:py-24 animate-slide-up-fade">
             <div className="container mx-auto max-w-3xl text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Workshop Schedule
@@ -357,7 +357,7 @@ export default function Home() {
                 evening wrap-up.
               </p>
               <ul className="mt-12 space-y-8 text-left">
-                <li className="flex items-start gap-6">
+                <li className="flex items-start gap-4 sm:gap-6">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
                     <Star className="h-6 w-6" />
                   </div>
@@ -370,7 +370,7 @@ export default function Home() {
                     </p>
                   </div>
                 </li>
-                <li className="flex items-start gap-6">
+                <li className="flex items-start gap-4 sm:gap-6">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
                     <Cloud className="h-6 w-6" />
                   </div>
@@ -383,7 +383,7 @@ export default function Home() {
                     </p>
                   </div>
                 </li>
-                 <li className="flex items-start gap-6">
+                 <li className="flex items-start gap-4 sm:gap-6">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary/80 text-primary-foreground">
                      <Utensils className="h-6 w-6" />
                   </div>
@@ -396,7 +396,7 @@ export default function Home() {
                     </p>
                   </div>
                 </li>
-                <li className="flex items-start gap-6">
+                <li className="flex items-start gap-4 sm:gap-6">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
                     <Zap className="h-6 w-6" />
                   </div>
@@ -409,7 +409,7 @@ export default function Home() {
                     </p>
                   </div>
                 </li>
-                <li className="flex items-start gap-6">
+                <li className="flex items-start gap-4 sm:gap-6">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
                     <Gift className="h-6 w-6" />
                   </div>
@@ -426,7 +426,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="location" className="py-20 sm:py-24 animate-slide-up-fade">
+          <section id="location" className="py-16 sm:py-24 animate-slide-up-fade">
             <div className="container mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 md:grid-cols-2 px-4">
               <div className="flex flex-col gap-8 text-center md:text-left">
                 <div className="space-y-4">
@@ -449,11 +449,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-full">
+              <div className="aspect-video w-full">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2856053880896!2d80.04248560906781!3d12.824811887424941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70ce1c18cd9%3A0xffb39775f24c16e9!2sTech%20Park%20Building%2C%20SRM%20University%2C%20Potheri%2C%20SRM%20Nagar%2C%20Kattankulathur%2C%20Tamil%20Nadu%20603203!5e0!3m2!1sen!2sin!4v1757371884091!5m2!1sen!2sin"
                   width="100%"
-                  height="300"
+                  height="100%"
                   style={{ border: 0 }}
                   allowFullScreen={true}
                   loading="lazy"
@@ -464,14 +464,14 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="faq" className="py-20 sm:py-24 animate-slide-up-fade">
+          <section id="faq" className="py-16 sm:py-24 animate-slide-up-fade">
             <div className="mx-auto max-w-3xl container px-4">
               <h2 className="text-center font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Frequently Asked Questions
               </h2>
               <Accordion type="single" collapsible className="mt-12 w-full">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
+                  <AccordionTrigger className="text-lg hover:no-underline">
                     Who can attend this workshop?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
@@ -481,7 +481,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
+                  <AccordionTrigger className="text-lg hover:no-underline">
                     Any Pre-requisites?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
@@ -491,7 +491,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
+                  <AccordionTrigger className="text-lg hover:no-underline">
                     What should I bring?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
@@ -501,7 +501,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
-                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
+                  <AccordionTrigger className="text-lg hover:no-underline">
                     What’s included in the ticket?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
@@ -516,7 +516,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-5">
-                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
+                  <AccordionTrigger className="text-lg hover:no-underline">
                     Will I get a certificate?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
@@ -525,7 +525,7 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-7">
-                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
+                  <AccordionTrigger className="text-lg hover:no-underline">
                     Can I network with the speakers?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
@@ -535,11 +535,11 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
                  <AccordionItem value="item-8">
-                  <AccordionTrigger className="text-lg no-underline hover:no-underline">
+                  <AccordionTrigger className="text-lg hover:no-underline">
                     How do I register?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
-                    Click the “Secure Your Spot Now” button on this page and secure
+                    Click the “Register” button on this page and secure
                     your seat. Seats are limited and expected to fill fast.
                   </AccordionContent>
                 </AccordionItem>
@@ -557,7 +557,7 @@ export default function Home() {
                   className="h-14 px-12 text-lg font-bold"
                 >
                   <Link href="/register">
-                    Secure Your Spot Now
+                    Register
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>

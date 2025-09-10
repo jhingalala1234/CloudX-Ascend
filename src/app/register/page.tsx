@@ -155,8 +155,8 @@ export default function RegisterPage() {
           </div>
         </header>
 
-        <main className="flex-1 flex items-center justify-center pt-20">
-          <div className="w-full max-w-lg p-8 space-y-6 bg-card text-card-foreground rounded-lg shadow-lg animate-slide-up-fade">
+        <main className="flex-1 flex items-center justify-center pt-20 px-4">
+          <div className="w-full max-w-lg p-6 sm:p-8 space-y-6 bg-card text-card-foreground rounded-lg shadow-lg animate-slide-up-fade">
 
             {/* Step 1: User Details Form */}
             {step === 1 && (
@@ -200,10 +200,10 @@ export default function RegisterPage() {
                         <FormItem>
                           <FormLabel>SRMIST Email</FormLabel>
                           <FormControl>
-                            <div className="flex items-center rounded-md border border-input focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background">
+                            <div className="flex items-center rounded-md border border-input bg-background focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background">
                               <Input
                                 placeholder="ab1234"
-                                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+                                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 flex-1"
                                 {...field}
                               />
                               <span className="h-10 items-center bg-transparent px-3 text-muted-foreground flex">
@@ -222,14 +222,14 @@ export default function RegisterPage() {
                         <FormItem>
                           <FormLabel>Phone Number</FormLabel>
                           <FormControl>
-                            <div className="flex items-center rounded-md border border-input focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background">
+                            <div className="flex items-center rounded-md border border-input bg-background focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background">
                               <span className="h-10 items-center bg-transparent px-3 text-muted-foreground flex">
                                 +91
                               </span>
                               <Input
                                 type="tel"
                                 placeholder="9876543210"
-                                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+                                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 flex-1"
                                 {...field}
                               />
                             </div>
@@ -356,5 +356,3 @@ export default function RegisterPage() {
     </>
   );
 }
-
-    

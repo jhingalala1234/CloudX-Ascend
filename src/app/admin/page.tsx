@@ -49,7 +49,6 @@ export default function AdminPage() {
     if (registrations.length > 0) {
         const fetchUrls = async () => {
             const urls: Record<string, string> = {};
-            // Use Promise.all to fetch URLs in parallel for better performance
             await Promise.all(registrations.map(async (reg) => {
                 if (reg.screenshotPath && !screenshotUrls[reg.id]) {
                     try {
@@ -57,7 +56,7 @@ export default function AdminPage() {
                         urls[reg.id] = url;
                     } catch (error) {
                         console.error(`Failed to get URL for ${reg.screenshotPath}:`, error);
-                        urls[reg.id] = ''; // Store empty string on error
+                        urls[reg.id] = ''; 
                     }
                 }
             }));
@@ -72,7 +71,6 @@ export default function AdminPage() {
     setIsFetchingRegistrations(true);
     try {
       const fetchedRegistrations = await getRegistrations() as Registration[];
-      // Sort registrations by creation date, newest first.
       const sortedRegistrations = fetchedRegistrations.sort((a, b) => {
         const dateA = a.createdAt?._seconds || 0;
         const dateB = b.createdAt?._seconds || 0;
@@ -117,7 +115,6 @@ export default function AdminPage() {
   };
 
   const handleStatusUpdate = async (id: string, status: 'verified' | 'rejected') => {
-    // Optimistic UI update
     const originalRegistrations = [...registrations];
     setRegistrations(regs => regs.map(r => r.id === id ? { ...r, status } : r));
 
@@ -128,7 +125,6 @@ export default function AdminPage() {
         description: `The attendee has been marked as ${status}.`,
       });
     } catch (error) {
-      // Revert UI on failure
       setRegistrations(originalRegistrations);
       toast({
         title: 'Update Failed',
@@ -140,7 +136,7 @@ export default function AdminPage() {
   
   if (!isLoggedIn) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      <div className="flex min-h-screen items-center justify-center bg-background p-4">
         <Card className="w-full max-w-sm animate-slide-up-fade">
           <CardHeader>
             <CardTitle className="text-center text-2xl text-primary">Admin Login</CardTitle>
@@ -182,9 +178,9 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-4 sm:p-8">
+    <div className="min-h-screen bg-background text-foreground p-4 sm:p-6 md:p-8">
       <div className="container mx-auto animate-fade-in">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-8">
             <h1 className="text-3xl font-bold text-primary">Admin Dashboard</h1>
             <Button onClick={fetchRegistrations} disabled={isFetchingRegistrations}>
                 {isFetchingRegistrations ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
@@ -199,8 +195,8 @@ export default function AdminPage() {
         ) : (
           <Card className="animate-slide-up-fade">
             <CardContent className="p-0">
-                <div className="overflow-x-auto">
-                <table className="w-full text-sm">
+                <div className="overflow-x-auto hide-scrollbar">
+                <table className="w-full text-sm whitespace-nowrap">
                     <thead className="bg-muted/50">
                     <tr className="border-b border-border">
                         <th className="p-4 text-left font-medium">Name</th>
@@ -270,5 +266,3 @@ export default function AdminPage() {
     </div>
   );
 }
-
-    
