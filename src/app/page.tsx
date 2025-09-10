@@ -30,6 +30,12 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollToTop } from '@/components/scroll-to-top';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AWS Ascend: Cloud, Data & AI Workshop',
+  description: 'Join AWS Ascend for a hands-on workshop on AWS, Data Lakes, and Generative AI with Amazon Q. Perfect for beginners and enthusiasts. Hosted by AWS Community Builders.',
+}
 
 export default function Home() {
   return (
@@ -98,7 +104,7 @@ export default function Home() {
                     <span className="sr-only">Toggle navigation menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right">
+                <SheetContent side="right" className="w-full max-w-xs">
                   <div className="grid gap-6 p-6">
                      <Link href="/" className="flex items-center gap-2">
                       <Image
@@ -177,7 +183,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="overview" className="py-16 sm:py-24 animate-slide-up-fade">
+          <section id="overview" className="py-12 sm:py-20 animate-slide-up-fade">
             <div className="container mx-auto px-4 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
               <div className="space-y-6">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
@@ -203,7 +209,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="learn" className="py-16 sm:py-24 animate-slide-up-fade">
+          <section id="learn" className="py-12 sm:py-20 animate-slide-up-fade">
             <div className="container mx-auto text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 What You’ll Learn
@@ -249,7 +255,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="sessions" className="py-16 sm:py-24 animate-slide-up-fade">
+          <section id="sessions" className="py-12 sm:py-20 animate-slide-up-fade">
             <div className="container mx-auto max-w-4xl text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Deep Dive into Sessions
@@ -347,7 +353,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="schedule" className="py-16 sm:py-24 animate-slide-up-fade">
+          <section id="schedule" className="py-12 sm:py-20 animate-slide-up-fade">
             <div className="container mx-auto max-w-3xl text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Workshop Schedule
@@ -426,7 +432,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="location" className="py-16 sm:py-24 animate-slide-up-fade">
+          <section id="location" className="py-12 sm:py-20 animate-slide-up-fade">
             <div className="container mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 md:grid-cols-2 px-4">
               <div className="flex flex-col gap-8 text-center md:text-left">
                 <div className="space-y-4">
@@ -464,7 +470,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="faq" className="py-16 sm:py-24 animate-slide-up-fade">
+          <section id="faq" className="py-12 sm:py-20 animate-slide-up-fade">
             <div className="mx-auto max-w-3xl container px-4">
               <h2 className="text-center font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Frequently Asked Questions
