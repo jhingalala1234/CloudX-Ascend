@@ -46,7 +46,7 @@ export default function Home() {
                 className="h-10 w-auto"
               />
             </Link>
-            <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+            <nav className="hidden items-center justify-center gap-8 text-sm font-medium md:flex flex-1">
               <Link
                 href="#overview"
                 className="text-muted-foreground transition-colors hover:text-primary"
@@ -86,7 +86,7 @@ export default function Home() {
             </nav>
             <Button asChild variant="glass" className="hidden md:flex">
               <Link href="/register">
-                Secure Your Spot Now
+                Register
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -129,7 +129,7 @@ export default function Home() {
                     </SheetClose>
                      <Button asChild variant="glass" className="w-full">
                       <Link href="/register">
-                        Secure Your Spot Now
+                        Register
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Link>
                     </Button>
@@ -336,13 +336,13 @@ export default function Home() {
           <section className="py-10 text-center">
             <div className="container mx-auto px-4">
               <p className="text-lg text-muted-foreground">
-                & For the CloudX touch
+                &amp; For the CloudX touch
               </p>
               <h2 className="font-headline mt-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-extrabold uppercase tracking-tighter text-transparent sm:text-5xl md:text-6xl">
                 NO PRIOR KNOWLEDGE REQUIRED
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground md:text-xl">
-                Don’t worry if you don’t know anything. Bring your Laptop & we'll have you covered.
+                Don’t worry if you don’t know anything. Bring your Laptop &amp; we'll have you covered.
               </p>
             </div>
           </section>
@@ -363,7 +363,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-xl font-bold">
-                      09:00 AM – 09:15 AM | Inauguration & Introduction
+                      09:00 AM – 09:15 AM | Inauguration &amp; Introduction
                     </h4>
                     <p className="text-muted-foreground">
                       Kick off the day with a warm welcome, overview of the workshop, and what you’ll achieve by the end of it.
@@ -415,7 +415,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-xl font-bold">
-                      03:30 PM – 04:00 PM | Q&A, Quiz & Prize Distribution
+                      03:30 PM – 04:00 PM | Q&amp;A, Quiz &amp; Prize Distribution
                     </h4>
                     <p className="text-muted-foreground">
                       Test your knowledge, win exclusive AWS swag, and get all your questions answered by the experts.
