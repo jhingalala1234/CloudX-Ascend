@@ -26,7 +26,9 @@ export async function verifyAdmin({ username, password }: { username: string, pa
 }
 
 export async function getRegistrations() {
-  const registrationsRef = firestore.collection('registrations').orderBy('createdAt', 'desc');
+  // Removed .orderBy('createdAt', 'desc') to avoid needing a composite index.
+  // The data will be unsorted from the server, but this prevents query failures.
+  const registrationsRef = firestore.collection('registrations');
   const snapshot = await registrationsRef.get();
   
   if (snapshot.empty) {
@@ -73,5 +75,3 @@ export async function getScreenshotUrl({ path }: { path: string }) {
         throw new Error('Could not get screenshot URL.');
     }
 }
-
-    
