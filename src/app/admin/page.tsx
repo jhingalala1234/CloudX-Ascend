@@ -71,10 +71,16 @@ export default function AdminPage() {
   const fetchRegistrations = async () => {
     setIsFetchingRegistrations(true);
     try {
-      const fetchedRegistrations = await getRegistrations();
-      // Type assertion as the service returns a plain object
-      setRegistrations(fetchedRegistrations as Registration[]);
+      const fetchedRegistrations = await getRegistrations() as Registration[];
+      // Sort registrations by creation date, newest first.
+      const sortedRegistrations = fetchedRegistrations.sort((a, b) => {
+        const dateA = a.createdAt?._seconds || 0;
+        const dateB = b.createdAt?._seconds || 0;
+        return dateB - dateA;
+      });
+      setRegistrations(sortedRegistrations);
     } catch (error) {
+      console.error(error);
       toast({
         title: 'Error fetching registrations',
         description: 'Could not load attendee data. Please try again.',
@@ -245,6 +251,7 @@ export default function AdminPage() {
                                 <Button variant="ghost" size="icon" className="text-green-500 hover:text-green-500 hover:bg-green-500/10" onClick={() => handleStatusUpdate(reg.id, 'verified')} title="Approve">
                                     <Check className="h-5 w-5" />
                                 </Button>
+
                                 <Button variant="ghost" size="icon" className="text-red-500 hover:text-red-500 hover:bg-red-500/10" onClick={() => handleStatusUpdate(reg.id, 'rejected')} title="Reject">
                                     <X className="h-5 w-5" />
                                 </Button>
@@ -263,5 +270,3 @@ export default function AdminPage() {
     </div>
   );
 }
-
-    
