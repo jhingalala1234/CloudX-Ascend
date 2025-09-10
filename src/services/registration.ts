@@ -21,14 +21,14 @@ export async function saveRegistration(data: RegistrationData) {
     // 1. Upload the image to Firebase Storage
     const { base64, contentType, fileName } = data.paymentScreenshot;
     
-    // Remove the data URI prefix
+    // Remove the data URI prefix (e.g., 'data:image/jpeg;base64,')
     const base64Data = base64.split(';base64,').pop();
     if (!base64Data) {
       throw new Error('Invalid Base64 data for screenshot.');
     }
 
     const buffer = Buffer.from(base64Data, 'base64');
-    const filePath = `screenshots/${Date.now()}-${fileName}`;
+    const filePath = `screenshots/${Date.now()}-${data.registrationNumber}-${fileName}`;
     const file = storage.file(filePath);
 
     await file.save(buffer, {
@@ -58,6 +58,8 @@ export async function saveRegistration(data: RegistrationData) {
     return { success: true, insertedId: docRef.id };
   } catch (error) {
     console.error('Error saving registration to Firebase:', error);
+    // It's better to throw a more specific error or handle it,
+    // but for now, we re-throw to let the client know something went wrong.
     throw new Error('Failed to save registration.');
   }
 }
