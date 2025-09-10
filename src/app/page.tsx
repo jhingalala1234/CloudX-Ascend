@@ -323,10 +323,9 @@ export default function Home() {
                    <div className="bg-muted/50 p-6 md:col-span-1">
                     <h4 className="font-bold text-lg mb-2">Key Takeaways</h4>
                     <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                      <li>Understand generative AI fundamentals</li>
-                      <li>Set up and work with the AWS Q CLI</li>
-                      <li>Build and debug apps with AI assistance</li>
-                      <li>Automate tasks using natural language commands</li>
+                      <li>Understand Gen-AI Fundamentals</li>
+                      <li>Set up and work with the AWS Q</li>
+                      <li>Build & Debug Apps with AI Assistance</li>
                     </ul>
                   </div>
                 </Card>
@@ -334,16 +333,16 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="py-10 text-center sm:py-16 snap-start flex items-center min-h-screen">
+          <section className="py-20 text-center snap-start flex items-center">
             <div className="container mx-auto px-4">
               <p className="text-lg text-muted-foreground">
-                …and for that CloudX touch...
+                & For the CloudX touch
               </p>
-              <h2 className="font-headline mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-bold uppercase tracking-tighter text-transparent sm:text-5xl md:text-6xl">
+              <h2 className="font-headline mt-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-extrabold uppercase tracking-tighter text-transparent sm:text-5xl md:text-6xl">
                 NO PRIOR KNOWLEDGE REQUIRED
               </h2>
-              <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
-                Don’t worry if you don’t know anything. Come as you are. Beginners, enthusiasts, and experts are all welcome.
+              <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
+                Don’t worry if you don’t know anything. Bring your Laptop & we'll have you covered.
               </p>
             </div>
           </section>
