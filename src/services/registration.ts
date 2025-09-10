@@ -28,6 +28,7 @@ export async function saveRegistration(data: RegistrationData) {
     }
 
     const buffer = Buffer.from(base64Data, 'base64');
+    const bucketName = `${process.env.FIREBASE_PROJECT_ID}.appspot.com`;
     const filePath = `screenshots/${Date.now()}-${data.registrationNumber}-${fileName}`;
     const file = storage.file(filePath);
 
@@ -40,7 +41,7 @@ export async function saveRegistration(data: RegistrationData) {
     });
     
     // Get the public URL
-    const screenshotUrl = `https://storage.googleapis.com/${storage.name}/${filePath}`;
+    const screenshotUrl = `https://storage.googleapis.com/${bucketName}/${filePath}`;
 
     // 2. Save registration data to Firestore
     const registrationDoc = {
