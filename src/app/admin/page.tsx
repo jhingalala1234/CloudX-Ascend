@@ -47,22 +47,29 @@ export default function AdminPage() {
 
   useEffect(() => {
     if (registrations.length > 0) {
-        const fetchUrls = async () => {
-            const urls: Record<string, string> = {};
-            await Promise.all(registrations.map(async (reg) => {
-                if (reg.screenshotPath && !screenshotUrls[reg.id]) {
-                    try {
-                        const url = await getScreenshotUrl({ path: reg.screenshotPath });
-                        urls[reg.id] = url;
-                    } catch (error) {
-                        console.error(`Failed to get URL for ${reg.screenshotPath}:`, error);
-                        urls[reg.id] = ''; 
-                    }
-                }
+      const fetchUrls = async () => {
+        const urlsToFetch = registrations.filter(
+          (reg) => reg.screenshotPath && !screenshotUrls[reg.id]
+        );
+
+        if (urlsToFetch.length === 0) return;
+
+        const newUrls: Record<string, string> = {};
+        await Promise.all(
+          urlsToFetch.map(async (reg) => {
+            try {
+              const url = await getScreenshotUrl({ path: reg.screenshotPath });
+              newUrls[reg.id] = url;
+            } catch (error) {
+              console.error(`Failed to get URL for ${reg.screenshotPath}:`, error);
+              newUrls[reg.id] = ''; // Store empty string on error to prevent re-fetching
             }
-            setScreenshotUrls(prev => ({...prev, ...urls}));
-        };
-        fetchUrls();
+          })
+        );
+
+        setScreenshotUrls((prev) => ({ ...prev, ...newUrls }));
+      };
+      fetchUrls();
     }
   }, [registrations, screenshotUrls]);
 
