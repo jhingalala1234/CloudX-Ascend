@@ -111,9 +111,8 @@ export default function RegisterPage() {
         upiId: upiId,
         paymentScreenshot: {
             fileName: screenshotFile.name,
-            fileType: screenshotFile.type,
-            fileSize: screenshotFile.size,
-            fileContent: screenshotBase64,
+            contentType: screenshotFile.type,
+            base64: screenshotBase64,
         },
       });
 
