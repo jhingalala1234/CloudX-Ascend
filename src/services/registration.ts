@@ -18,32 +18,26 @@ interface RegistrationData {
 
 export async function saveRegistration(data: RegistrationData) {
   try {
-    // 1. Upload the image to Firebase Storage
     const { base64, contentType, fileName } = data.paymentScreenshot;
     
-    // Remove the data URI prefix (e.g., 'data:image/jpeg;base64,')
     const base64Data = base64.split(';base64,').pop();
     if (!base64Data) {
       throw new Error('Invalid Base64 data for screenshot.');
     }
 
     const buffer = Buffer.from(base64Data, 'base64');
-    const bucketName = 'cloud-ascend-cloudx.appspot.com';
     const filePath = `screenshots/${Date.now()}-${data.registrationNumber}-${fileName}`;
     const file = storage.file(filePath);
 
-    // Correctly await the file save operation
     await file.save(buffer, {
       metadata: {
         contentType: contentType,
       },
-      public: true, // Make the file public upon upload
+      public: true,
     });
     
-    // Get the public URL
-    const screenshotUrl = `https://storage.googleapis.com/${bucketName}/${filePath}`;
+    const screenshotUrl = `https://storage.googleapis.com/${storage.name}/${filePath}`;
 
-    // 2. Save registration data to Firestore
     const registrationDoc = {
       name: data.name,
       registrationNumber: data.registrationNumber,
@@ -60,8 +54,6 @@ export async function saveRegistration(data: RegistrationData) {
     return { success: true, insertedId: docRef.id };
   } catch (error) {
     console.error('Error saving registration to Firebase:', error);
-    // It's better to throw a more specific error or handle it,
-    // but for now, we re-throw to let the client know something went wrong.
     throw new Error('Failed to save registration.');
   }
 }

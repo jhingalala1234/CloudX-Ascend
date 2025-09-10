@@ -1,7 +1,6 @@
 
 import admin from 'firebase-admin';
 
-// This check prevents the app from being initialized multiple times
 if (!admin.apps.length) {
   try {
     admin.initializeApp({
@@ -10,6 +9,7 @@ if (!admin.apps.length) {
         clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
         privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
       }),
+      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
     });
   } catch (error: any) {
     console.error('Firebase admin initialization error', error.stack);
@@ -17,7 +17,6 @@ if (!admin.apps.length) {
   }
 }
 
-// Export the initialized services
 const firestore = admin.firestore();
 const auth = admin.auth();
 const storage = admin.storage().bucket();
