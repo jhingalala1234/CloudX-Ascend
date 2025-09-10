@@ -493,7 +493,7 @@ export default function Home() {
               <Accordion type="single" collapsible className="mt-12 w-full">
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="text-lg hover:no-underline">
-                    Who can attend this workshop?
+                    Who Can Attend This Workshop?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
                     Anyone! Beginners, enthusiasts, and aspiring cloud
@@ -503,7 +503,7 @@ export default function Home() {
                 </AccordionItem>
                 <AccordionItem value="item-2">
                   <AccordionTrigger className="text-lg hover:no-underline">
-                    Any Pre-requisites?
+                    Any Pre-Requisites?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
                     Not at all. This workshop is designed to take you from
@@ -513,7 +513,7 @@ export default function Home() {
                 </AccordionItem>
                 <AccordionItem value="item-3">
                   <AccordionTrigger className="text-lg hover:no-underline">
-                    What should I bring?
+                    What Should I Bring?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
                     Bring a laptop, a charged mind, and enthusiasm to learn.
@@ -523,7 +523,7 @@ export default function Home() {
                 </AccordionItem>
                 <AccordionItem value="item-4">
                   <AccordionTrigger className="text-lg hover:no-underline">
-                    What’s included in the ticket?
+                    What’s Included In The Ticket?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
                     <ul className="list-disc space-y-2 pl-6">
@@ -538,7 +538,7 @@ export default function Home() {
                 </AccordionItem>
                 <AccordionItem value="item-5">
                   <AccordionTrigger className="text-lg hover:no-underline">
-                    Will I get a certificate?
+                    Will I Get A Certificate?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
                     Yes! All participants will receive a Certificate of
@@ -547,7 +547,7 @@ export default function Home() {
                 </AccordionItem>
                 <AccordionItem value="item-7">
                   <AccordionTrigger className="text-lg hover:no-underline">
-                    Can I network with the speakers?
+                    Can I Network With The Speakers?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
                     Absolutely. AWS Community Builders will be available
@@ -557,7 +557,7 @@ export default function Home() {
                 </AccordionItem>
                  <AccordionItem value="item-8">
                   <AccordionTrigger className="text-lg hover:no-underline">
-                    How do I register?
+                    How Do I Register?
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-muted-foreground">
                     Click the “Register” button on this page and secure
