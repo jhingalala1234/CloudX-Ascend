@@ -37,7 +37,7 @@ export async function saveRegistration(data: RegistrationData) {
 
     await file.makePublic();
     
-    const screenshotUrl = `https://storage.googleapis.com/${process.env.FIREBASE_STORAGE_BUCKET}/${filePath}`;
+    const screenshotUrl = `https://storage.googleapis.com/${process.env.FIREBASE_PROJECT_ID}.appspot.com/${filePath}`;
 
     const registrationDoc = {
       name: data.name,
@@ -58,4 +58,3 @@ export async function saveRegistration(data: RegistrationData) {
     throw error;
   }
 }
-
