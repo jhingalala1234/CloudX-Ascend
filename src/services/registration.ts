@@ -15,12 +15,7 @@ interface RegistrationData {
 export async function saveRegistration(data: RegistrationData) {
   try {
     const registrationDoc = {
-      name: data.name,
-      registrationNumber: data.registrationNumber,
-      email: data.email,
-      phoneNumber: data.phoneNumber,
-      upiId: data.upiId,
-      screenshotUrl: data.screenshotUrl, // We now receive the direct download URL
+      ...data,
       createdAt: new Date(),
       status: 'pending_verification',
     };
@@ -30,7 +25,6 @@ export async function saveRegistration(data: RegistrationData) {
     return { success: true, insertedId: docRef.id };
   } catch (error) {
     console.error('Error saving registration to Firebase:', error);
-    // Re-throw the original error to get a detailed stack trace on the client.
-    throw error;
+    throw new Error('Could not save registration data.');
   }
 }
