@@ -138,7 +138,7 @@ export default function RegisterPage() {
   return (
     <>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
-        <header className="fixed top-0 z-50 w-full bg-background/95 shadow-md">
+        <header className="fixed top-0 z-50 w-full bg-background/95 shadow-md animate-fade-in">
           <div className="container mx-auto flex h-20 items-center justify-between px-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
@@ -156,11 +156,11 @@ export default function RegisterPage() {
         </header>
 
         <main className="flex-1 flex items-center justify-center pt-20">
-          <div className="w-full max-w-lg p-8 space-y-6 bg-card text-card-foreground rounded-lg shadow-lg">
+          <div className="w-full max-w-lg p-8 space-y-6 bg-card text-card-foreground rounded-lg shadow-lg animate-slide-up-fade">
 
             {/* Step 1: User Details Form */}
             {step === 1 && (
-              <>
+              <div className="animate-fade-in">
                 <div className="text-center">
                   <h1 className="text-3xl font-bold text-primary">Register for AWS Ascend</h1>
                   <p className="text-muted-foreground mt-2">Step 1 of 3: Enter your details</p>
@@ -244,12 +244,12 @@ export default function RegisterPage() {
                     </Button>
                   </form>
                 </Form>
-              </>
+              </div>
             )}
 
             {/* Step 2: Payment Details */}
             {step === 2 && (
-              <div className="space-y-6 text-center">
+              <div className="space-y-6 text-center animate-fade-in">
                 <div className="text-center">
                     <h1 className="text-3xl font-bold text-primary">Payment</h1>
                     <p className="text-muted-foreground mt-2">Step 2 of 3: Complete your payment</p>
@@ -283,7 +283,7 @@ export default function RegisterPage() {
 
             {/* Step 3: Screenshot Upload */}
             {step === 3 && (
-               <>
+               <div className="animate-fade-in">
                 <div className="text-center">
                   <h1 className="text-3xl font-bold text-primary">Final Step</h1>
                   <p className="text-muted-foreground mt-2">Step 3 of 3: Verify your payment</p>
@@ -348,7 +348,7 @@ export default function RegisterPage() {
                         </div>
                     </form>
                 </Form>
-               </>
+               </div>
             )}
           </div>
         </main>
@@ -356,3 +356,5 @@ export default function RegisterPage() {
     </>
   );
 }
+
+    

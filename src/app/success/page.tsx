@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function SuccessPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
-        <header className="fixed top-0 z-50 w-full bg-background/95 shadow-md">
+        <header className="fixed top-0 z-50 w-full bg-background/95 shadow-md animate-fade-in">
             <div className="container mx-auto flex h-20 items-center justify-between px-4">
                 <Link href="/" className="flex items-center gap-2">
                 <Image
@@ -21,7 +21,7 @@ export default function SuccessPage() {
             </div>
         </header>
         <main className="flex-1 flex flex-col items-center justify-center text-center p-4">
-            <div className="w-full max-w-md p-8 space-y-6 bg-card text-card-foreground rounded-lg shadow-lg">
+            <div className="w-full max-w-md p-8 space-y-6 bg-card text-card-foreground rounded-lg shadow-lg animate-slide-up-fade">
                 <div className="flex justify-center">
                     <CheckCircle className="h-20 w-20 text-green-500" />
                 </div>
@@ -46,3 +46,5 @@ export default function SuccessPage() {
     </div>
   );
 }
+
+    

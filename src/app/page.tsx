@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
-        <header className="sticky top-0 z-50 w-full bg-background/95 shadow-md backdrop-blur-sm">
+        <header className="sticky top-0 z-50 w-full bg-background/95 shadow-md backdrop-blur-sm animate-fade-in">
           <div className="container mx-auto flex h-20 items-center justify-between px-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
@@ -148,7 +148,7 @@ export default function Home() {
             <div className="absolute inset-0 -z-10">
               <div className="absolute inset-0 bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
             </div>
-            <div className="relative mx-auto max-w-5xl">
+            <div className="relative mx-auto max-w-5xl animate-slide-up-fade">
               <div className="flex justify-center items-center flex-col">
                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   AWS Ascend
@@ -177,7 +177,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="overview" className="py-20 sm:py-24">
+          <section id="overview" className="py-20 sm:py-24 animate-slide-up-fade">
             <div className="container mx-auto px-4 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
               <div className="space-y-6">
                 <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
@@ -203,7 +203,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="learn" className="py-20 sm:py-24">
+          <section id="learn" className="py-20 sm:py-24 animate-slide-up-fade">
             <div className="container mx-auto text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 What You’ll Learn
@@ -212,7 +212,7 @@ export default function Home() {
                 This isn’t theory. Every session is hands-on, so you walk away with real projects and skills that everyone else is scrambling to catch up on.
               </p>
               <div className="mt-12 grid grid-cols-1 gap-8 text-left md:grid-cols-2 lg:grid-cols-3">
-                <Card>
+                <Card className="transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                   <CardHeader>
                     <Cloud className="mb-4 h-10 w-10 text-primary" />
                     <CardTitle>AWS Fundamentals</CardTitle>
@@ -223,7 +223,7 @@ export default function Home() {
                     </p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                   <CardHeader>
                     <Database className="mb-4 h-10 w-10 text-accent" />
                     <CardTitle>Data Lakes on AWS</CardTitle>
@@ -234,7 +234,7 @@ export default function Home() {
                     </p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                   <CardHeader>
                     <Zap className="mb-4 h-10 w-10 text-primary" />
                     <CardTitle>Generative AI with AWS Q</CardTitle>
@@ -249,7 +249,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="sessions" className="py-20 sm:py-24">
+          <section id="sessions" className="py-20 sm:py-24 animate-slide-up-fade">
             <div className="container mx-auto max-w-4xl text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Deep Dive into Sessions
@@ -258,7 +258,7 @@ export default function Home() {
                 Our expert-led sessions are designed to give you hands-on experience and deep insights.
               </p>
               <div className="mt-12 space-y-12 text-left">
-                <Card className="overflow-hidden md:grid md:grid-cols-3">
+                <Card className="overflow-hidden md:grid md:grid-cols-3 transition-shadow duration-300 hover:shadow-xl">
                   <div className="md:col-span-2">
                      <CardHeader>
                       <CardTitle className="text-2xl text-accent">Session 01 : CloudSteps</CardTitle>
@@ -294,7 +294,7 @@ export default function Home() {
                   </div>
                 </Card>
                 
-                <Card className="overflow-hidden md:grid md:grid-cols-3">
+                <Card className="overflow-hidden md:grid md:grid-cols-3 transition-shadow duration-300 hover:shadow-xl">
                    <div className="md:col-span-2">
                      <CardHeader>
                       <CardTitle className="text-2xl text-accent">Session 02 : CloudUnlocked</CardTitle>
@@ -333,7 +333,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="py-10 text-center">
+          <section className="py-10 text-center animate-slide-up-fade">
             <div className="container mx-auto px-4">
               <p className="text-lg text-muted-foreground">
                 &amp; For the CloudX touch
@@ -347,7 +347,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="schedule" className="py-20 sm:py-24">
+          <section id="schedule" className="py-20 sm:py-24 animate-slide-up-fade">
             <div className="container mx-auto max-w-3xl text-center px-4">
               <h2 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Workshop Schedule
@@ -426,7 +426,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section id="location" className="py-20 sm:py-24">
+          <section id="location" className="py-20 sm:py-24 animate-slide-up-fade">
             <div className="container mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 md:grid-cols-2 px-4">
               <div className="flex flex-col gap-8 text-center md:text-left">
                 <div className="space-y-4">
@@ -462,7 +462,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="faq" className="py-20 sm:py-24">
+          <section id="faq" className="py-20 sm:py-24 animate-slide-up-fade">
             <div className="mx-auto max-w-3xl container px-4">
               <h2 className="text-center font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Frequently Asked Questions
@@ -545,7 +545,7 @@ export default function Home() {
             </div>
           </section>
           
-          <footer className="border-t border-border/50">
+          <footer className="border-t border-border/50 animate-fade-in">
             <div className="container mx-auto pt-12 pb-8 px-4 text-center text-muted-foreground">
               <div className="mb-8">
                 <Button
@@ -577,3 +577,5 @@ export default function Home() {
     </>
   );
 }
+
+    

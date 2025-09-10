@@ -141,7 +141,7 @@ export default function AdminPage() {
   if (!isLoggedIn) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background px-4">
-        <Card className="w-full max-w-sm">
+        <Card className="w-full max-w-sm animate-slide-up-fade">
           <CardHeader>
             <CardTitle className="text-center text-2xl text-primary">Admin Login</CardTitle>
           </CardHeader>
@@ -183,7 +183,7 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground p-4 sm:p-8">
-      <div className="container mx-auto">
+      <div className="container mx-auto animate-fade-in">
         <div className="flex justify-between items-center mb-8">
             <h1 className="text-3xl font-bold text-primary">Admin Dashboard</h1>
             <Button onClick={fetchRegistrations} disabled={isFetchingRegistrations}>
@@ -197,7 +197,7 @@ export default function AdminPage() {
                 <Loader2 className="h-12 w-12 animate-spin text-primary" />
             </div>
         ) : (
-          <Card>
+          <Card className="animate-slide-up-fade">
             <CardContent className="p-0">
                 <div className="overflow-x-auto">
                 <table className="w-full text-sm">
@@ -270,3 +270,5 @@ export default function AdminPage() {
     </div>
   );
 }
+
+    
