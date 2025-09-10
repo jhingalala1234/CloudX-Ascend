@@ -28,7 +28,7 @@ export async function saveRegistration(data: RegistrationData) {
     }
 
     const buffer = Buffer.from(base64Data, 'base64');
-    const bucketName = `${process.env.FIREBASE_PROJECT_ID}.appspot.com`;
+    const bucketName = 'cloud-ascend-cloudx.appspot.com';
     const filePath = `screenshots/${Date.now()}-${data.registrationNumber}-${fileName}`;
     const file = storage.file(filePath);
 
