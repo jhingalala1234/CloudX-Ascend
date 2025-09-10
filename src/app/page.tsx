@@ -16,6 +16,7 @@ import {
   Mail,
   Instagram,
   Menu,
+  Database,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -148,13 +149,14 @@ export default function Home() {
               <div className="absolute inset-0 bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
             </div>
             <div className="relative mx-auto max-w-5xl">
-              <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
-                AWS Ascend
-                <br />
-                <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+              <div className="flex justify-center items-center flex-col">
+                <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
+                  AWS Ascend
+                </h1>
+                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                   Elevate Your Skills
-                </span>
-              </h1>
+                </h1>
+              </div>
               <p className="mt-4 text-xl font-medium text-muted-foreground">Powered By <span className="font-bold bg-gradient-to-r from-orange-400 to-white bg-clip-text text-transparent">Amazon Q</span></p>
               <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
                 One Day. Two Sessions. Real Projects. Directly From Industry Mentors. 
@@ -207,28 +209,28 @@ export default function Home() {
                 What You’ll Learn
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
-                This isn’t theory. Every session is hands-on, so you leave with real projects and skills you can show off.
+                This isn’t theory. Every session is hands-on, so you walk away with real projects and skills that everyone else is scrambling to catch up on.
               </p>
               <div className="mt-12 grid grid-cols-1 gap-8 text-left md:grid-cols-2 lg:grid-cols-3">
                 <Card>
                   <CardHeader>
                     <Cloud className="mb-4 h-10 w-10 text-primary" />
-                    <CardTitle>AWS &amp; Data Lakes</CardTitle>
+                    <CardTitle>AWS Fundamentals</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Kickstart your cloud journey with the fundamentals of AWS, then build and manage your very own data lake — the backbone of modern data-driven applications.
+                      Start with the building blocks of the cloud. Learn core AWS services and concepts so you’re not just following along — you actually understand how the cloud works.
                     </p>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader>
-                    <Code className="mb-4 h-10 w-10 text-accent" />
-                    <CardTitle>Docker &amp; Kubernetes</CardTitle>
+                    <Database className="mb-4 h-10 w-10 text-accent" />
+                    <CardTitle>Data Lakes on AWS</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Master the essentials of containerization and orchestration. Learn how to package, run, and scale applications the way the industry does it.
+                      Go beyond basics and build a working data lake. Handle, organize, and process data the way modern companies do to drive insights and innovation.
                     </p>
                   </CardContent>
                 </Card>
@@ -239,7 +241,7 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Step into the future with the AWS Q CLI. Build intelligent, AI-powered solutions and see how generative AI is reshaping cloud development.
+                      Step into the future of cloud development. Use the AWS Q CLI to build, debug, and automate tasks with natural language, and see firsthand how AI is reshaping the cloud.
                     </p>
                   </CardContent>
                 </Card>
