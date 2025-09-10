@@ -39,7 +39,7 @@ const userDetailsSchema = z.object({
 
 // Schema for Step 3
 const paymentDetailsSchema = z.object({
-  upiId: z.string().min(1, 'UPI Transaction ID is required.'),
+  paymentId: z.string().min(1, 'Payment Transaction ID is required.'),
   paymentScreenshot: z
     .any()
     .refine((files) => files?.length == 1, 'Payment screenshot is required.')
@@ -64,7 +64,7 @@ export default function RegisterForm() {
 
   const paymentDetailsForm = useForm<PaymentDetailsData>({
     resolver: zodResolver(paymentDetailsSchema),
-    defaultValues: { upiId: '' },
+    defaultValues: { paymentId: '' },
   });
   const fileRef = paymentDetailsForm.register("paymentScreenshot");
 
@@ -117,7 +117,7 @@ export default function RegisterForm() {
             registrationNumber: userDetails.registrationNumber,
             email: `${userDetails.email}@srmist.edu.in`,
             phoneNumber: `+91${userDetails.phoneNumber}`,
-            upiId: values.upiId,
+            paymentId: values.paymentId,
             screenshotPath: filePath,
           });
 
@@ -293,10 +293,10 @@ export default function RegisterForm() {
                     <form onSubmit={paymentDetailsForm.handleSubmit(handleFinalSubmit)} className="space-y-4">
                         <FormField
                             control={paymentDetailsForm.control}
-                            name="upiId"
+                            name="paymentId"
                             render={({ field }) => (
                             <FormItem>
-                                <FormLabel>UPI Transaction ID</FormLabel>
+                                <FormLabel>Payment Transaction ID</FormLabel>
                                 <FormDescription>
                                     Enter the Reference or Transaction ID from your payment app.
                                 </FormDescription>
@@ -357,3 +357,5 @@ export default function RegisterForm() {
     </>
   );
 }
+
+    

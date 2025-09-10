@@ -8,7 +8,7 @@ interface RegistrationData {
   registrationNumber: string;
   email: string;
   phoneNumber: string;
-  upiId: string;
+  paymentId: string;
   screenshotPath: string; // Changed from screenshotUrl
 }
 
@@ -28,3 +28,5 @@ export async function saveRegistration(data: RegistrationData) {
     throw new Error('Could not save registration data.');
   }
 }
+
+    
