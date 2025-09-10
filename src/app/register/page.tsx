@@ -22,7 +22,6 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
-import { saveRegistration } from '@/services/firestore';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -89,58 +88,13 @@ export default function RegisterPage() {
     setIsDialogOpen(false);
     setIsSubmitting(true);
 
-    const file = formData.paymentScreenshot[0];
-    if (!file) {
-      toast({
-        title: 'Error',
-        description: 'Please upload a payment screenshot.',
+    toast({
+        title: 'Registration temporarily disabled',
+        description: "We're sorry, registrations are not being accepted at this moment.",
         variant: 'destructive',
-      });
-      setIsSubmitting(false);
-      return;
-    }
+    });
+    setIsSubmitting(false);
 
-    try {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = async () => {
-        const base64data = reader.result as string;
-        try {
-            await saveRegistration({ ...formData, upiRefId: upiId, paymentScreenshot: base64data });
-            toast({
-                title: 'Registration Submitted',
-                description: "We've received your registration and will verify it shortly.",
-            });
-            router.push('/success');
-        } catch (serverError) {
-             console.error('Error saving registration:', serverError);
-            toast({
-                title: 'Error',
-                description: 'Failed to save registration. Please try again.',
-                variant: 'destructive',
-            });
-            setIsSubmitting(false);
-        }
-      };
-      reader.onerror = () => {
-        console.error('Error reading file');
-        toast({
-          title: 'Error',
-          description: 'Failed to read the uploaded file. Please try again.',
-          variant: 'destructive',
-        });
-        setIsSubmitting(false);
-      }
-    } catch (error) {
-      console.error('Error processing form:', error);
-      toast({
-        title: 'Error',
-        description:
-          'An unexpected error occurred. Please try again later.',
-        variant: 'destructive',
-      });
-       setIsSubmitting(false);
-    }
   }
 
   return (
