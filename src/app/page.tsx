@@ -16,6 +16,7 @@ import {
   Mail,
   Instagram,
   Menu,
+  Rocket,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -39,7 +40,7 @@ export default function Home() {
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.png"
-                alt="Cloud Ascend Logo"
+                alt="AWS Ascend Logo"
                 width={120}
                 height={40}
                 className="h-10 w-auto"
@@ -102,7 +103,7 @@ export default function Home() {
                      <Link href="/" className="flex items-center gap-2">
                       <Image
                         src="/logo.png"
-                        alt="Cloud Ascend Logo"
+                        alt="AWS Ascend Logo"
                         width={120}
                         height={40}
                         className="h-10 w-auto"
@@ -149,10 +150,10 @@ export default function Home() {
             </div>
             <div className="relative mx-auto max-w-5xl">
               <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
-                Cloud Ascend
+                AWS Ascend
                 <br />
-                <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                  Elevate Your Skills
+                <span className="inline-flex items-center gap-4 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                  Elevate Your Skills <Rocket className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20" />
                 </span>
               </h1>
               <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
@@ -181,7 +182,7 @@ export default function Home() {
                   Workshop Overview
                 </h2>
                  <p className="text-lg text-muted-foreground">
-                  Cloud Ascend is a full-day, hands-on workshop designed for anyone — no prior cloud experience required. From your very first step in the cloud to building with AWS, Docker, Kubernetes, and the AWS Q CLI, you’ll learn by doing, not just listening.
+                  AWS Ascend is a full-day, hands-on workshop designed for anyone — no prior cloud experience required. From your very first step in the cloud to building with AWS, Docker, Kubernetes, and the AWS Q CLI, you’ll learn by doing, not just listening.
                 </p>
                 <p className="text-lg text-muted-foreground">
                   Guided by AWS Community Builders, this workshop is packed with labs, swags, and community learning. You’ll walk out with real projects, a certificate, and practical skills that set you apart. Miss it, and you’re missing the easiest way to step into the future of cloud.
@@ -576,5 +577,3 @@ export default function Home() {
     </>
   );
 }
-
-    

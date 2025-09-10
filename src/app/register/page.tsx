@@ -143,7 +143,7 @@ export default function RegisterPage() {
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.png"
-                alt="Cloud Ascend Logo"
+                alt="AWS Ascend Logo"
                 width={120}
                 height={40}
                 className="h-10 w-auto"
@@ -162,7 +162,7 @@ export default function RegisterPage() {
             {step === 1 && (
               <>
                 <div className="text-center">
-                  <h1 className="text-3xl font-bold text-primary">Register for Cloud Ascend</h1>
+                  <h1 className="text-3xl font-bold text-primary">Register for AWS Ascend</h1>
                   <p className="text-muted-foreground mt-2">Step 1 of 3: Enter your details</p>
                 </div>
                 <Form {...userDetailsForm}>

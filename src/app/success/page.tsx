@@ -12,7 +12,7 @@ export default function SuccessPage() {
                 <Link href="/" className="flex items-center gap-2">
                 <Image
                     src="/logo.png"
-                    alt="Cloud Ascend Logo"
+                    alt="AWS Ascend Logo"
                     width={120}
                     height={40}
                     className="h-10 w-auto"

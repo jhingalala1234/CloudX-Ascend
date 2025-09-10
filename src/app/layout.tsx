@@ -16,8 +16,8 @@ const spaceGrotesk = SpaceGrotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Cloud Ascend',
-  description: 'Join us for Cloud Ascend, a deep dive into AWS, DevOps, and the Q CLI. Hosted by AWS Community Builders.',
+  title: 'AWS Ascend',
+  description: 'Join us for AWS Ascend, a deep dive into AWS, DevOps, and the Q CLI. Hosted by AWS Community Builders.',
 };
 
 export default function RootLayout({
