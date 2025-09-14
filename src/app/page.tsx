@@ -186,7 +186,7 @@ export default function Home() {
                   Workshop Overview
                 </h2>
                  <p className="text-lg text-muted-foreground text-justify">
-                  AWS Ascend is a full-day, hands-on workshop designed for anyone & no prior cloud experience required. From your very first step in the cloud to building a data lake on AWS and exploring generative AI with the AWS Q CLI, you’ll learn by doing, not just listening.
+                  AWS Ascend is a full-day, hands-on workshop designed for anyone &amp; no prior cloud experience required. From your very first step in the cloud to building a data lake on AWS and exploring generative AI with the AWS Q CLI, you’ll learn by doing, not just listening.
                 </p>
                 <p className="text-lg text-muted-foreground text-justify">
                   Guided by AWS Community Builders, this workshop is packed with labs, swags, and community learning. You’ll walk out with real projects, a certificate, and practical skills that set you apart. Miss it, and you’re missing the easiest way to step into the future of cloud.
@@ -195,8 +195,8 @@ export default function Home() {
               <div>
                 <Image
                   src="/poster.png"
-                  width={420}
-                  height={594}
+                  width={1414}
+                  height={2000}
                   alt="Workshop Poster"
                   data-ai-hint="event poster"
                   className="rounded-xl shadow-2xl"
@@ -327,7 +327,7 @@ export default function Home() {
                     <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                       <li>Understand Gen-AI Fundamentals</li>
                       <li>Set up and work with the AWS Q</li>
-                      <li>Build & Debug Apps with AI Assistance</li>
+                      <li>Build &amp; Debug Apps with AI Assistance</li>
                     </ul>
                   </div>
                 </Card>
@@ -587,3 +587,5 @@ export default function Home() {
     </>
   );
 }
+
+    
