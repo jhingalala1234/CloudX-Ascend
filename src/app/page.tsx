@@ -196,14 +196,14 @@ export default function Home() {
                   Guided by AWS Community Builders, this workshop is packed with labs, swags, and community learning. You’ll walk out with real projects, a certificate, and practical skills that set you apart. Miss it, and you’re missing the easiest way to step into the future of cloud.
                 </p>
               </div>
-              <div className="flex items-center justify-center h-full">
+              <div className="flex items-center justify-center">
                 <Image
-                  src="/poster.png"
-                  width={1414}
-                  height={2000}
+                  src="https://picsum.photos/seed/poster/400/566"
+                  width={400}
+                  height={566}
                   alt="Workshop Poster"
                   data-ai-hint="event poster"
-                  className="rounded-xl shadow-2xl w-full h-full object-cover"
+                  className="rounded-xl shadow-2xl"
                 />
               </div>
             </div>
