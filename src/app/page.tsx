@@ -159,7 +159,7 @@ export default function Home() {
                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   AWS Ascend
                 </h1>
-                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                 <h1 className="font-headline text-4xl font-bold leading-tight tracking-tighter whitespace-nowrap sm:text-6xl md:text-7xl lg:text-8xl bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                   Elevate Your Skills
                 </h1>
               </div>
@@ -194,11 +194,11 @@ export default function Home() {
               </div>
               <div>
                 <Image
-                  src="https://picsum.photos/seed/1/600/400"
-                  width={600}
-                  height={400}
-                  alt="Workshop in session"
-                  data-ai-hint="workshop team"
+                  src="/poster.png"
+                  width={420}
+                  height={594}
+                  alt="Workshop Poster"
+                  data-ai-hint="event poster"
                   className="rounded-xl shadow-2xl"
                 />
               </div>
