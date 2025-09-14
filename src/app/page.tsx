@@ -196,7 +196,7 @@ export default function Home() {
                   Guided by AWS Community Builders, this workshop is packed with labs, swags, and community learning. You’ll walk out with real projects, a certificate, and practical skills that set you apart. Miss it, and you’re missing the easiest way to step into the future of cloud.
                 </p>
               </div>
-              <div>
+              <div className="flex h-full items-center justify-center">
                 <Image
                   src="/poster.png"
                   width={1414}
