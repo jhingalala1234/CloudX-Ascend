@@ -91,7 +91,7 @@ export default function Home() {
               </Link>
             </nav>
             <Button asChild variant="glass" className="hidden md:flex">
-              <Link href="/register">
+              <Link href="https://pages.razorpay.com/awsascend" target="_blank" rel="noopener noreferrer">
                 Register Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -134,7 +134,7 @@ export default function Home() {
                      <Link href="#faq" className="text-muted-foreground transition-colors hover:text-primary">FAQ</Link>
                     </SheetClose>
                      <Button asChild variant="glass" className="w-full">
-                      <Link href="/register">
+                      <Link href="https://pages.razorpay.com/awsascend" target="_blank" rel="noopener noreferrer">
                         Register
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Link>
@@ -173,7 +173,7 @@ export default function Home() {
                   variant="glass"
                   className="h-14 px-12 text-lg font-bold"
                 >
-                  <Link href="/register">Secure Your Spot Now</Link>
+                  <Link href="https://pages.razorpay.com/awsascend" target="_blank" rel="noopener noreferrer">Secure Your Spot Now</Link>
                 </Button>
               </div>
             </div>
@@ -438,7 +438,7 @@ export default function Home() {
               </p>
               <div className="mt-8">
                 <Button asChild size="lg" variant="glass">
-                  <Link href="/register">
+                  <Link href="https://pages.razorpay.com/awsascend" target="_blank" rel="noopener noreferrer">
                     REGISTER NOW!
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
