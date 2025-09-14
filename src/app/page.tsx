@@ -198,7 +198,7 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-center">
                 <Image
-                  src="https://picsum.photos/seed/poster/400/566"
+                  src="/poster.png"
                   width={400}
                   height={566}
                   alt="Workshop Poster"
