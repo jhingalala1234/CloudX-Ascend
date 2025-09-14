@@ -163,11 +163,11 @@ export default function Home() {
                   Elevate Your Skills
                 </h1>
               </div>
-              <div className="mx-auto mt-8 flex flex-col items-center gap-1 text-lg text-muted-foreground md:flex-row md:gap-3 md:text-xl">
+              <div className="mx-auto mt-8 flex flex-wrap justify-center items-center gap-1 text-lg text-muted-foreground md:gap-3 md:text-xl">
                 <span>
                     Powered By <span className="font-bold bg-gradient-to-r from-orange-400 to-white bg-clip-text text-transparent">Amazon Q</span>
                 </span>
-                <span className="hidden md:inline">|</span>
+                <span className="hidden sm:inline">|</span>
                 <span>25th Sept, iMac Lab</span>
               </div>
               <div className="mt-10">
@@ -196,7 +196,7 @@ export default function Home() {
                   Guided by AWS Community Builders, this workshop is packed with labs, swags, and community learning. You’ll walk out with real projects, a certificate, and practical skills that set you apart. Miss it, and you’re missing the easiest way to step into the future of cloud.
                 </p>
               </div>
-              <div className="flex h-full items-center justify-center">
+              <div className="flex items-center justify-center h-full">
                 <Image
                   src="/poster.png"
                   width={1414}
@@ -591,5 +591,3 @@ export default function Home() {
     </>
   );
 }
-
-    
