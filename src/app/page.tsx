@@ -203,7 +203,7 @@ export default function Home() {
                   height={2000}
                   alt="Workshop Poster"
                   data-ai-hint="event poster"
-                  className="rounded-xl shadow-2xl"
+                  className="rounded-xl shadow-2xl w-full h-full object-cover"
                 />
               </div>
             </div>
