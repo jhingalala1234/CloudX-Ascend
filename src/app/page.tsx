@@ -159,13 +159,17 @@ export default function Home() {
                 <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   AWS Ascend
                 </h1>
-                 <h1 className="font-headline text-4xl font-bold leading-tight tracking-tighter whitespace-nowrap sm:text-6xl md:text-7xl lg:text-8xl bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                 <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter whitespace-nowrap bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                   Elevate Your Skills
                 </h1>
               </div>
-              <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
-                 Powered By <span className="font-bold bg-gradient-to-r from-orange-400 to-white bg-clip-text text-transparent">Amazon Q</span> | 25th Sept, iMac Lab
-              </p>
+              <div className="mx-auto mt-8 flex flex-col items-center gap-1 text-lg text-muted-foreground md:flex-row md:gap-3 md:text-xl">
+                <span>
+                    Powered By <span className="font-bold bg-gradient-to-r from-orange-400 to-white bg-clip-text text-transparent">Amazon Q</span>
+                </span>
+                <span className="hidden md:inline">|</span>
+                <span>25th Sept, iMac Lab</span>
+              </div>
               <div className="mt-10">
                 <Button
                   asChild
