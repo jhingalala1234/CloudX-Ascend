@@ -92,7 +92,7 @@ export default function Home() {
             </nav>
             <Button asChild variant="glass" className="hidden md:flex">
               <Link href="/register">
-                Register
+                Register Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -305,19 +305,19 @@ export default function Home() {
                       <p className="text-muted-foreground">Step into the future of development with the AWS Q CLI, a generative AI assistant built for the command line. Learn how to use AI to build, debug, and automate faster than ever.</p>
                        <div className="flex items-center gap-4">
                         <Avatar>
-                          <AvatarImage src="/speakers/speaker2.jpeg" alt="Jeevitha M" />
-                          <AvatarFallback>JM</AvatarFallback>
+                          <AvatarImage src="/speakers/speaker2.jpeg" alt="Aadhityaa SB" />
+                          <AvatarFallback>AS</AvatarFallback>
                         </Avatar>
                         <div>
                           <div className="flex items-center gap-2">
-                            <p className="font-bold">Jeevitha M</p>
+                            <p className="font-bold">Aadhityaa SB</p>
                             <span className="text-muted-foreground/50">|</span>
-                            <Link href="https://www.linkedin.com/in/jeevitha-m-357979223/" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://www.linkedin.com/in/aadhi0612/" target="_blank" rel="noopener noreferrer">
                               <Linkedin className="h-5 w-5 text-blue-500 transition-colors hover:text-blue-500/80" />
                             </Link>
                           </div>
-                          <p className="text-sm text-primary">AWS Community Builder - AI Engineering</p>
-                          <p className="text-sm text-muted-foreground">Generative AI & Data Science Engineer, BigTapp Analytics</p>
+                          <p className="text-sm text-primary">AWS Community Builder - AI</p>
+                          <p className="text-sm text-muted-foreground">AI Software Developer - EY</p>
                         </div>
                       </div>
                     </CardContent>
