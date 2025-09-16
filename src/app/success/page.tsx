@@ -29,6 +29,18 @@ export default function SuccessPage() {
                 <p className="text-muted-foreground">
                     Thank you! Your ticket will be sent to your registered email address by the end of the day after we verify your payment.
                 </p>
+
+                <div className="border-t border-border/50 pt-6 space-y-4">
+                    <p className="text-muted-foreground">
+                        Click the link below to join the official WhatsApp group for registered participants.
+                    </p>
+                    <Button asChild className="w-full">
+                        <Link href="https://chat.whatsapp.com/GD2NsC74EMY8arm7g6sxVE?mode=ems_copy_t" target="_blank" rel="noopener noreferrer">
+                            Join WhatsApp Group
+                        </Link>
+                    </Button>
+                </div>
+                
                 <div className="text-sm text-muted-foreground pt-4">
                     <p>In case of any issues or questions, feel free to reach out to us on our socials.</p>
                      <div className="flex justify-center gap-6 mt-4">
@@ -38,7 +50,8 @@ export default function SuccessPage() {
                         <Link href="https://www.instagram.com/cloudx.srmist/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[#E4405F] transition-colors"><Instagram className="h-6 w-6" /></Link>
                     </div>
                 </div>
-                <Button asChild>
+
+                <Button asChild variant="outline" className="w-full">
                     <Link href="/">Return to Homepage</Link>
                 </Button>
             </div>
@@ -46,5 +59,3 @@ export default function SuccessPage() {
     </div>
   );
 }
-
-    
