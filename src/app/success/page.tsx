@@ -27,7 +27,7 @@ export default function SuccessPage() {
                 </div>
                 <h1 className="text-3xl font-bold text-primary">Registration Submitted!</h1>
                 <p className="text-muted-foreground">
-                    Thank you! Your ticket will be sent to your registered email address by the end of the day after we verify your payment.
+                    Thank you! Your ticket will be sent to your registered email address by E.O.D.
                 </p>
 
                 <div className="border-t border-border/50 pt-6 space-y-4">
