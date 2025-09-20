@@ -4,6 +4,7 @@ import { Inter, Space_Grotesk as SpaceGrotesk } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
+import { Navbar } from '@/components/navbar';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -83,6 +84,7 @@ export default function RootLayout({
           spaceGrotesk.variable
         )}
       >
+        <Navbar />
         {children}
         <Toaster />
       </body>

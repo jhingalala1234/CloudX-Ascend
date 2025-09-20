@@ -13,20 +13,7 @@ export const metadata: Metadata = {
 export default function RegistrationsClosedPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
-        <header className="fixed top-0 z-50 w-full bg-background/95 shadow-md animate-fade-in">
-            <div className="container mx-auto flex h-20 items-center justify-between px-4">
-                <Link href="/" className="flex items-center gap-2">
-                <Image
-                    src="/logo.png"
-                    alt="AWS Ascend Logo"
-                    width={120}
-                    height={40}
-                    className="h-10 w-auto"
-                />
-                </Link>
-            </div>
-        </header>
-        <main className="flex-1 flex flex-col items-center justify-center text-center p-4">
+        <main className="flex-1 flex flex-col items-center justify-center text-center p-4 pt-20">
             <div className="w-full max-w-md p-8 space-y-6 bg-card text-card-foreground rounded-lg shadow-lg animate-slide-up-fade">
                 <div className="flex justify-center">
                     <PartyPopper className="h-20 w-20 text-primary" />
@@ -62,5 +49,3 @@ export default function RegistrationsClosedPage() {
     </div>
   );
 }
-
-    

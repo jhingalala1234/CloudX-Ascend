@@ -139,23 +139,6 @@ export default function RegisterForm() {
   return (
     <>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
-        <header className="fixed top-0 z-50 w-full bg-background/95 shadow-md animate-fade-in">
-          <div className="container mx-auto flex h-20 items-center justify-between px-4">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/logo.png"
-                alt="AWS Ascend Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto"
-              />
-            </Link>
-            <Button asChild variant="outline">
-              <Link href="/">Home</Link>
-            </Button>
-          </div>
-        </header>
-
         <main className="flex-1 flex items-center justify-center pt-20 px-4">
           <div className="w-full max-w-lg p-4 sm:p-8 space-y-6 bg-card text-card-foreground rounded-lg shadow-lg animate-slide-up-fade">
 
@@ -316,6 +299,7 @@ export default function RegisterForm() {
                                 <FormDescription>
                                     Upload the screenshot of your ₹99 payment.
                                 </FormDescription>
+
                                 <FormControl>
                                 <Input type="file" {...fileRef} accept="image/png, image/jpeg, image/jpg" />
                                 </FormControl>
@@ -357,5 +341,3 @@ export default function RegisterForm() {
     </>
   );
 }
-
-    

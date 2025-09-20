@@ -29,7 +29,6 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollToTop } from '@/components/scroll-to-top';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -41,111 +40,6 @@ export default function Home() {
   return (
     <>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
-        <header className="sticky top-0 z-50 w-full bg-background/95 shadow-md backdrop-blur-sm animate-fade-in">
-          <div className="container mx-auto flex h-20 items-center justify-between px-4">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/logo.png"
-                alt="AWS Ascend Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto"
-              />
-            </Link>
-            <nav className="hidden items-center justify-center gap-8 text-sm font-medium md:flex flex-1">
-              <Link
-                href="#overview"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                Overview
-              </Link>
-              <Link
-                href="#learn"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                Learnings
-              </Link>
-              <Link
-                href="#sessions"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                Sessions
-              </Link>
-              <Link
-                href="#schedule"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                Schedule
-              </Link>
-              <Link
-                href="#location"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                Location
-              </Link>
-              <Link
-                href="#faq"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                FAQ
-              </Link>
-            </nav>
-            <Button asChild variant="glass" className="hidden md:flex">
-              <Link href="/registrations-closed">
-                Register Now
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <div className="md:hidden">
-               <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="outline" size="icon">
-                    <Menu className="h-6 w-6" />
-                    <span className="sr-only">Toggle navigation menu</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-full max-w-xs">
-                  <div className="grid gap-6 p-6">
-                     <Link href="/" className="flex items-center gap-2">
-                      <Image
-                        src="/logo.png"
-                        alt="AWS Ascend Logo"
-                        width={120}
-                        height={40}
-                        className="h-10 w-auto"
-                      />
-                    </Link>
-                    <SheetClose asChild>
-                      <Link href="#overview" className="text-muted-foreground transition-colors hover:text-primary">Overview</Link>
-                    </SheetClose>
-                    <SheetClose asChild>
-                      <Link href="#learn" className="text-muted-foreground transition-colors hover:text-primary">Learnings</Link>
-                    </SheetClose>
-                    <SheetClose asChild>
-                      <Link href="#sessions" className="text-muted-foreground transition-colors hover:text-primary">Sessions</Link>
-                    </SheetClose>
-                     <SheetClose asChild>
-                      <Link href="#schedule" className="text-muted-foreground transition-colors hover:text-primary">Schedule</Link>
-                    </SheetClose>
-                    <SheetClose asChild>
-                      <Link href="#location" className="text-muted-foreground transition-colors hover:text-primary">Location</Link>
-                    </SheetClose>
-                    <SheetClose asChild>
-                     <Link href="#faq" className="text-muted-foreground transition-colors hover:text-primary">FAQ</Link>
-                    </SheetClose>
-                     <Button asChild variant="glass" className="w-full">
-                      <Link href="/registrations-closed">
-                        Register
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Link>
-                    </Button>
-                  </div>
-                </SheetContent>
-              </Sheet>
-            </div>
-          </div>
-        </header>
-
         <main className="flex-1">
           <section
             id="home"
@@ -164,7 +58,7 @@ export default function Home() {
                 </h1>
               </div>
               <div className="mx-auto mt-8 flex flex-wrap justify-center items-center gap-1 text-lg text-muted-foreground md:gap-3 md:text-xl">
-                <span>
+                 <span>
                     Powered By <span className="font-bold bg-gradient-to-r from-orange-400 to-white bg-clip-text text-transparent">Amazon Q</span>
                 </span>
                 <span className="hidden sm:inline">|</span>
@@ -591,5 +485,3 @@ export default function Home() {
     </>
   );
 }
-
-    
