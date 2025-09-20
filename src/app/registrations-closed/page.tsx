@@ -30,7 +30,7 @@ export default function RegistrationsClosedPage() {
                     <p className="text-muted-foreground">
                         Follow our Instagram to be the first to know about future workshops, events, and all things cloud.
                     </p>
-                    <Button asChild className="w-full bg-[#E4405F] hover:bg-[#E4405F]/90 text-white">
+                    <Button asChild className="w-full" variant="accent">
                         <Link href="https://www.instagram.com/cloudx.srmist/" target="_blank" rel="noopener noreferrer">
                             <Instagram className="mr-2 h-5 w-5" />
                             Follow on Instagram
