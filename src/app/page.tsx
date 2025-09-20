@@ -428,7 +428,7 @@ export default function Home() {
                       <li>Full-day access to both sessions</li>
                       <li>Hands-on labs and projects</li>
                       <li>Swags and prizes for quiz winners</li>
-                      <li>Refreshments from Burger King</li>
+                      <li>Dominos Pizza and Paper Boat drinks</li>
                       <li>Certificate of Participation</li>
                       <li>Full-day OD</li>
                     </ul>

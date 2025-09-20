@@ -74,6 +74,12 @@ export function Navbar() {
           >
             Schedule
           </Link>
+           <Link
+            href="/certificates"
+            className="text-muted-foreground transition-colors hover:text-primary"
+          >
+            Certificates
+          </Link>
           <Link
             href="/#location"
             className="text-muted-foreground transition-colors hover:text-primary"
@@ -130,6 +136,11 @@ export function Navbar() {
                 <SheetClose asChild>
                   <Link href="/#schedule" className="text-muted-foreground transition-colors hover:text-primary">
                     Schedule
+                  </Link>
+                </SheetClose>
+                 <SheetClose asChild>
+                  <Link href="/certificates" className="text-muted-foreground transition-colors hover:text-primary">
+                    Certificates
                   </Link>
                 </SheetClose>
                 <SheetClose asChild>
